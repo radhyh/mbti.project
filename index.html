@@ -36,11 +36,12 @@
                 text-decoration: none;
                 display: block;
                 text-align: left;
-                padding: 10px;
+                padding: 20px 20px 20px 0px;
             }
             .dropdown-content a:hover {background-color:lightcyan;text-decoration: none;}
             .dropdown:hover .dropdown-content{
-                display: block;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
             }
 
             li a:hover{
@@ -64,8 +65,9 @@
 
          <ul>
             <li class="dropdown">
-                <a href="#mbtitype">MBTI Type</a>
+              MBTI Type
                 <div class="dropdown-content">
+                    <a href="#enfp">INFP</a>
                     <a href="#enfp">ENFP</a>
                     <a href="#enfp">INFJ</a>
                     <a href="#enfp">ENFJ</a>
