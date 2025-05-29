@@ -78,10 +78,22 @@
             footer{
                 background-color: rgb(247, 230, 180);
                 color: white;
-                text-align: left;
+                text-align: center;
                 padding: 10px;
             }
-            
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                background-color: #efce73;
+                padding: 10px;
+            }
+            .celebrity {
+                display: block;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
         </style>
     </head>
 
@@ -143,7 +155,25 @@
     
 
          <footer>
-            <p>Famous People with ISTP Personality Type: Tom Cruise, Bruce Lee, Clint Eastwood and Scarlett Johansson</p>  
+            <p>Famous People with ISTP Personality Type:</p> 
+            <div class="container">
+                <div class="celebrity">
+                    <p>Tom Cruise</p>
+                   <img src="c:\Users\Asus\Downloads\Tom-Cruise.png" alt="Tom Cruise" style="width:130px;height:128px;">
+                </div>
+                <div class="celebrity">
+                    <p>Bruce Lee</p>
+                    <img src="c:\Users\Asus\Downloads\bruce lee.jpg" alt="Bruce Lee" style="width:130px;height:128px;">
+                </div>
+                <div class="celebrity">
+                    <p>Clint Eastwood</p>
+                    <img src="c:\Users\Asus\Downloads\clint-eastwood.jpg" alt="Clint Eastwood" style="width:130px;height:128px;">
+                </div>
+                <div class="celebrity">
+                    <p>Scarlett Johansson</p>
+                    <img src="c:\Users\Asus\Downloads\Scarlett Johansson.jpg" alt="Scarlett Johansson" style="width:130px;height:128px;">
+                </div>
+            </div>
         </footer>
        
     </body>
