@@ -3,68 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
+    <title>About Us</title>
     <style>
-        *{
+        header,body,footer{
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             background-color: rgb(240, 237, 230);
         }
-        .flex-container {
-            display:flex;
-            justify-content: center;
+
+        .header {    /* Creates a flexbox layout to align items like a logo and group name horizontally and responsively*/
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
         }
-        .flex-container img{
-            border: 1px solid black;
-            margin: 30px;
+
+        @media (max-width: 600px) {  /*Creates a responsive rule that only applies when the screen width is 600px or smaller (e.g., phones)*/
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
         }
-        .gmbrbesar{
-            float:right;
-            margin-right:50px;
+
+        img {  /* Makes all images responsive*/
+            max-width: 100%;
+            height: auto;
         }
-        .tulisan{
-            font-size: x-large;
-            display:inline;
+
+        section {
+            margin-bottom: 40px; /* Adds vertical space below each section to separate content blocks*/
         }
-        .butang{
-            text-decoration: none;
-            color: black;
-            font-size: 25px;
+        .container { 
+            max-width: 1200px; /* Prevents the content from stretching too wide on large screens. Keeps it readable and centered.*/
+            margin: 0 auto;/* Horizontally centers the container within the browser window (top and bottom margin = 0, left and right = auto).*/
+            padding-left: 0%; /* Adds space inside the container, so content doesn't touch the edges.*/
         }
-        .butanggambar{
-            float:right;
-            height:25px;
-            width:40px;
+
+        .mbti-image {
+            margin-left: 60px;        /* push right */
+            margin-right: auto;       /* keep no extra right margin */
         }
+
+        .member {
+            margin: 4.4%;
+            border: 1px solid #ccc;
+            float: left;
+            width: 16%;
+        }
+
+        .member:hover {
+            border: 1px solid #777;
+        }
+
+        .desc {
+            padding: 15px;
+            text-align: center;
+        }
+        
     </style>
 </head>
 <body>
-    <br><br><br><br><br>
-    <img class="gmbrbesar" title="Diverse of personalities" src="https://i.postimg.cc/tJT6SJrK/Screenshot-2025-05-28-230809-removebg-preview.png" alt="gambarbesar">
-    <p title="our group name" style="text-indent: 250px;font-size: xx-large;">uIn4letters</p><br><br><br><br><br>
-    <h1 style="text-indent: 200px;color:rgb(31, 47, 129)">Prepared by:</h1>
-    <br><br><br><br>
-    <div class="flex-container">
-    <div title="Dini's mbti"><img src="https://i.postimg.cc/Z5SJLgDm/Screenshot-2025-05-28-222611-removebg-preview.png" alt="mbti dini" style="width:150px;height:230px;padding: 0 100px 0 100px;"></div>
-    <div title="Sarah's mbti"><img src="https://i.postimg.cc/CMnYpY3Y/Screenshot-2025-05-28-222632-removebg-preview.png" alt="mbti sarah" style="width:150px;height:230px;padding: 0 100px 0 100px;"></div>
-    <div title="Radhiyah's mbti"><img src="https://i.postimg.cc/2SGN75Zd/Screenshot-2025-05-28-222650-removebg-preview.png" alt="mbti rad" style="width:150px;height:230px;padding: 0 100px 0 100px;"></div>
-    <div title="Izzah's mbti"><img src="https://i.postimg.cc/Z5SJLgDm/Screenshot-2025-05-28-222611-removebg-preview.png" alt="mbti dini" style="width:150px;height:230px;padding: 0 100px 0 100px;"></div>
-    </div>
-    <br><br>
-    <p class="tulisan" style="margin:0px 230px 0 110px;">Nur Dini Syauqina</p>
-    <p class="tulisan" style="margin-right:280px;">Nur Sarah</p>
-    <p class="tulisan" style="margin-right:230px;">Nurradhiyah</p>
-    <p class="tulisan">Nur Izzah Amani</p>
-    <p class="tulisan" style="margin:0px 320px 0 180px;">(ENTP)</p>
-    <p class="tulisan" style="margin-right:330px;">(INTP)</p>
-    <p class="tulisan" style="margin-right:350px;">(ENFJ)</p>
-    <p class="tulisan">()</p>
-    <footer>
-    <br><br><br>
-    <div style="text-align: right; margin-right: 30px;">
-        <a  title="go to homepage"class="butang" href="homepage.html" target="_self">Next<img src="https://i.postimg.cc/zXnpmpTz/th-2-removebg-preview.png" class="butanggambar"></a>
-    </div>
-</footer>
+    <div class="header">
+  <img title="logo" src="https://i.postimg.cc/5ttmsfRc/photo-6179120980505511329-x-removebg-preview.png" alt="Logo">
+  <h2 title="group name" class="group-name">uIn4letters</h2>
+  <img class="mbti-image"title="all mbti" src="https://i.postimg.cc/25f15Gn0/gambar-besar-untuk-aboutus.png" alt="all mbti"  style="margin: auto;">
+</div>
+<h2 style="color:rgb(25, 31, 112); font-size: 300%;">Prepared By :</h2>
 
-
+<div class="container">
+  <div class="member">
+    <img title="dini's mbti" src="https://i.postimg.cc/XYwC9qcN/dini.png" alt="dini's mbti" width="100%" height="120%">
+    <div class="desc">Nur Dini Syauqina</div>
+  </div>
+  <div class="member">
+      <img title="dini's mbti" src="https://i.postimg.cc/s28Yjq3b/sarah.png" alt="dini's mbti" width="100%" height="120%">
+      <div class="desc">Nur Sarah</div>
+    </div>
+  <div class="member">
+      <img title="dini's mbti" src="https://i.postimg.cc/9fbwNknv/rad.png" alt="dini's mbti" width="100%" height="120%">
+      <div class="desc">Nurradhiyah</div>
+    </div>
+  <div class="member">
+      <img title="dini's mbti" src="https://i.postimg.cc/4d9zmPdy/dini.png" alt="dini's mbti" width="100%" height="120%">
+      <div class="desc">Nur Izzah Amani</div>
+    </div>
+</div>
 </body>
 </html>
