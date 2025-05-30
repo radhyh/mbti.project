@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <style>
-        header,body,footer{
+        body,footer{
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             background-color: rgb(240, 237, 230);
         }
+
+        body{
+                margin: 0;
+            }
 
         .header {    /* Creates a flexbox layout to align items like a logo and group name horizontally and responsively*/
             display: flex;
@@ -25,20 +29,13 @@
         img {  /* Makes all images responsive*/
             max-width: 100%;
             height: auto;
+           
         }
 
-        section {
-            margin-bottom: 40px; /* Adds vertical space below each section to separate content blocks*/
-        }
         .container { 
             max-width: 1200px; /* Prevents the content from stretching too wide on large screens. Keeps it readable and centered.*/
             margin: 0 auto;/* Horizontally centers the container within the browser window (top and bottom margin = 0, left and right = auto).*/
             padding:0 0%; /* Adds space inside the container, so content doesn't touch the edges.*/
-        }
-
-        .mbti-image {
-            margin-left: 60px;        /* push right */
-            margin-right: auto;       /* keep no extra right margin */
         }
 
         .member {
@@ -61,40 +58,39 @@
             color: rgb(25, 31, 112);
             font-size: 40px;
             float:right;
-            margin-right: 0%;
         }
 
     </style>
 </head>
 <body>
   <div class="header">
-  <img title="logo" src="https://i.postimg.cc/5ttmsfRc/photo-6179120980505511329-x-removebg-preview.png" alt="Logo" style="width:20%;height:20%;">
-  <h2 title="group name" class="group-name">uIn4letters</h2>
-  <img class="mbti-image"title="all mbti" src="https://i.postimg.cc/25f15Gn0/gambar-besar-untuk-aboutus.png" alt="all mbti" style="margin: auto;">
+    <img title="logo" src="https://i.postimg.cc/5ttmsfRc/photo-6179120980505511329-x-removebg-preview.png" alt="Logo" style="width:10%;height:10%;">
+  <h2 title="group name">uIn4letters</h2>
+  <img title="all mbti" src="https://i.postimg.cc/25f15Gn0/gambar-besar-untuk-aboutus.png" alt="all mbti" style="margin: auto;">
 </div>
-<h2 style="color:rgb(25, 31, 112); font-size: 300%;">Prepared By :</h2>
+<h3 style="color:rgb(25, 31, 112); font-size: 300%;">Prepared By :</h3>
 
 <div class="container">
   <div class="member">
-   <a href="ENTP.html"><img title="ENTP" src="https://i.postimg.cc/SxLNvXKn/dini-removebg-preview.png" alt="dini's mbti" width="100%" height="120%"></a>
+   <a href="ENTP.html"><img title="ENTP" src="https://i.postimg.cc/SxLNvXKn/dini-removebg-preview.png" alt="dini's mbti"></a>
     <div class="desc">Nur Dini Syauqina</div>
   </div>
   <div class="member">
-    <a href="INTP.html"><img title="INTP" src="https://i.postimg.cc/Ssnn3y5H/sarah-removebg-preview-1.png" alt="dini's mbti" width="100%" height="120%"></a>
+    <a href="INTP.html"><img title="INTP" src="https://i.postimg.cc/Ssnn3y5H/sarah-removebg-preview-1.png" alt="sarah's mbti"></a>
       <div class="desc">Nur Sarah</div>
     </div>
   <div class="member">
-    <a href="ENFJ.html"><img title="ENFJ" src="https://i.postimg.cc/cCYr1Fdm/rad-removebg-preview-1.png" alt="dini's mbti" width="100%" height="120%"></a>
+    <a href="ENFJ.html"><img title="ENFJ" src="https://i.postimg.cc/cCYr1Fdm/rad-removebg-preview-1.png" alt="rad's mbti"></a>
       <div class="desc">Nurradhiyah</div>
     </div>
   <div class="member">
-    <a href=""><img title="izzah's mbti" src="https://i.postimg.cc/Ssnn3y5H/sarah-removebg-preview-1.png" alt="dini's mbti" width="100%" height="120%"></a>
+    <a href=""><img title="izzah's mbti" src="https://i.postimg.cc/Ssnn3y5H/sarah-removebg-preview-1.png" alt="izzah's mbti"></a>
       <div class="desc">Nur Izzah Amani</div>
     </div>
 </div>
 <div style="clear: both;"></div>
-<div>
+<footer>
     <a class="butang" href="homepage.html">Next <img src="https://i.postimg.cc/Pqxbfn9Q/arrow-untuk-next-button.png" style="width:10%;"></a>
-    </div>
+</footer>
 </body>
 </html>
