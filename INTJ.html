@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: rgb(233, 220, 245);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(250, 187, 187);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #section {
+            background-image: url('mbti.img/paperbg1.png');
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
+                <div class="dropdown-content">
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
+                </div>
+            </li>
+            <li><a href="#meme">Meme</a></li>
+            <li><a href="#test">Take Test</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+        <h1 style="color: lightpurple;">INTJ<br>
+        <div>
+            <img src="mbti.img/intj1.png" style="width: 22%; margin: 50px;">
+        </div>
+        Architect</h1><br><br><br><br>
+
+        <h2 style="margin-left: 20px;">About</h2>
+        <section id="section">
+            <p>INTJs are known for their strategic thinking and analytical skills. They are often seen as independent and self-sufficient, preferring to work alone or in small groups. INTJs value knowledge and competence, and they are often driven by a desire to understand complex systems and ideas.</p>
+            <p>INTJs are often seen as reserved or aloof, but they can be passionate about their interests and ideas. They may struggle with emotional expression and may need to work on developing their emotional intelligence.</p>
+            <p>INTJs may also struggle with socializing in large groups, as they may find it difficult to connect with others on a personal level. They may prefer to engage in deep, meaningful conversations with a few close friends rather than small talk with many acquaintances.</p>
+        </section><br><br>
+
+        <h2 style="text-align: right; margin-right: 20px;">Strengths</h2>
+        <section id="section">
+            <ul>
+                <li>Strategic and analytical thinkers</li>
+                <li>Independent and self-sufficient</li>
+                <li>Highly organized and efficient</li>
+                <li>Value knowledge and competence</li>
+                <li>Driven by a desire to understand complex systems</li>
+            </ul>
+        </section><br><br>
+
+        <h2 style="margin-left: 20px;">Weaknesses</h2>
+        <section id="section">
+            <ul>
+                <li>May struggle with emotional expression</li>
+                <li>Can be seen as aloof or reserved</li>
+                <li>May have difficulty connecting with others on a personal level</li>
+                <li>Can be overly critical or perfectionistic</li>
+                <li>May struggle with routine or repetitive tasks</li>
+            </ul>
+        </section><br><br>
+
+        <h2 style="text-align: right; margin-right: 20px;">Relationships</h2>
+        <section id="section">
+            <p>INTJs are often drawn to partners who can engage them in intellectual discussions and debates. They value independence and may struggle with traditional relationship structures. INTJs may also enjoy playful banter and teasing in their relationships.</p>
+            <p>In friendships, INTJs are often seen as loyal and dependable, but they may struggle with emotional intimacy. They may need to work on expressing their feelings more openly and being more vulnerable with their friends.</p>
+            <p>INTJs may also struggle with socializing with large groups, as they may find it difficult to connect with others and may prefer small, intimate gatherings.</p>
+        </section><br><br>
+
+        <h2 style="margin-left: 20px;">Career</h2>
+        <section id="section">
+            <p>INTJs are often drawn to careers that allow them to use their strategic thinking and analytical skills. They may excel in fields such as science, technology, engineering, and mathematics (STEM), as well as in management and leadership roles.</p>
+            <p>INTJs may also be drawn to careers that allow them to work independently or in small groups, such as research or consulting. They may struggle with routine or repetitive tasks and may prefer to work in environments that allow for flexibility and innovation.</p>
+        </section><br><br>
+
+        <h2 style="text-align: right; margin-right: 20px;">Famous INTJs</h2>
+        <section id="section">
+            <ul>
+                <li>Elon Musk</li>
+                <li>Isaac Newton</li>
+                <li>Stephen Hawking</li>
+                <li>Jane Austen</li>
+                <li>Hillary Clinton</li>
+            </ul>
+        </section><br><br>
+
+    <footer>
+        <p style="text-align: center;">&copy; 2025 uIn4letters. All rights reserved.</p><br><br><br>    
+    </footer>
+    
+</body>
+</html>
