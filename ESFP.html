@@ -1,150 +1,266 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>uIn4letters</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-color: rgb(243, 175, 40);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color:rgb(246, 241, 220);
+            text-align: center;
+        }
+        div.title {
+            padding:40px;
+            font-size: 30px;
+        }
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(222, 217, 119);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(233, 227, 135);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-        <style>
-            *{
-                font-family: Verdana, Geneva, Tahoma, sans-serif; 
-            }
-            body, html {
-                margin: 0;
-                padding: 0;
-                height: 100%;
-            }
-            body{
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-            }
-            header{
-                border-bottom: 2px solid rgb(170, 170, 170);
-                position: sticky;
-                top: 0;
-                background-color:rgb(247, 230, 180);
-                padding: 20px;
-            }
-             ul{
-                list-style-type: none;
-                text-align: center;
-                margin: 0;
-                padding: 1em;
-             
-            }
-             li{
-                display: inline;
-                margin-right: 60px;
-                margin-left: 60px;
-            }
-             li a{
-                color: black;
-                text-decoration: none;
-                padding: 0;
-            }
-             li.dropdown{
-                display: inline-block;
-             }
-             .dropdown-content {
-               display: none;
-               position: absolute;
-            }
-            .dropdown-content a {
-                color: black;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-                padding: 20px 20px 20px 0px;
-            }
-            .dropdown-content a:hover {background-color:lightcyan;text-decoration: none;}
-            .dropdown:hover .dropdown-content{
-                display: grid;
-                grid-template-columns: auto auto auto auto;
-            }
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgb(233, 227, 135);
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-            li a:hover{
-                text-decoration: underline;
-            }
-            h1{
-                text-align: center;
-            }
-            h2{margin: 40px;}
-            div{
-                display: flex;
-                justify-content: center;
-                flex: 1;
-            }
-            .left{float: left;}
-            .right{float: right;}
-            footer{
-                background-color: rgb(247, 230, 180);
-                color: white;
-                text-align: left;
-                padding: 10px;
-            }
-            
-        </style>
-    </head>
+        }
+        .flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-    <body>
-        <header>
-             <ul>
+.container {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.container img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+</style>
+</head>
+
+<body>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
             <li class="dropdown">
-              MBTI Type
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
                 <div class="dropdown-content">
-                    <a href="#enfp">INFP</a>
-                    <a href="#enfp">ENFP</a>
-                    <a href="#enfp">INFJ</a>
-                    <a href="#enfp">ENFJ</a>
-                    <a href="#intp">INTP</a>
-                    <a href="#enfp">ENTP</a>
-                    <a href="#enfp">INTJ</a>
-                    <a href="#enfp">ENTJ</a>
-                    <a href="#enfp">ISFP</a>
-                    <a href="#enfp">ESFP</a>
-                    <a href="#enfp">ISFJ</a>
-                    <a href="#enfp">ESFJ</a>
-                    <a href="#enfp">ISTP</a>
-                    <a href="#enfp">ESTP</a>
-                    <a href="#enfp">ISTJ</a>
-                    <a href="#enfp">ESTJ</a>
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
                 </div>
-            <li><a href="#meme">Meme</a></li>
-            <li><a href="#test">Take Test</a></li>
-            <li><a href="about">About Us</a></li>
             </li>
-         </ul>
-        </header>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
 
-             <h1 style="color: rgb(230, 212, 94);">ESFP<br>
-            <div>
-                <img src="c:\Users\Asus\Downloads\estpall(2)(2).png" alt="esfp icon" style="width: 60%; margin: 50px;">
+    <div style="margin:60px;">
+        <h1 style="font-size: 100px;text-align: left;">ESFP</h1>
+        <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Extraverted, Observant, Feeling, Prospecting )</h1></div>
+    <img title="ESFP icon" class="icon" src="https://i.postimg.cc/7hrzKsYT/esfpintro-removebg-preview.png" alt="ESFP icon" style="width: 200%; max-width: 1100px;"></div>
+    <div class="title">
+    <h1>Entertainer</h1>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/mryLMm1r/esfpabout-removebg-preview.png" alt="esfp icon" style="height:230px;width:170px;float:left;">
+        <h2>About</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFPs thrive on fun, connection, and shared experiences. They love being around people, bringing energy to any room, and often act as the heart of the party.</li>
+            <li> Naturally spontaneous and curious, they prefer excitement and hands-on experiences over routine or long-term planning. They live for the now and aren’t afraid to explore the unknown.</li>
+            <li> ESFPs are deeply in tune with others' feelings. While they avoid conflict involving themselves, they’re quick to offer support and cheer others up with warmth and flair.</li>
+            <li> With a strong aesthetic sense, they enjoy fashion and beauty. However, they can overspend or avoid responsibilities if they’re not careful with planning and follow-through.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/3rkwb5yM/esfpstrength-removebg-preview.png" alt="esfp icon" style="height:250px;width:200px;float:right;">
+        <h2>Strength</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFPs love diving into new experiences and aren’t afraid to take risks. Their bold spirit often encourages others to step out of their comfort zones too.</li>
+            <li> With their upbeat energy and infectious enthusiasm, they light up any room and quickly connect with people through warmth and humor.</li>
+            <li> Whether it’s their style, conversations, or ideas, ESFPs bring originality to everything they do. They love to stand out and keep things exciting.</li>
+            <li> ESFPs are highly tuned into their surroundings. They prefer hands-on activities and quickly notice real-world changes and emotions in others.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/FsZsY98L/esfp-weakness-removebg-preview.png" alt="esfp icon" style="height:200px;width:200px;float:left;">
+        <h2>Weaknesses</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> While they may seem confident, ESFPs take things personally and can react emotionally when they feel judged.</li>
+            <li> They dislike tension and often dodge difficult conversations, choosing peace over resolution.</li>
+            <li> Repetitive or boring tasks can quickly lose their interest. They thrive on variety but may struggle with staying focused over time.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/qqv7xqNS/esfprelationship-removebg-preview.png" alt="esfp icon" style="height:180px;width:200px;float:right;">
+        <h2>Relationship</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> Rather than focusing on the distant future, they thrive in the present. Conversations are lighthearted and playful, and they prefer shared adventures over deep, heavy talks.</li>
+            <li> They take things personally and don’t respond well to criticism, especially from their partner. At the same time, they can be overly influenced by friends’ opinions about their relationship.</li>
+            <li> ESFPs may struggle with long-term commitment but are deeply caring. They seek genuine joy and connection, valuing relationships that feel good day by day rather than ones built on routine or obligation.</li>
+            <li> ESFPs bring energy, excitement, and spontaneity into relationships. They love the thrill of falling in love and work hard to keep the spark alive with fun, affectionate gestures.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/KcffGWx8/esfpcareer-removebg-preview.png" alt="esfp icon" style="height:250px;width:190px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFPs thrive in careers where they can connect with others, like event planning, sales, customer service, or hospitality. Their charm and energy make them natural networkers.</li>
+            <li> They excel in emotionally charged, hands-on roles such as nurses, EMTs, social workers, or counselors jobs where their empathy and quick thinking truly shine.</li>
+            <li> Many ESFPs are drawn to careers in music, fashion, photography, and design. They love creating beauty and bringing joy through their artistic flair.</li></ul></div>
+    </div>
+
+    <footer>
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/zBTSWds3/elton.jpg">
+            <div class="desc">Elton John</div>
             </div>
-       Entertainer</h1>
+            <div class="container">
+            <img src="https://i.postimg.cc/mDVWbSm1/miley.jpg">
+            <div class="desc">Miley Cyrus</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/2yRY9592/jamiefoxx.jpg">
+            <div class="desc">Jamie Foxx</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/XYxfkG1c/jb.jpg">
+            <div class="desc">Justin Bieber</div>
+            </div>
+        </div>
 
-        <br><br><h2 class="left">About</h2>
-        <section class="left">
-        <p class="left"><img class="left" src="c:\Users\Asus\Downloads\ESFP_1200-removebg-preview(1)(1).png" alt="esfp icon" style="width: 10%;">
-            ESFPs are lively, outgoing, and spontaneous individuals who thrive on social interaction and sensory experiences. They are warm, empathetic, and in tune with the emotions of those around them, often bringing fun and positivity wherever they go. Highly observant and grounded in the present, ESFPs love excitement, beauty, and hands-on activities. While they excel at living in the moment and connecting with others, they may struggle with long-term planning, routine, and handling conflict directly.
-        </section><br><br>
-        <h2 class="right" style="text-align: right;">Strengths</h2>
-        <section class="right">
-        <p class="right"><img class="right" src="c:\Users\Asus\Downloads\ESFP_1200-removebg-preview(1)(1).png" alt="esfp icon" style="width: 10%;">
-            ESFPs are vibrant, outgoing, and full of energy. They are naturally warm, empathetic, and highly attuned to the emotions of others, making them excellent at connecting and lifting people’s moods. ESFPs are observant and grounded in the present, thriving in dynamic, hands-on environments. Their spontaneity, adaptability, and charisma make them engaging and fun to be around.</p>
-        </section><br><br>
-        <h2 class="left">Weaknesses</h2> 
-        <section class="left"><p class="left">ESFPs often struggle with long-term planning and dislike strict routines or responsibilities that limit their freedom. They can be impulsive, acting on feelings in the moment without thinking through consequences. Conflict makes them uncomfortable, so they may avoid it or gloss over problems. They are also sensitive to criticism and may take feedback too personally.</p>
-        </section><br><br>
-        <h2 class="right" style="text-align: right;">Relationships</h2>
-        <section class="right"><p class="right">ESFPs are affectionate, playful, and emotionally expressive. They love making their partner feel special through shared experiences, quality time, and physical affection. They bring excitement and positivity into their connections and are often the emotional glue in their social circles. However, they may avoid deep emotional conversations or anything that feels too heavy or routine.</p>
-        </section><br><br>
-        <h2 class="left">Career</h2>
-        <section class="left"><p class="left">ESFPs thrive in dynamic, people-oriented careers that offer creativity, variety, and real-world engagement. They excel in roles that involve personal interaction, sensory experience, and immediate results. Routine and isolation drain them, while energetic environments inspire them. Ideal careers include entertainment, event planning, hospitality, healthcare, and customer service.</p>
-        </section><br><br> 
-    
-
-         <footer>
-            <p>Famous People with ESFP Personality Type: Justin Bieber, Katy Perry, Jamie Foxx and Miley Cyrus</p>  
-        </footer>
-       
+    </footer>
     </body>
 </html>

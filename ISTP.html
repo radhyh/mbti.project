@@ -1,197 +1,267 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>uIn4letters</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-color: rgb(243, 175, 40);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color:rgb(246, 241, 220);
+            text-align: center;
+        }
+        div.title {
+            padding:40px;
+            font-size: 30px;
+        }
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(222, 217, 119);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(233, 227, 135);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-        <style>
-            *{
-                font-family: Verdana, Geneva, Tahoma, sans-serif; 
-            }
-            body, html {
-                margin: 0;
-                padding: 0;
-                height: 100%;
-            }
-            main{
-                background-color: rgb(251, 232, 169);
-            }
-            body{
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-            }
-            header{
-                border-bottom: 2px solid rgb(170, 170, 170);
-                position: sticky;
-                top: 0;
-                background-color:rgb(244, 229, 133);
-                padding: 20px;
-            }
-             ul{
-                list-style-type: none;
-                text-align: center;
-                margin: 0;
-                padding: 1em;
-            }
-             li{
-                display: inline;
-                margin-right: 60px;
-                margin-left: 60px;
-            }
-             li a{
-                color: black;
-                text-decoration: none;
-                padding: 0;
-            }
-             li.dropdown{
-                display: inline-block;
-             }
-             .dropdown-content {
-               display: none;
-               position: absolute;
-            }
-            .dropdown-content a {
-                color: black;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-                padding: 20px 20px 20px 0px;
-            }
-            .dropdown-content a:hover {background-color:rgb(196, 243, 243);text-decoration: none;}
-            .dropdown:hover .dropdown-content{
-                display: grid;
-                grid-template-columns: auto auto auto auto;
-            }
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgb(233, 227, 135);
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-            li a:hover{
-                text-decoration: underline;
-            }
-            h1{
-                text-align: center;
-            }
-            h2{margin: 40px;}
-            div{
-                display: flex;
-                justify-content: center;
-                flex: 1;
-            }
-            .left{float: left;}
-            .right{float: right;}
-            footer{
-                background-color: rgb(244, 223, 163);
-                color: white;
-                text-align: center;
-                padding: 10px;
-            }
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
-                background-color: #efce73;
-                padding: 10px;
-            }
-            .celebrity {
-                display: block;
-                text-align: center;
-                font-family: Arial, sans-serif;
-            }
-        </style>
-    </head>
+        }
+        .flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-    <body>
-        <header>
-            <ul>
+.container {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.container img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+</style>
+</head>
+
+<body>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
             <li class="dropdown">
-              MBTI Type
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
                 <div class="dropdown-content">
-                    <a href="INFP.html">INFP</a>
-                    <a href="ENFP.html">ENFP</a>
-                    <a href="INFJ.html">INFJ</a>
-                    <a href="ENFJ.html">ENFJ</a>
-                    <a href="INTP.html">INTP</a>
-                    <a href="ENTP.html">ENTP</a>
-                    <a href="INTJ.html">INTJ</a>
-                    <a href="ENTJ.html">ENTJ</a>
-                    <a href="ISFP.html">ISFP</a>
-                    <a href="ESFP.html">ESFP</a>
-                    <a href="ISFJ.html">ISFJ</a>
-                    <a href="ESFJ.html">ESFJ</a>
-                    <a href="ISTP.html">ISTP</a>
-                    <a href="ESTP.html">ESTP</a>
-                    <a href="ISTJ.html">ISTJ</a>
-                    <a href="ESTJ.html">ESTJ</a>
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
                 </div>
-            <li><a href="meme.html">Meme</a></li>
-            <li><a href="#test">Take Test</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
             </li>
-            </ul>
-        </header>
-        <main>
-            <h1 style="color: rgb(230, 212, 94);">ISTP<br>
-            <div>
-                <img src="c:\Users\Asus\Downloads\estpall(4)(4).png" alt="istp icon" style="width: 60%; margin: 50px;">
-            </div>
-            Virtuoso</h1>
-            <br><br>
-            <h2 class="left">About</h2>
-              <section class="left">
-                <p class="left">
-                    <img class="left" src="c:\Users\Asus\Downloads\istp-removebg-preview(1)(1).png" alt="istp icon" style="width: 15%;">
-                    ISTPs are practical, independent, and action-oriented individuals who love to figure out how things work. They are curious problem-solvers, skilled with tools, and enjoy hands-on activities. Quiet and observant, they prefer doing over talking and thrive in situations that allow freedom and flexibility.
-              </section>
-            <br><br>
-            <h2 class="right" style="text-align: right;">Strengths</h2>
-              <section class="right">
-                <p class="right">
-                    <img class="right" src="c:\Users\Asus\Downloads\strength_istp_1__1_-removebg-preview.png" alt="istp icon" style="width: 12%;">
-                    ISTPs are logical, resourceful, and calm under pressure. They’re quick thinkers who enjoy troubleshooting and fixing problems. Highly independent, they adapt well to new situations and often stay cool and rational in a crisis.</p>
-              </section>
-            <br><br>
-            <h2 class="left">Weaknesses</h2> 
-              <section class="left">
-                <p class="left">
-                    <img class="left" src="c:\Users\Asus\Downloads\istp2_2__2_-removebg-preview.png" alt="istp icon" style="width: 12%;">
-                    They can be emotionally reserved and struggle with expressing their feelings. ISTPs may become bored easily with routine or overly structured environments. They can also be impulsive, taking risks without fully thinking them through.</p>
-              </section>
-            <br><br>
-            <h2 class="right" style="text-align: right;">Relationships</h2>
-              <section class="right">
-                <p class="right">
-                    <img class="right" src="c:\Users\Asus\Downloads\istp3-removebg-preview.png" alt="istp icon" style="width: 15%;">
-                    ISTPs are loyal but value their independence. They show love through actions rather than words and need space to be themselves. They prefer low-drama, practical relationships and may struggle with emotional conversations or long-term emotional planning.</p>
-              </section>
-            <br><br>
-            <h2 class="left">Career</h2>
-              <section class="left">
-                <p class="left">
-                    <img class="left" src="c:\Users\Asus\Downloads\istp3_2__2_-removebg-preview.png" alt="istp icon" style="width: 12%;">
-                    ISTPs thrive in hands-on, flexible roles that involve problem-solving and real-world application. They do well in careers like engineering, mechanics, emergency services, aviation, or anything that involves tools, technology, or physical skills. They dislike routine office work and prefer action and autonomy.</p>
-              </section>
-            <br><br> 
-        </main>
-        <footer>
-            <p>Famous People with ISTP Personality Type:</p> 
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <div style="margin:60px;">
+        <h1 style="font-size: 100px;text-align: left;">ISTP</h1>
+        <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Introverted, Observant, Thinking, Prospecting )</h1></div>
+    <img title="ISTP icon" class="icon" src="https://i.postimg.cc/QdggnyY3/istpintro-removebg-preview.png" alt="ISTP icon" style="width: 200%; max-width: 1100px;"></div>
+    <div class="title">
+    <h1>Virtuoso</h1>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/P5CDgbbS/istpabout-removebg-preview.png" alt="istp icon" style="height:280px;width:170px;float:left;">
+        <h2>About</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTPs love to explore how things work and learn best through direct experience. They prefer working with their hands and solving practical problems.</li>
+            <li> In high-pressure situations, ISTPs stay cool and level-headed. They are flexible, quick to adjust, and great at thinking on their feet.</li>
+            <li> ISTPs tend to keep to themselves and really value their freedom. They are happiest when they have the space to do things their own way and dont usually enjoy being told what to do or stuck in rigid routines.</li>
+            <li> ISTPs rely on logic and like to keep things practical. They had rather jump in and get things done than sit around talking about it.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/Z5mPXsK4/istpstrength-removebg-preview.png" alt="istp icon" style="height:280px;width:200px;float:right;">
+        <h2>Strength</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTPs are often deep into projects, fully engaged with their surroundings. They have a great eye for detail and love figuring things out by observing and working hands-on. If something can be fixed or improved, they'll usually find a smart, practical way to do it.</li>
+            <li> Give an ISTP some tools and a challenge, and they will probably come up with a clever, creative solution. They're naturally skilled at working with their hands, whether it is building, repairing, or experimenting with something new.</li>
+            <li> ISTPs like to keep things flexible and are great at thinking on their feet. They might not plan everything out in advance, but when something unexpected comes up, they often rise to the occasion with energy and sharp instincts.</li> 
+            <li> These personalities dont beat around the bush. ISTPs say what they mean and mean what they say. Their honest, no-nonsense communication makes them easy to trust, even if their bluntness can catch people off guard.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/QMjQ9b68/istpweakness-removebg-preview.png" alt="istp icon" style="height:250px;width:250px;float:left;">
+        <h2>Weaknesses</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTPs tend to keep their feelings and thoughts to themselves. They dont open up easily and might prefer silence over small talk, which can make it hard for others to really get to know them.</li> 
+            <li> Once something feels routine or predictable, ISTPs may quickly lose interest. They love the excitement of new challenges but can struggle to stay committed when the novelty wears off.</li>
+            <li> Because they lean heavily on logic, ISTPs can have a hard time connecting emotionally. Even when they try to be supportive, their words might come out a bit flat or miss the mark entirely.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src=https://i.postimg.cc/63Rd2mdm/istprelationship-removebg-preview.png" alt="istp icon" style="height:180px;width:300px;float:right;">
+        <h2>Relationship</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTPs need space and dont open up quickly. They prefer relaxed, pressure-free relationships that grow naturally.</li>
+            <li> They live in the moment and prefer partners who are grounded in the now. Future talk too early can make them pull away.</li>
+            <li> ISTPs dont often express their feelings out loud, but their loyalty runs deep. They show love through actions, not words.</li>
+            <li> They prefer calm, honest connection without drama or pressure. Relationships work best when allowed to grow at their own pace.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/vTrj8D1c/istpcareer-removebg-preview-1.png" alt="istp icon" style="height:250px;width:300px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTPs are problem-solvers who love working with tools, machines, and real-world systems. They need work that leads to tangible, immediate results and not abstract theories or endless planning.</li>
+            <li> They thrive in jobs that give them space to work on their own terms. Highly structured environments or strict routines can quickly wear them down.</li>
+            <li> ISTPs often dislike being tied down and may pursue freelance or self-directed work. Whether it is running a business, fixing things, or creating something new, they are happiest when they set the pace.</li>
+            <li> ISTPs stay calm when things get intense, making them great in fast-paced, high-stress jobs like firefighting, emergency response, or flying. They think quickly, act fast, and handle pressure better than most.</li></ul></div>
+    </div>
+
+    <footer>
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
             <div class="container">
-                <div class="celebrity">
-                    <p>Tom Cruise</p>
-                   <img src="c:\Users\Asus\Downloads\Tom-Cruise.png" alt="Tom Cruise" style="width:150px;height:128px;">
-                </div>
-                <div class="celebrity">
-                    <p>Bruce Lee</p>
-                    <img src="c:\Users\Asus\Downloads\bruce lee.jpg" alt="Bruce Lee" style="width:150px;height:128px;">
-                </div>
-                <div class="celebrity">
-                    <p>Clint Eastwood</p>
-                    <img src="c:\Users\Asus\Downloads\clint-eastwood.jpg" alt="Clint Eastwood" style="width:150px;height:128px;">
-                </div>
-                <div class="celebrity">
-                    <p>Scarlett Johansson</p>
-                    <img src="c:\Users\Asus\Downloads\Scarlett Johansson.jpg" alt="Scarlett Johansson" style="width:150px;height:128px;">
-                </div>
+            <img src="https://i.postimg.cc/RFhJzb0Y/clint-eastwood.jpg">
+            <div class="desc">Clint Eastwood</div>
             </div>
-        </footer>
-       
+            <div class="container">
+            <img src="https://i.postimg.cc/5tVkpT38/keith.jpg">
+            <div class="desc">Keith Richards</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/J0d9202g/bruce-lee.jpg">
+            <div class="desc">Bruce Lee</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/wvNCG9pT/steve-jobs.jpg">
+            <div class="desc">Steve Jobs</div>
+            </div>
+        </div>
+
+    </footer>
     </body>
 </html>

@@ -1,198 +1,267 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>uIn4letters</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-color: rgb(243, 175, 40);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color:rgb(246, 241, 220);
+            text-align: center;
+        }
+        div.title {
+            padding:40px;
+            font-size: 30px;
+        }
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(222, 217, 119);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(233, 227, 135);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-        <style>
-            *{
-                font-family: Verdana, Geneva, Tahoma, sans-serif; 
-            }
-            body, html {
-                margin: 0;
-                padding: 0;
-                height: 100%;
-            }
-            main{
-                background-color: rgb(251, 232, 169);
-            }
-            body{
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-            }
-            header{
-                border-bottom: 2px solid rgb(170, 170, 170);
-                position: sticky;
-                top: 0;
-                background-color:rgb(244, 229, 133);
-                padding: 20px;
-            }
-             ul{
-                list-style-type: none;
-                text-align: center;
-                margin: 0;
-                padding: 1em;
-             
-            }
-             li{
-                display: inline;
-                margin-right: 60px;
-                margin-left: 60px;
-            }
-             li a{
-                color: black;
-                text-decoration: none;
-                padding: 0;
-            }
-             li.dropdown{
-                display: inline-block;
-             }
-             .dropdown-content {
-               display: none;
-               position: absolute;
-            }
-            .dropdown-content a {
-                color: black;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-                padding: 20px 20px 20px 0px;
-            }
-            .dropdown-content a:hover {background-color:lightcyan;text-decoration: none;}
-            .dropdown:hover .dropdown-content{
-                display: grid;
-                grid-template-columns: auto auto auto auto;
-            }
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgb(233, 227, 135);
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-            li a:hover{
-                text-decoration: underline;
-            }
-            h1{
-                text-align: center;
-            }
-            h2{margin: 40px;}
-            div{
-                display: flex;
-                justify-content: center;
-                flex: 1;
-            }
-            .left{float: left;}
-            .right{float: right;}
-            footer{
-                background-color: rgb(244, 223, 163);
-                color: white;
-                text-align: center;
-                padding: 10px;
-            }
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
-                background-color: #efce73;
-                padding: 10px;
-            }
-            .celebrity {
-                display: block;
-                text-align: center;
-                font-family: Arial, sans-serif;
-            }
-        </style>
-    </head>
+        }
+        .flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-    <body>
-        <header>
-             <ul>
+.container {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.container img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+</style>
+</head>
+
+<body>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
             <li class="dropdown">
-              MBTI Type
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
                 <div class="dropdown-content">
-                    <a href="#enfp">INFP</a>
-                    <a href="#enfp">ENFP</a>
-                    <a href="#enfp">INFJ</a>
-                    <a href="#enfp">ENFJ</a>
-                    <a href="#intp">INTP</a>
-                    <a href="#enfp">ENTP</a>
-                    <a href="#enfp">INTJ</a>
-                    <a href="#enfp">ENTJ</a>
-                    <a href="#enfp">ISFP</a>
-                    <a href="#enfp">ESFP</a>
-                    <a href="#enfp">ISFJ</a>
-                    <a href="#enfp">ESFJ</a>
-                    <a href="#enfp">ISTP</a>
-                    <a href="#enfp">ESTP</a>
-                    <a href="#enfp">ISTJ</a>
-                    <a href="#enfp">ESTJ</a>
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
                 </div>
-            <li><a href="#meme">Meme</a></li>
-            <li><a href="#test">Take Test</a></li>
-            <li><a href="about">About Us</a></li>
             </li>
-         </ul>
-        </header>
-        <main>
-             <h1 style="color: rgb(230, 212, 94);">ISFP<br>
-            <div>
-                <img src="c:\Users\Asus\Downloads\estpall(3)(3).png" alt="isfp icon" style="width: 60%; margin: 50px;">
-            </div>
-            Adventurer</h1>
-            <br><br>
-            <h2 class="left">About</h2>
-              <section class="left">
-                <p class="left">
-                    <img class="left" src="c:\Users\Asus\Downloads\isfp-removebg-preview.png" alt="isfp icon" style="width: 15%;">
-                    ISFPs are quiet, sensitive, and deeply in touch with their inner values and the world around them. They are gentle and caring, often expressing themselves through creativity, art, or quiet acts of kindness. ISFPs prefer to live in the moment, enjoy personal freedom, and avoid conflict. They are independent yet warm, valuing deep emotional connections but needing space to be themselves. Calm and observant, they bring a peaceful, grounded energy to the people and environments they care about.
-              </section>
-            <br><br>
-            <h2 class="right" style="text-align: right;">Strengths</h2>
-              <section class="right">
-                <p class="right">
-                    <img class="right" src="C:\Users\Asus\Downloads\isfpstrength-removebg-preview.png" alt="isfp icon" style="width: 10%;">
-                    ISFPs are gentle, caring, and deeply empathetic individuals. They are highly observant and in tune with their surroundings, often expressing themselves through creativity or hands-on work. Flexible and open-minded, ISFPs are easy to be around and adapt well to change. Their quiet loyalty and kindness make them reliable and comforting companions.</p>
-              </section>
-            <br><br>
-            <h2 class="left">Weaknesses</h2> 
-              <section class="left">
-                <p class="left">
-                    <img class="left" src="C:\Users\Asus\Downloads\isfp2-removebg-preview.png" alt="isfp icon" style="width: 10%;">
-                    Despite their warmth, ISFPs can be overly private and struggle to open up emotionally. They tend to avoid conflict and may have difficulty addressing problems directly. Long-term planning and structure can feel restrictive to them, and their sensitivity makes them easily hurt by criticism or rejection. Their go-with-the-flow attitude may also lead to indecision or procrastination.</p>
-              </section>
-            <br><br>
-            <h2 class="right" style="text-align: right;">Relationships</h2>
-              <section class="right">
-                <p class="right">
-                    <img class="right" src="C:\Users\Asus\Downloads\isfp3_1__1_-removebg-preview.png" alt="isfp icon" style="width: 8%;">
-                    ISFPs are caring, loyal, and deeply affectionate in relationships. They show love through quiet actions and thoughtful gestures. They value emotional connection but need space and independence. They dislike drama and prefer harmony and trust.</p>
-              </section>
-            <br><br>
-            <h2 class="left">Career</h2>
-              <section class="left">
-                <p class="left">
-                    <img class="left" src="https://i.postimg.cc/2Sqs04SK/adventurerisfp-1-1-removebg-preview.png" alt="isfp icon" style="width: 10%;">
-                    ISFPs thrive in creative, hands-on, and people-centered careers. They prefer flexible work environments where they can express themselves and avoid strict routines. Ideal careers include art, design, healthcare, animal care, and social services.</p>
-              </section>
-            <br><br> 
-        </main>
-        <footer>
-            <p>Famous People with ISFP Personality Type:</p>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <div style="margin:60px;">
+        <h1 style="font-size: 100px;text-align: left;">ISFP</h1>
+        <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Introverted, Observant, Feeling, Prospecting )</h1></div>
+    <img title="ISFP icon" class="icon" src="https://i.postimg.cc/3rfm3qk7/isfpintro-removebg-preview.png" alt="ISFP icon" style="width: 200%; max-width: 1100px;"></div>
+    <div class="title">
+    <h1>Adventurer</h1>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/vmqJZMfb/isfpabout-removebg-preview.png" alt="isfp icon" style="height:270px;width:170px;float:left;">
+        <h2>About</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISFPs are natural artists who express themselves through their style, hobbies, and how they live. They see beauty in everyday life and often inspire others without even trying.</li>
+            <li> They live in the moment and go with the flow, embracing new experiences and different people without judgment. Routines and rigid plans just aren’t their thing.</li>
+            <li> ISFPs are caring and gentle, always encouraging others to follow their passions. Though quiet, they’re deeply empathetic and believe in giving people second chances.</li>
+            <li> They need alone time to recharge and stay connected to their sense of self. While they may seem carefree, ISFPs often care deeply about how others see them.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/K8kFVJW0/isfpstrength1-removebg-preview.png" alt="isfp icon" style="height:250px;width:200px;float:right;">
+        <h2>Strength</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISFPs have a calm, relaxed presence that makes others feel at ease. Their “live and let live” mindset often makes them naturally likable and socially approachable.</li>
+            <li> They’re highly sensitive to how others feel, often picking up on emotions without a word being said. This emotional awareness helps them connect deeply and avoid unnecessary conflict.</li>
+            <li> ISFPs are compassionate and encouraging, always ready to cheer others on. They create safe emotional spaces where people feel seen, heard, and accepted.</li> 
+            <li> They express themselves through bold ideas and artistic flair. When they care about something, their quiet passion becomes a powerful driving force.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/rF5kcKjk/isfpweakness-removebg-preview.png" alt="isfp icon" style="height:200px;width:250px;float:left;">
+        <h2>Weaknesses</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> When things become emotionally intense or chaotic, ISFPs may shut down. Their usual calm can give way to emotional withdrawal or anxiety.</li> 
+            <li> ISFPs thrive when they have the freedom to follow their own path. When faced with rigid rules, strict schedules, or too much structure, they can feel boxed in and creatively stifled.</li>
+            <li> Living in the moment can cause them to neglect future responsibilities. This can lead to challenges in relationships, finances, and career growth over time.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/dVmWvS1q/isfprelationship-removebg-preview.png" alt="isfp icon" style="height:180px;width:300px;float:right;">
+        <h2>Relationship</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISFPs are easily hurt by criticism or feeling unappreciated. They won’t ask for praise, but need to feel emotionally safe and valued. Kindness and reassurance go a long way.</li>
+            <li> They bring surprise and sweetness into relationships, often showing love through unexpected gestures. While not big planners, they’re always ready to turn everyday moments into something meaningful.</li>
+            <li> ISFPs may seem reserved at first, but they care deeply and express love through quiet actions rather than words. They often focus on making their partner feel seen and appreciated, even if they don’t say it out loud.</li>
+            <li> They crave excitement and don’t like being rushed into commitments but when they feel secure and understood, they become passionate and deeply loyal partners.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/zBJw7JSW/isfpcareer-removebg-preview.png" alt="isfp icon" style="height:250px;width:250px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISFPs thrive when they have creative freedom. Structured, rigid jobs that prioritize power or long-term planning can feel stifling to them. They need space to express themselves and do things their own way.</li>
+            <li> These personalities shine in artistic or sensory-focused careers like design, photography, crafting, music, or fitness. They prefer roles where they can actively create or contribute beauty and meaning to the world.</li>
+            <li> ISFPs feel drained by routine desk jobs that lack color or creativity. They come alive in roles that let them move around, stay hands-on, and go with the flow where each day can bring something new and exciting.</li>
+            <li> They may struggle with goal-setting or certifications required for stable careers like teaching or counseling. However, freelance or purpose-driven roles can help them stay inspired while still earning a living.</li></ul></div>
+    </div>
+
+    <footer>
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
             <div class="container">
-                <div class="celebrity">
-                    <p>Michael Jackson</p>
-                   <img src="c:\Users\Asus\Downloads\michael jackson.jpg" alt="Michael Jackson" style="width:160px;height:128px;">
-                </div>
-                <div class="celebrity">
-                    <p>Lana Del Rey</p>
-                    <img src="c:\Users\Asus\Downloads\lana del rey.jpg" alt="Lana Del Rey" style="width:150px;height:128px;">
-                </div>
-                <div class="celebrity">
-                    <p>Britney Spears</p>
-                    <img src="c:\Users\Asus\Downloads\britney.jpg" alt=" Britney Spears" style="width:150px;height:128px;">
-                </div>
-                <div class="celebrity">
-                    <p>Princess Diana</p>
-                    <img src="c:\Users\Asus\Downloads\princess-diana.webp" alt="Princess Diana" style="width:160px;height:128px;">
-                </div>
-            </div>  
-        </footer>
-       
+            <img src="https://i.postimg.cc/d0WFqcjF/bobdylan.jpg">
+            <div class="desc">Bob Dylan</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/cCS0zLLx/britney.jpg">
+            <div class="desc">Britney Spears</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/MT7pqFHm/ryan.jpg">
+            <div class="desc">Ryan Gosling</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/prVCB3n0/frida-kahlo.jpg">
+            <div class="desc">Frida Kahlo</div>
+            </div>
+        </div>
+
+    </footer>
     </body>
 </html>
