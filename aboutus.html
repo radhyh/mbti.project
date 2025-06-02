@@ -9,87 +9,80 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             background-color: rgb(240, 237, 230);
         }
-
         body{
                 margin: 0;
             }
-
-        .header {    
+        .header {    /* Creates a flexbox layout to align items like a logo and group name horizontally and responsively*/
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
             padding: 20px;
         }
-
-        @media (max-width: 600px) { 
- 
-        }
-
-        img {  
+        img {  /* Makes all images responsive*/
             max-width: 100%;
             height: auto;
-           
         }
-
         .container { 
-            max-width: 1200px; 
-            margin: 0 auto;
-            padding:0 0%;
+            max-width: 1200px; /* Prevents the content from stretching too wide on large screens. Keeps it readable and centered.*/
+            margin: 0 auto;/* Horizontally centers the container within the browser window (top and bottom margin = 0, left and right = auto).*/
+            padding:0 0%; /* Adds space inside the container, so content doesn't touch the edges.*/
         }
-
         .member {
             margin: 4.4%;
-            border: 1px solid #ccc;
             float: left;
             width: 16%;
         }
-
         .member:hover {
-            border: 1px solid #777;
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
         }
-
         .desc {
             padding: 15px;
             text-align: center;
         }
-        .butang{
+        .button{
             text-decoration: none;
             color: rgb(25, 31, 112);
             font-size: 40px;
             float:right;
         }
-
     </style>
 </head>
 <body>
-  <div class="header">
-    <img title="logo" src="https://i.postimg.cc/5ttmsfRc/photo-6179120980505511329-x-removebg-preview.png" alt="Logo" style="width:300px;height:250px;">
-  <img title="all mbti" src="https://i.postimg.cc/25f15Gn0/gambar-besar-untuk-aboutus.png" alt="all mbti" style="margin: auto;">
-</div>
-<h3 style="color:rgb(25, 31, 112); font-size: 300%;">Prepared By :</h3>
+    <div class="header">
+        <img title="our group's trademark !" src="https://i.postimg.cc/5ttmsfRc/photo-6179120980505511329-x-removebg-preview.png" alt="Logo" style="width:20%; height:20%; top: 0">
+        <img src="https://i.postimg.cc/25f15Gn0/gambar-besar-untuk-aboutus.png" alt="all mbti" style="margin: auto; width:30%; height:30%;">
+    </div>
 
-<div class="container">
-  <div class="member">
-   <a href="ENTP.html"><img title="ENTP" src="https://i.postimg.cc/SxLNvXKn/dini-removebg-preview.png" alt="dini's mbti"></a>
-    <div class="desc">Nur Dini Syauqina</div>
-  </div>
-  <div class="member">
-    <a href="INTP.html"><img title="INTP" src="https://i.postimg.cc/Ssnn3y5H/sarah-removebg-preview-1.png" alt="sarah's mbti"></a>
-      <div class="desc">Nur Sarah</div>
+    <h3 style="color:rgb(25, 31, 112); font-size: 200%; margin-left: 30px;">Prepared By :</h3>
+
+    <div class="container">
+        <div class="member">
+            <a href="ENTP.html"><img title="ENTP" src="mbti.img/entp1.png" alt="dini's mbti"></a>
+            <div class="desc">Nur Dini Syauqina</div>
+        </div>
+
+        <div class="member">
+            <a href="INTP.html"><img title="INTP" src="mbti.img/intp1.png" alt="sarah's mbti" style="width:100%; height:100%;"></a>
+            <div class="desc">Nur Sarah</div>
+        </div>
+
+        <div class="member">
+            <a href="ENFJ.html"><img title="ENFJ" src="mbti.img/enfj1.png" alt="rad's mbti"></a>
+            <div class="desc">Nurradhiyah</div>
+        </div>
+
+        <div class="member">
+            <a href=""><img title="ESFJ" src="mbti.img/esfj1.png" alt="izzah's mbti"></a>
+            <div class="desc">Nur Izzah Amani</div>
+        </div>
     </div>
-  <div class="member">
-    <a href="ENFJ.html"><img title="ENFJ" src="https://i.postimg.cc/cCYr1Fdm/rad-removebg-preview-1.png" alt="rad's mbti"></a>
-      <div class="desc">Nurradhiyah</div>
-    </div>
-  <div class="member">
-    <a href=""><img title="ESFJ" src="https://i.postimg.cc/Ssnn3y5H/sarah-removebg-preview-1.png" alt="izzah's mbti"></a>
-      <div class="desc">Nur Izzah Amani</div>
-    </div>
-</div>
-<div style="clear: both;"></div>
-<footer>
-    <a class="butang" href="homepage.html">Next <img src="https://i.postimg.cc/Pqxbfn9Q/arrow-untuk-next-button.png" style="width:10%;"></a>
-</footer>
+    <div style="clear: both;"></div>
+    <footer>
+        <a title="homepage" class="button" href="homepage.html">Next<img src="https://i.postimg.cc/Pqxbfn9Q/arrow-untuk-next-button.png" style="width:10%;"></a>
+        <br><br><br><br><br><br>
+        <p style="text-align: center; font-size: 10px;">&copy; 2025 uIn4letters. All rights reserved.</p>
+    </footer>
 </body>
 </html>
