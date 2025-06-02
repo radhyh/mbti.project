@@ -3,9 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-color: rgb(193, 220, 247);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color:rgb(24, 80, 148);
+            text-align: center;
+        }
+        div.title {
+            padding:40px;
+            font-size: 30px;
+        }
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(142, 171, 199);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: aliceblue;
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: aliceblue;
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        .flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.container {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.container img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+    </style>
 </head>
 <body>
-    
-</body>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
+                <div class="dropdown-content">
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
+                </div>
+            </li>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+    <div style="margin:60px;">
+        <h1 style="font-size: 100px;text-align: left;">ISTJ</h1>
+        <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Introverted, Observant, Thinking, Judging )</h1></div>
+    <img title="ISTJ icon" class="icon" src="https://i.postimg.cc/zB6RWvxp/Screenshot-2025-06-02-193021-removebg-preview.png" alt="istj icon"></div>
+    <div class="title">
+    <h1>Logistician</h1>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/448SxfyY/ISTJ-removebg-preview.png" alt="istj icon" style="height:300px;width:300px;float:left;">
+        <h2>About</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTJ personalities are dependable, responsible, and deeply committed to structure and tradition.</li>
+            <li> They value honesty, follow through on commitments, and often take pride in upholding integrity and stability.</li> 
+            <li> While they may seem reserved, they work hard behind the scenes and can struggle with resentment if others rely on them too heavily.</li> 
+            <li> Setting boundaries helps them maintain balance and fully offer their strengths of loyalty, clarity, and reliability.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/0jNX03W5/ISTJ-3-removebg-preview.png" alt="istj icon" style="height:300px;width:300px;float:right;">
+        <h2>Strength</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTJ personalities are honest, disciplined, and highly responsible, always following through on their commitments with integrity.</li>
+            <li> They remain calm under pressure, making practical, well-organized decisions based on logic and clear rules. </li>
+            <li> Known for their strong work ethic and respect for structure, they thrive in orderly environments. </li>
+            <li> Their research-oriented mindset helps them absorb and apply information effectively to ensure reliable results.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/43z0fpHG/ISTJ-5-removebg-preview.png" alt="istj icon" style="height:300px;width:300px;float:left;">
+        <h2>Weaknesses</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTJs can be stubborn and overly focused on facts, making it hard for them to accept new ideas or admit mistakes.</li> 
+            <li> Their direct honesty, while well-meaning, can come across as insensitive, especially to more emotional individuals. </li>
+            <li> They prefer strict rules and structure, often struggling in flexible or unstructured environments. </li>
+            <li> Their tendency to take on too much responsibility can lead to burnout, especially when they refuse help or dismiss alternative approaches.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/cC599m2R/ISTJ-2-removebg-preview.png" alt="istj icon" style="height:320px;width:320px;float:right;">
+        <h2>Relationship</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTJs are loyal and dependable partners who value tradition and seek stable, long-term relationships built on shared values.</li>
+            <li> They prefer familiar, structured dating experiences and approach love with practicality and commitment. </li>
+            <li> While they may struggle with emotional expression, they offer steady support once they recognize it's needed. </li>
+            <li> Their reliability and dedication create a strong foundation for lasting, functional partnerships.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/SskvJjcM/ISTJ-4-removebg-preview.png" alt="istj icon" style="height:320px;width:320px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISTJs thrive in structured, stable careers that value reliability, order, and tradition, such as roles in law enforcement, the military, law, finance, and medicine. </li>
+            <li> They excel in positions that require focus, logic, and clear procedures, often preferring to work independently or within well-defined teams.</li> 
+            <li> While they may struggle with emotionally demanding or highly social roles, their dedication to rules and responsibility makes them essential in maintaining societal order. </li>
+            <li> ISTJs take pride in being dependable, principled workers who uphold the systems others rely on.</li></ul></div>
+    </div>
+    <footer>
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/k43RxGGn/obama.jpg">
+            <div class="desc">Barack Obama</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/3wDD4mKS/bill.jpg">
+            <div class="desc">Bill Gates</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/7Yx7s5Vh/hermione.jpg">
+            <div class="desc">Hermione Granger</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/L5mqbWjw/snape.jpg">
+            <div class="desc">Professor Severus Snape</div>
+            </div>
+        </div>
+
+    </footer>
+    </body>
 </html>

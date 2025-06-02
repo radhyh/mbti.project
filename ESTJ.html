@@ -3,9 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-color: rgb(193, 220, 247);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color:rgb(24, 80, 148);
+            text-align: center;
+        }
+        div.title {
+            padding:40px;
+            font-size: 30px;
+        }
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(142, 171, 199);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: aliceblue;
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: aliceblue;
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        .flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.container {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.container img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+    </style>
 </head>
 <body>
-    
-</body>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
+                <div class="dropdown-content">
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
+                </div>
+            </li>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+    <div style="margin:60px;">
+        <h1 style="font-size: 100px;text-align: left;">ESTJ</h1>
+        <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Extraverted, Observant, Thinking, Judging )</h1></div>
+    <img title="ESTJ icon" class="icon" src="https://i.postimg.cc/BbFPC3y3/Screenshot-2025-06-02-193051-removebg-preview.png" alt="estj icon"></div>
+    <div class="title">
+    <h1>Executive</h1>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/zBmC75pk/ESTJ-removebg-preview.png" alt="estj icon" style="height:300px;width:300px;float:left;">
+        <h2>About</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESTJs are natural leaders who value tradition, honesty, and hard work, often seen as the model citizens who uphold laws and community values.</li>
+            <li> They lead by example, tackle challenges efficiently, and expect the same dedication from others, sometimes coming across as inflexible.</li> 
+            <li> Their strength lies in their reliability and commitment to finishing what they start.</li> 
+            <li> The key for ESTJs is to balance their strong principles with an openness to different perspectives to lead effectively for everyone.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/7h9Sqz4B/ESTJ-3-removebg-preview.png" alt="estj icon" style="height:300px;width:300px;float:right;">
+        <h2>Strength</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESTJs are dedicated and strong-willed individuals who value honesty, reliability, and high standards, never giving up easily on their principles or tasks.</li>
+            <li> They thrive on creating order and stability through clear rules and structured environments. </li>
+            <li> Known for their directness and loyalty, ESTJs are dependable leaders and excellent organizers who fairly delegate responsibilities to ensure efficiency.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/FRjjnqBX/ESTJ-2-removebg-preview.png" alt="estj icon" style="height:300px;width:300px;float:left;">
+        <h2>Weaknesses</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESTJs can be inflexible and stubborn, often resisting new ideas and changes that challenge their tried-and-true methods. </li>
+            <li> Their strong convictions sometimes make them judgmental, as they believe there’s only one right way to do things. </li>
+            <li> Concerned with social status and respect, they may neglect their own needs and struggle to relax or show emotions, focusing more on facts than feelings.</li> 
+            <li> This can lead to difficulty expressing empathy, unintentionally hurting those around them.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/3rXBLys0/ESTJ-4-removebg-preview.png" alt="estj icon" style="height:320px;width:320px;float:right;">
+        <h2>Relationship</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESTJs value honesty and consistency in relationships, maintaining steady goals and expectations from dating through marriage, which often leads to stable partnerships.</li> 
+            <li> They show commitment through practical gestures and social activities rather than emotional expressions, sometimes struggling with emotional intimacy and sensitivity to their partner’s feelings. </li>
+            <li> Their direct, fact-based approach to conflict can come across as harsh, so learning to listen openly and meet their partner halfway is important. </li>
+            <li> Despite their stubbornness, ESTJs are fiercely loyal and protective, dedicated to keeping their relationships strong.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/3NYgMBs4/ESTJ-1-removebg-preview.png" alt="estj icon" style="height:320px;width:320px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESTJs thrive in careers that value organization, structure, and clear paths for advancement, often staying loyal to reputable institutions like law enforcement, the military, or legal firms. </li>
+            <li> Their strong leadership skills and commitment to hard work make them effective managers who demand efficiency and honesty from others. </li>
+            <li> They excel in roles requiring multitasking, meticulousness, and follow-through, such as auditing, finance, and administration. </li>
+            <li> ESTJs’ dedication and self-motivation also suit them well for sales and other goal-driven positions where clear progress and results are valued.</li></ul></div>
+    </div>
+    <footer>
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/2SyWYggf/michelle.jpg">
+            <div class="desc">Michelle Obama</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/FzGf5xZR/emma.jpg">
+            <div class="desc">Emma Watson</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/2StZS2fL/simon.jpg">
+            <div class="desc">Simon Cowell</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/B6HDyDkL/adele.jpg">
+            <div class="desc">Adele</div>
+            </div>
+        </div>
+
+    </footer>
+    </body>
 </html>
