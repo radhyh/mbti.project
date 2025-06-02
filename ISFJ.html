@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-color: rgb(193, 220, 247);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color:rgb(24, 80, 148);
+            text-align: center;
+        }
+        div.title {
+            padding:40px;
+            font-size: 30px;
+        }
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(142, 171, 199);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: aliceblue;
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: aliceblue;
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        .flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.container {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.container img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
+                <div class="dropdown-content">
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
+                </div>
+            </li>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+    <div style="margin:60px;">
+        <h1 style="font-size: 100px;text-align: left;">ISFJ</h1>
+        <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Introverted, Observant, Feeling, Judging )</h1></div>
+    <img title="ISFJ icon" class="icon" src="https://i.postimg.cc/Mpy5h14J/Screenshot-2025-06-01-154311-removebg-preview.png" alt="isfj icon"></div>
+    <div class="title">
+    <h1>Defender</h1>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/Lsg1cShY/ISFJ-removebg-preview.png" alt="esfj icon" style="height:300px;width:300px;float:left;">
+        <h2>About</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISFJs are caring, loyal, and dependable individuals who quietly support others through consistent effort and thoughtful gestures.</li>
+            <li> They thrive on helping loved ones and communities, often going above and beyond without seeking recognition. </li>
+            <li> While they value tradition and can struggle with sudden change, their attention to detail and humility make them incredibly reliable.</li> 
+            <li> To avoid burnout, ISFJs benefit from learning to set boundaries and care for themselves as generously as they care for others.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/Hkx5tXgt/ISFJ-2-removebg-preview.png" alt="esfj icon" style="height:300px;width:300px;float:right;">
+        <h2>Strength</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISFJs are supportive, reliable, and hardworking individuals who take pride in helping others and exceeding expectations.</li>
+            <li> They’re observant and detail-oriented, often noticing others’ needs before they’re even expressed. </li>
+            <li> With a practical mindset and genuine enthusiasm for making a difference, they prefer teamwork over competition and consistently deliver high-quality results. </li>
+            <li> Their blend of compassion and diligence makes them dependable in both personal and professional settings.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/HkhMvnW1/ISFJ-3-removebg-preview.png" alt="esfj icon" style="height:300px;width:300px;float:left;">
+        <h2>Weaknesses</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISFJs can be overly humble, often downplaying their contributions and avoiding recognition even when it’s deserved.</li>
+            <li> Their sensitivity to criticism and reluctance to express negative emotions can lead to misunderstandings or emotional buildup.</li> 
+            <li> They tend to resist change, preferring familiar routines and traditions, even when adaptation is needed. </li>
+            <li> Their generous nature can also make them vulnerable to being taken advantage of, as they may avoid confrontation to maintain harmony.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/FFyjFhp0/ISFJ-5-removebg-preview.png" alt="esfj icon" style="height:320px;width:320px;float:right;">
+        <h2>Relationship</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISFJs are deeply loyal and caring partners who show love through thoughtful, everyday actions rather than grand gestures.</li>
+            <li> They seek long-term commitment and give their all to nurture and support their relationships.</li>
+            <li> However, their deep emotional investment can make them vulnerable to feeling unappreciated or staying in unhealthy relationships out of loyalty. </li>
+            <li> Balancing their partner’s needs with their own is key to maintaining fulfilling, lasting love.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/NfQR5ZCS/ISFJ-1-removebg-preview.png" alt="esfj icon" style="height:320px;width:320px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ISFJs bring dedication, reliability, and a strong sense of service to their careers, often becoming the quiet backbone of their workplace. </li>
+            <li> They thrive in supportive, team-oriented environments and excel in roles like teaching, therapy, healthcare, customer service, and administration.</li> 
+            <li> Their attention to detail makes them well-suited for meticulous work, while their people skills help them build strong, meaningful connections. </li>
+            <li> Though humble about their contributions, ISFJs flourish in workplaces that recognize and value their steady, compassionate efforts.</li></ul></div>
+    </div>
+    <footer>
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/284C38XF/beyonce.jpg">
+            <div class="desc">Beyonce</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/htsgbZnX/anne.jpg">
+            <div class="desc">Anne Hathaway</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/fbbsH7WB/vin.jpg">
+            <div class="desc">Vin Diesel</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/m2xbbFVg/selena.png">
+            <div class="desc">Selena Gomez</div>
+            </div>
+        </div>
+
+    </footer>
+    </body>
+</html>

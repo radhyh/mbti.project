@@ -1,144 +1,267 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>uIn4letters</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-color: rgb(193, 247, 207);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color:rgb(24, 148, 69);
+            text-align: center;
+        }
+        div.title {
+            padding:40px;
+            font-size: 30px;
+        }
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(142, 199, 154);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(240, 255, 245);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-        <style>
-            *{
-                font-family: Verdana, Geneva, Tahoma, sans-serif; 
-            }
-            body{
-                margin: 0;
-            }
-            header{
-                border-bottom: 2px solid rgb(170, 170, 170);
-                position: sticky;
-                top: 0;
-                background-color:lightgreen;
-                padding: 20px;
-            }
-             ul{
-                list-style-type: none;
-                text-align: center;
-                margin: 0;
-                padding: 1em;
-             
-            }
-             li{
-                display: inline;
-                margin-right: 60px;
-                margin-left: 60px;
-            }
-             li a{
-                color: black;
-                text-decoration: none;
-                padding: 0;
-            }
-             li.dropdown{
-                display: inline-block;
-             }
-             .dropdown-content {
-               display: none;
-               position: absolute;
-            }
-            .dropdown-content a {
-                color: black;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-                padding: 20px 20px 20px 0px;
-            }
-            .dropdown-content a:hover {background-color:lightcyan;text-decoration: none;}
-            .dropdown:hover .dropdown-content{
-                display: grid;
-                grid-template-columns: auto auto auto auto;
-            }
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgb(240, 255, 245);
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-            li a:hover{
-                text-decoration: underline;
-            }
-            h1{
-                text-align: center;
-            }
-            h2{margin: 40px;}
-            div{
-                display: flex;
-                justify-content: center;
-            }
-            .left{float: left;}
-            .right{float: right;}
-            footer{
-                background-color: lightgreen;
-                color: white;
-            }
-            
-        </style>
-    </head>
+        }
+        .flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-    <body>
-        <header>
-            <ul>
+.container {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.container img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+</style>
+</head>
+
+<body>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
             <li class="dropdown">
-              MBTI Type
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
                 <div class="dropdown-content">
-                    <a href="INFP.html">INFP</a>
-                    <a href="ENFP.html">ENFP</a>
-                    <a href="INFJ.html">INFJ</a>
-                    <a href="ENFJ.html">ENFJ</a>
-                    <a href="INTP.html">INTP</a>
-                    <a href="ENTP.html">ENTP</a>
-                    <a href="INTJ.html">INTJ</a>
-                    <a href="ENTJ.html">ENTJ</a>
-                    <a href="ISFP.html">ISFP</a>
-                    <a href="ESFP.html">ESFP</a>
-                    <a href="ISFJ.html">ISFJ</a>
-                    <a href="ESFJ.html">ESFJ</a>
-                    <a href="ISTP.html">ISTP</a>
-                    <a href="ESTP.html">ESTP</a>
-                    <a href="ISTJ.html">ISTJ</a>
-                    <a href="ESTJ.html">ESTJ</a>
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
                 </div>
-            <li><a href="meme.html">Meme</a></li>
-            <li><a href="#test">Take Test</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
             </li>
-         </ul>
-        </header>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
 
-             <h1 style="color: green;">INFP<br>
-            <div>
-                <img src="https://i.pinimg.com/736x/66/ae/91/66ae91db2ebbe4fe3ee177a67aebeafd.jpg" alt="infp icon" style="width: 15%; margin: 30px;">
+    <div style="margin:60px;">
+        <h1 style="font-size: 100px;text-align: left;">INFP</h1>
+        <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Introverted, Intuitive, Feeling, Prospecting )</h1></div>
+    <img title="INFP icon" class="icon" src="mbti.img\mediator-desktop2.svg" alt="infp icon"></div>
+    <div class="title">
+    <h1>Mediator</h1>
+    </div>
+
+    <div class="content">
+        <img src="mbti.img\Picture15-removebg-preview.png" alt="infp icon" style="height:300px;width:300px;float:left;">
+        <h2>About</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ENFJs (Protagonist) are natural-born leaders who are full of passion and charisma.</li>
+            <li> They are warm, empathetic, and genuinely interested in helping others grow and succeed.</li>
+            <li> ENFJs thrive in environments where they can connect with people and make a meaningful impact. They are often found in roles such as teachers, counselors, leaders, and advocates.</li>
+            <li> Their strong communication skills and emotional intelligence allow them to inspire, motivate, and bring out the best in those around them.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="mbti.img\Picture16-removebg-preview.png" alt="infp icon" style="height:230px;width:300px;float:right;">
+        <h2>Strength</h2>eview.png"
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFJs (Consuls) are practical, hardworking, and deeply loyal individuals who excel at managing daily tasks and supporting those around them.</li>
+            <li> They have a strong sense of duty and uphold traditions with consistency, making them reliable partners and team members. </li>
+            <li> Warm and sensitive, ESFJs prioritize harmony and are skilled at connecting with others, often becoming well-liked social anchors in their communities.</li> 
+            <li> Their natural empathy and commitment make them dependable pillars in both personal and professional settings.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="mbti.img\Picture17-removebg-preview.png" alt="infp icon" style="height:280px;width:300px;float:left;">
+        <h2>Weaknesses</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFJs (Consuls) can be overly concerned with social status and others’ expectations, which may limit their creativity and cause them to lose touch with themselves.</li> 
+            <li> They tend to be inflexible, valuing tradition and social norms, and may struggle to embrace change or criticism. </li>
+            <li> Their need for appreciation can make them seem needy, and their selflessness sometimes leads them to neglect their own needs or overwhelm others with attention.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="mbti.img\Picture18-removebg-preview.png" alt="infp icon" style="height:320px;width:320px;float:right;">
+        <h2>Relationship</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFJs (Consuls) deeply value romantic relationships for the security and support they provide, often seeking long-term commitment and mutual respect.</li>
+            <li> They can be sensitive to criticism and need reassurance that their partner truly supports their dreams and values.</li>
+            <li> While their loyalty and care make them devoted partners, they must be cautious not to lose themselves by seeking too much external validation or compromising their own needs.</li>
+            <li> A healthy relationship for ESFJs balances their generosity with mutual appreciation and personal fulfillment.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="mbti.img\Picture19-removebg-preview.png" alt="infp icon" style="height:300px;width:350px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFJs (Consuls) thrive in careers that combine their practical skills with social interaction, enjoying organized environments with clear roles.</li>
+            <li> They excel in roles like administration, teaching, healthcare, and social work, where they can help others and feel appreciated. </li>
+            <li> Routine tasks don’t bother them as long as they’re contributing meaningfully and working alongside people.</li>
+            <li> Their strong desire to be useful and valued drives their career satisfaction and success.</li></ul></div>
+    </div>
+
+    <footer>
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/g22hzRtZ/bruno.jpg">
+            <div class="desc">Bruno Mars</div>
             </div>
-        Mediator</h1>
+            <div class="container">
+            <img src="https://i.postimg.cc/7LCT74kP/hugh.jpg">
+            <div class="desc">Hugh Jackman</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/65wRPFdz/jennifer.jpg">
+            <div class="desc">Jennifer Lawrence</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/wTVJYF2z/taylor.jpg">
+            <div class="desc">Taylor Swift</div>
+            </div>
+        </div>
 
-        <br><br><h2 class="left">About</h2>
-        <section class="left">
-        <p class="left"><img class="left" src="https://i.pinimg.com/736x/0f/ee/57/0fee57f977b980072f5ed36a8922fcce.jpg" alt="infp icon" style="width: 12%;">
-            INFPs are idealistic, creative, and introspective individuals who value authenticity and personal growth. They are often seen as dreamers and are driven by their values and beliefs. INFPs are empathetic and compassionate, often seeking to understand the emotions of others. They may struggle with practical matters and can be sensitive to criticism.
-        </p>
-        </section><br><br>
-        <h2 class="right">Strengths</h2>
-        <section class="right">
-        <p class="right"><img class="right" src="https://i.pinimg.com/736x/89/d6/77/89d6770555dcfde1a27f95de068165c8.jpg" alt="infp icon" style="width: 7%;margin-right:5%;">
-            eg: INFPs are known for their creativity, empathy, and strong values. They are often able to see the world in a unique way and can inspire others with their ideas. INFPs are also known for their ability to connect with others on an emotional level, making them great friends and partners.</p>
-        </section><br><br>
-        <h2 class="left">Weaknesses</h2>
-        <section class="left"><p class="left">eg: INFPs may struggle with practical matters and may be sensitive to criticism. They may also struggle with practical matters and may be sensitive to criticism.</p>
-        </section><br><br>
-        <h2 class="right">Relationships</h2>
-        <section class="right"><p class="right">eg: INFPs are often drawn to partners who share their values and beliefs. They may struggle with practical matters and may be sensitive to criticism. INFPs are often seen as loyal and supportive partners, but they may also need space and time to process their emotions.</p>
-        </section><br><br>
-        <h2 class="left">Career</h2>
-        <section class="left"><p class="left">eg: INFPs are often drawn to careers that allow them to express their creativity and values. They may be drawn to careers in the arts, writing, counseling, or social work. INFPs may struggle with practical matters and may be sensitive to criticism.</p>
-        </section><br><br> 
-    
-
-         <footer>
-            <p>
-                Famous People with INFP Personality Type:
-         </p>
-          
-        </footer>
-       
+    </footer>
     </body>
 </html>

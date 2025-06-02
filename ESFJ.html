@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-color: rgb(193, 220, 247);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color:rgb(24, 80, 148);
+            text-align: center;
+        }
+        div.title {
+            padding:40px;
+            font-size: 30px;
+        }
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(142, 171, 199);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: aliceblue;
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: aliceblue;
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        .flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.container {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.container img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
+                <div class="dropdown-content">
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
+                </div>
+            </li>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+    <div style="margin:60px;">
+        <h1 style="font-size: 100px;text-align: left;">ESFJ</h1>
+        <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Extraverted, Observant, Feeling, Judging )</h1></div>
+    <img title="ESFJ icon" class="icon" src="mbti.img\consul-mobile.svg" alt="esfj icon"></div>
+    <div class="title">
+    <h1>Consul</h1>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/br7vX8hw/photo-6185753509522164554-x-removebg-preview.png" alt="esfj icon" style="height:300px;width:300px;float:left;">
+        <h2>About</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFJs (Consuls) thrive on social connection, often serving as the supportive heart of their communities and close-knit groups.</li>
+            <li> Guided by a strong sense of responsibility and tradition, they value hospitality, loyalty, and doing the right thing, sometimes struggling to accept differing viewpoints.</li>
+            <li> Outgoing and attentive, ESFJs excel at building lasting relationships and making others feel cared for through thoughtful gestures and organized gatherings.</li>
+            <li> Their greatest challenge is learning to let go of control over others while focusing on their natural ability to bring people together with warmth and reliability.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/c12Ct7nG/photo-6185753509522164556-x-removebg-preview.png" alt="esfj icon" style="height:300px;width:300px;float:right;">
+        <h2>Strength</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFJs (Consuls) are practical, hardworking, and deeply loyal individuals who excel at managing daily tasks and supporting those around them.</li>
+            <li> They have a strong sense of duty and uphold traditions with consistency, making them reliable partners and team members. </li>
+            <li> Warm and sensitive, ESFJs prioritize harmony and are skilled at connecting with others, often becoming well-liked social anchors in their communities.</li> 
+            <li> Their natural empathy and commitment make them dependable pillars in both personal and professional settings.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/SxpKDydZ/photo-6185753509522164482-x-removebg-preview.png" alt="esfj icon" style="height:300px;width:300px;float:left;">
+        <h2>Weaknesses</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFJs (Consuls) can be overly concerned with social status and others’ expectations, which may limit their creativity and cause them to lose touch with themselves.</li> 
+            <li> They tend to be inflexible, valuing tradition and social norms, and may struggle to embrace change or criticism. </li>
+            <li> Their need for appreciation can make them seem needy, and their selflessness sometimes leads them to neglect their own needs or overwhelm others with attention.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/MKBT7c7M/photo-6185753509522164555-x-removebg-preview.png" alt="esfj icon" style="height:320px;width:320px;float:right;">
+        <h2>Relationship</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFJs (Consuls) deeply value romantic relationships for the security and support they provide, often seeking long-term commitment and mutual respect.</li>
+            <li> They can be sensitive to criticism and need reassurance that their partner truly supports their dreams and values.</li>
+            <li> While their loyalty and care make them devoted partners, they must be cautious not to lose themselves by seeking too much external validation or compromising their own needs.</li>
+            <li> A healthy relationship for ESFJs balances their generosity with mutual appreciation and personal fulfillment.</li></ul></div>
+    </div>
+    <div class="content">
+        <img src="https://i.postimg.cc/0jMNHjh4/photo-6185753509522164557-x-removebg-preview.png" alt="esfj icon" style="height:320px;width:320px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESFJs (Consuls) thrive in careers that combine their practical skills with social interaction, enjoying organized environments with clear roles.</li>
+            <li> They excel in roles like administration, teaching, healthcare, and social work, where they can help others and feel appreciated. </li>
+            <li> Routine tasks don’t bother them as long as they’re contributing meaningfully and working alongside people.</li>
+            <li> Their strong desire to be useful and valued drives their career satisfaction and success.</li></ul></div>
+    </div>
+    <footer>
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/g22hzRtZ/bruno.jpg">
+            <div class="desc">Bruno Mars</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/7LCT74kP/hugh.jpg">
+            <div class="desc">Hugh Jackman</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/65wRPFdz/jennifer.jpg">
+            <div class="desc">Jennifer Lawrence</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/wTVJYF2z/taylor.jpg">
+            <div class="desc">Taylor Swift</div>
+            </div>
+        </div>
+
+    </footer>
+    </body>
+</html>
