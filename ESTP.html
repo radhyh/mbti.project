@@ -1,150 +1,266 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>uIn4letters</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-color: rgb(243, 175, 40);
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color:rgb(246, 241, 220);
+            text-align: center;
+        }
+        div.title {
+            padding:40px;
+            font-size: 30px;
+        }
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(222, 217, 119);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(233, 227, 135);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-        <style>
-            *{
-                font-family: Verdana, Geneva, Tahoma, sans-serif; 
-            }
-            body, html {
-                margin: 0;
-                padding: 0;
-                height: 100%;
-            }
-            body{
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-            }
-            header{
-                border-bottom: 2px solid rgb(170, 170, 170);
-                position: sticky;
-                top: 0;
-                background-color:rgb(247, 230, 180);
-                padding: 20px;
-            }
-             ul{
-                list-style-type: none;
-                text-align: center;
-                margin: 0;
-                padding: 1em;
-             
-            }
-             li{
-                display: inline;
-                margin-right: 60px;
-                margin-left: 60px;
-            }
-             li a{
-                color: black;
-                text-decoration: none;
-                padding: 0;
-            }
-             li.dropdown{
-                display: inline-block;
-             }
-             .dropdown-content {
-               display: none;
-               position: absolute;
-            }
-            .dropdown-content a {
-                color: black;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-                padding: 20px 20px 20px 0px;
-            }
-            .dropdown-content a:hover {background-color:lightcyan;text-decoration: none;}
-            .dropdown:hover .dropdown-content{
-                display: grid;
-                grid-template-columns: auto auto auto auto;
-            }
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgb(233, 227, 135);
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
 
-            li a:hover{
-                text-decoration: underline;
-            }
-            h1{
-                text-align: center;
-            }
-            h2{margin: 40px;}
-            div{
-                display: flex;
-                justify-content: center;
-                flex: 1;
-            }
-            .left{float: left;}
-            .right{float: right;}
-            footer{
-                background-color: rgb(247, 230, 180);
-                color: white;
-                text-align: left;
-                padding: 10px;
-            }
-            
-        </style>
-    </head>
+        }
+        .flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-    <body>
-        <header>
-             <ul>
+.container {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.container img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+</style>
+</head>
+
+<body>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
             <li class="dropdown">
-              MBTI Type
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
                 <div class="dropdown-content">
-                    <a href="INFP.html">INFP</a>
-                    <a href="ENFP.html">ENFP</a>
-                    <a href="INFJ.html">INFJ</a>
-                    <a href="ENFJ.html">ENFJ</a>
-                    <a href="INTP.html">INTP</a>
-                    <a href="ENTP.html">ENTP</a>
-                    <a href="INTJ.html">INTJ</a>
-                    <a href="ENTJ.html">ENTJ</a>
-                    <a href="ISFP.html">ISFP</a>
-                    <a href="ESFP.html">ESFP</a>
-                    <a href="ISFJ.html">ISFJ</a>
-                    <a href="ESFJ.html">ESFJ</a>
-                    <a href="ISTP.html">ISTP</a>
-                    <a href="ESTP.html">ESTP</a>
-                    <a href="ISTJ.html">ISTJ</a>
-                    <a href="ESTJ.html">ESTJ</a>
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
                 </div>
-            <li><a href="#meme">Meme</a></li>
-            <li><a href="#test">Take Test</a></li>
-            <li><a href="about">About Us</a></li>
             </li>
-         </ul>
-        </header>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
 
-             <h1 style="color: rgb(230, 212, 94);">ESTP<br>
-            <div>
-                <img src="C:\Users\Asus\Downloads\estpall(1)(1).png" alt="estp icon" style="width: 60%; margin: 50px;">
+    <div style="margin:60px;">
+        <h1 style="font-size: 100px;text-align: left;">ESTP</h1>
+        <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Extraverted, Observant, Thinking, Prospecting )</h1></div>
+    <img title="ESTP icon" class="icon" src="https://i.postimg.cc/7hrzKsYT/esfpintro-removebg-preview.png" alt="ESTP icon" style="width: 200%; max-width: 1100px;"></div>
+    <div class="title">
+    <h1>Entrepreneur</h1>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/mryLMm1r/esfpabout-removebg-preview.png" alt="estp icon" style="height:230px;width:170px;float:left;">
+        <h2>About</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESTPs are bold, spontaneous, and thrive in the moment. They prefer hands-on experiences and are quick to act rather than over-plan.</li>
+            <li> They have a sharp eye for detail and can quickly notice changes in their environment or in people’s behavior, often responding with directness and confidence.</li>
+            <li> ESTPs prefer following their own moral compass and often question or challenge rules, which can lead to both innovation and conflict.</li>
+            <li> With their lively energy, rational minds, and social ease, ESTPs naturally draw people in and often take the lead, especially in dynamic or fast-paced situations.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/3rkwb5yM/esfpstrength-removebg-preview.png" alt="estp icon" style="height:250px;width:200px;float:right;">
+        <h2>Strength</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESTPs are energetic, love challenges, and focus on actionable ideas they can implement immediately.</li>
+            <li> They value honesty and clarity, preferring straightforward and factual conversations.</li>
+            <li> They have a natural charm that draws people in, and they thrive in group settings where they can connect, lead, and make the most of social opportunities.</li>
+            <li> They quickly notice changes and think creatively, often finding unique solutions others might miss.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/FsZsY98L/esfp-weakness-removebg-preview.png" alt="estp icon" style="height:200px;width:200px;float:left;">
+        <h2>Weaknesses</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> They prioritize facts over feelings and may struggle in emotionally intense situations.</li>
+            <li> They easily get frustrated with slow-paced or repetitive tasks, as they thrive on excitement and quick results. ESTPs feel most alive when things are moving fast and there's something new to tackle.</li>
+            <li> Because they’re so focused on what’s happening right now, ESTPs can sometimes lose sight of long-term goals or how all the pieces fit together. They prefer solving immediate problems and may miss the bigger picture in the process.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/qqv7xqNS/esfprelationship-removebg-preview.png" alt="estp icon" style="height:180px;width:200px;float:right;">
+        <h2>Relationship</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> ESTPs approach relationships with spontaneity and excitement, preferring to enjoy the present rather than plan for the distant future.</li>
+            <li> They bring energy and creativity to relationships, often filling them with adventurous dates, shared hobbies, and hands-on activities.</li>
+            <li> ESTPs are confident and bold in dating, but may struggle with deeper emotional intimacy over time, especially if things feel routine.</li>
+            <li> Though not naturally sentimental, ESTPs are observant and problem-solving, using these skills to support and connect with their partners when committed.</li></ul></div>
+    </div>
+
+    <div class="content">
+        <img src="https://i.postimg.cc/KcffGWx8/esfpcareer-removebg-preview.png" alt="estp icon" style="height:250px;width:190px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
+            <ul>
+            <li> With strong social skills and confidence, they excel in careers like sales, marketing, entrepreneurship, and negotiation, where charm and persuasion matter.</li>
+            <li> ESTPs thrive in fast-paced environments where they can make quick decisions and adapt on the fly, making them ideal for high-energy roles.</li>
+            <li> Whether in emergency services, sports, or action-driven fields, ESTPs seek roles that are thrilling, physically engaging, and make a visible difference.</li></ul></div>
+    </div>
+
+    <footer>
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/zBTSWds3/elton.jpg">
+            <div class="desc">Elton John</div>
             </div>
-       Entrepreneur</h1>
+            <div class="container">
+            <img src="https://i.postimg.cc/mDVWbSm1/miley.jpg">
+            <div class="desc">Miley Cyrus</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/2yRY9592/jamiefoxx.jpg">
+            <div class="desc">Jamie Foxx</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/XYxfkG1c/jb.jpg">
+            <div class="desc">Justin Bieber</div>
+            </div>
+        </div>
 
-        <br><br><h2 class="left">About</h2>
-        <section class="left">
-        <p class="left"><img class="left" src="C:\Users\Asus\Downloads\estpnew.png" alt="estp icon" style="width: 12%;">
-            ESTPs are energetic, bold, and action-oriented individuals who thrive on excitement and real-world experiences. They are quick thinkers, highly observant, and adaptable, often preferring spontaneity over routine. Confident and charismatic, ESTPs enjoy taking risks and leading in the moment, but may struggle with long-term planning and emotional depth.
-        </section><br><br>
-        <h2 class="right" style="text-align: right;">Strengths</h2>
-        <section class="right">
-        <p class="right"><img class="right" src="C:\Users\Asus\Downloads\estpnew.png" alt="estp icon" style="width: 12%;">
-            ESTPs are highly observant, quick-thinking, and adaptable. They excel in fast-paced environments and remain calm under pressure. Their confidence and charm make them persuasive communicators, and they’re natural problem-solvers who enjoy taking initiative. ESTPs are practical, resourceful, and often bring energy and excitement to any situation.</p>
-        </section><br><br>
-        <h2 class="left">Weaknesses</h2> 
-        <section class="left"><p class="left">ESTPs can be impulsive and risk-prone, often acting before thinking things through. They may struggle with long-term planning and have little patience for routine or slow progress. Their focus on the present can lead them to overlook deeper emotional or abstract issues. ESTPs can also come across as insensitive or overly blunt, especially in emotionally charged situations.</p>
-        </section><br><br>
-        <h2 class="right" style="text-align: right;">Relationships</h2>
-        <section class="right"><p class="right">ESTPs in relationships are fun, spontaneous, and action-oriented. They show love through shared experiences and practical support rather than deep emotional talks. They value freedom, avoid drama, and prefer partners who are energetic and independent.</p>
-        </section><br><br>
-        <h2 class="left">Career</h2>
-        <section class="left"><p class="left">ESTPs thrive in fast-paced, hands-on careers that offer variety and challenge. They excel in roles requiring quick thinking, problem-solving, and direct interaction with people. They dislike routine and prefer action over planning. Ideal careers include sales, entrepreneurship, emergency services, and sports.</p>
-        </section><br><br> 
-    
-
-         <footer>
-            <p>Famous People with ESTP Personality Type: Tony Stark (Iron Man), James Bond, Ginny Weasley and Jack Sparrow</p>  
-        </footer>
-       
+    </footer>
     </body>
 </html>
