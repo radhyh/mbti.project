@@ -8,10 +8,10 @@
         * {
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
         body {
-            background-color: rgb(233, 220, 245);
+            background-color: rgb(217, 200, 232);
         }
         header {
             position: sticky;
@@ -76,21 +76,65 @@
         .dropdown-content a:hover {
             background-color: whitesmoke;
         }
+        .icon {
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         h1 {
             text-align: center;
-            margin-top: 50px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(76, 7, 99);
         }
-        h2 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        div.title {
+            padding:40px;
+            font-size: 30px;
         }
-        #section {
-            background-image: url('mbti.img/paperbg1.png');
-            margin: 20px;
+        div.content {
+            margin-top: 100px;
             padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            border:2px solid rgb(125, 79, 151);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(247, 240, 255);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgb(247, 240, 255);
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .container {
+            text-align: center;
+            flex: 1 1 200px;
+        }
+        .container img {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .desc {
+            padding: 10px 0;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -130,68 +174,106 @@
         </ul>
         </nav>
     </header>
-        <h1 style="color: lightpurple;">ENTJ<br>
-        <div>
-            <img src="mbti.img/entj1.png" style="width: 20%; margin: 50px;">
+        <div style="margin:60px;">
+            <h1 style="font-size: 100px;text-align: left;">ENTJ</h1>
+            <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Extraverted, Intuitive, Thinking, Judging )</h1></div>
+            <img title="ENTJ icon" class="icon" src="https://www.16personalities.com/static/images/personality-types/scenes/analysts_Commander_ENTJ_strengths.svg" alt="entj icon"></div>
+            <div class="title">
+            <h1>Commander</h1>
         </div>
-        Commander</h1><br><br><br><br>
 
-        <h2 style="margin-left: 20px;">About</h2>
-        <section id="section">
-            <p>ENTJs are extroverted, intuitive, thinking, and judging individuals who are known for their leadership qualities and strategic thinking. They are often seen as natural leaders who enjoy taking charge and organizing people and resources to achieve their goals.</p>
-            <p>ENTJs are highly analytical and enjoy solving complex problems. They are often drawn to careers in management, entrepreneurship, and consulting, where they can use their strategic thinking skills to drive results.</p>
-            <p>ENTJs value efficiency and effectiveness and may become frustrated with inefficiency or lack of direction. They may also struggle with emotional expression and may need to work on developing their emotional intelligence.</p>
-        </section><br><br>
+        <div class="content">
+            <img src="mbti.img/entj1.png" alt="entj icon" style="margin-top:20px; height:220px;width:220px;float: left;">
+            <h2>About</h2>
+            <div style="margin:10px;">
+                <ul>
+                    <li>ENTJs are known for their strong leadership skills, strategic thinking, and ability to organize and execute plans effectively.</li>
+                    <li>They are often seen as natural leaders who are confident, decisive, and assertive.</li>
+                    <li>ENTJs are known for their ability to think strategically and make sound decisions, often leading by example and inspiring others.</li>
+                    <li>They are often seen as ambitious and driven, with a strong desire to achieve their goals and make a positive impact on the world.</li>
+                    <li>ENTJs are often seen as confident and assertive, with a strong sense of self and a clear vision for their future.</li>
+                <ul>
+            </div>
+        </div>
 
-        <h2 style="text-align: right; margin-right: 20px;">Strengths</h2>
-        <section id="section">
+        <div class="content">
+            <img src="mbti.img/entj3.png" alt="entj icon" style="height:250px;width:220px;float:right;">
+            <h2>Strengths</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>Strong leadership skills</li>
+                <li>Strategic thinking and planning abilities</li>
+                <li>Ability to organize and execute plans effectively</li>
+                <li>Confidence, decisiveness, and assertiveness</li>
+                <li>Ability to think strategically and make sound decisions</li>
+                <li>Ambitious and driven</li>
+                <li>Strong sense of self and clear vision for their future</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <img src="mbti.img/intp4.png" alt="entj icon" style="height:240px;width:230px;float:left;">
+            <h2>Weaknesses</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>Can be overly critical or demanding of themselves and others</li>
+                <li>May struggle with emotional expression and understanding others' feelings</li>
+                <li>Can be overly concerned with social status and others' expectations</li>
+                <li>May be overly concerned with intellectual pursuits and may struggle to engage in social interactions</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <img src="mbti.img/entj2.png" alt="entj icon" style="height:220px;width:250px;float:right;">
+            <h2>Relationship</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>ENTJs are often seen as confident and assertive in their relationships, with a strong desire to lead and take charge.</li>
+                <li>They value independence and may struggle with emotional expression, often preferring to focus on practical matters rather than emotional ones.</li>
+                <li>ENTJs may struggle with understanding others' feelings and may need to work on developing their emotional intelligence.</li>
+                <li>They may also struggle with balancing their desire for independence with their need for connection and intimacy in their relationships.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+        <img src="mbti.img/entj4.png" alt="entj icon" style="height:230px;width:180px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
             <ul>
-                <li>Natural leaders who can inspire and motivate others</li>
-                <li>Strategic thinkers who excel at problem-solving</li>
-                <li>Highly organized and efficient in their work</li>
-                <li>Confident and assertive in their decision-making</li>
-                <li>Enjoy challenges and thrive in dynamic environments</li>
+            <li>ENTJs are often seen as ambitious and driven, with a strong desire to achieve their goals and make a positive impact on the world.</li>
+            <li>They are often seen as confident and assertive, with a strong sense of self and a clear vision for their future.</li>
+            <li>ENTJs are known for their strong leadership skills, strategic thinking, and ability to organize and execute plans effectively.</li>
+            <li>They are often seen as natural leaders who are confident, decisive, and assertive.</li>
+            <li>ENTJs are known for their ability to think strategically and make sound decisions, often leading by example and inspiring others.</li>
             </ul>
-        </section><br><br>
-
-        <h2 style="margin-left: 20px;">Weaknesses</h2>
-        <section id="section">
-            <ul>
-                <li>May come across as domineering or controlling</li>
-                <li>Struggle with emotional expression and may seem aloof</li>
-                <li>Can be impatient with others who do not share their vision</li>
-                <li>May overlook details in their pursuit of big-picture goals</li>
-                <li>Can be overly critical of themselves and others</li>
-            </ul>
-        </section><br><br>
-
-        <h2 style="text-align: right; margin-right: 20px;">Relationships</h2>
-        <section id="section">
-            <p>ENTJs value relationships that are intellectually stimulating and allow for open communication. They may struggle with emotional expression and may need to work on developing their emotional intelligence to build deeper connections with others.</p>
-            <p>In romantic relationships, ENTJs may be drawn to partners who share their ambition and drive. They may also appreciate partners who can challenge them intellectually and engage in meaningful discussions.</p>
-            <p>ENTJs may struggle with expressing vulnerability and may need to work on being more open and receptive to the emotions of others. They may also benefit from learning to balance their assertiveness with empathy and understanding.</p>
-        </section><br><br>
-
-        <h2 style="margin-left: 20px;">Career</h2>
-        <section id="section">
-            <p>ENTJs are often drawn to careers that allow them to use their leadership and strategic thinking skills. They may excel in fields such as management, entrepreneurship, consulting, and finance.</p>
-            <p>ENTJs value efficiency and effectiveness in their work and may become frustrated with inefficiency or lack of direction. They may also thrive in dynamic environments that allow for innovation and creativity.</p>
-            <p>ENTJs may benefit from seeking out opportunities for professional development and learning to balance their assertiveness with empathy and understanding in their interactions with colleagues and team members.</p>
-        </section><br><br>
-
-        <h2 style="text-align: right; margin-right: 20px;">Famous ENTJs</h2>
-        <section id="section">
-            <ul>
-                <li>Margaret Thatcher - Former Prime Minister of the United Kingdom</li>
-                <li>Franklin D. Roosevelt - 32nd President of the United States</li>
-                <li>Steve Jobs - Co-founder of Apple Inc.</li>
-                <li>Bill Gates - Co-founder of Microsoft Corporation</li>
-                <li>Napoleon Bonaparte - French military leader and emperor</li>
-            </ul>
-        </section><br><br>
+        </div>
+        </div>
 
     <footer>
-        <p style="text-align: center;">&copy; 2025 uIn4letters. All rights reserved.</p><br><br><br>    
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/g22hzRtZ/bruno.jpg">
+            <div class="desc">Bruno Mars</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/7LCT74kP/hugh.jpg">
+            <div class="desc">Hugh Jackman</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/65wRPFdz/jennifer.jpg">
+            <div class="desc">Jennifer Lawrence</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/wTVJYF2z/taylor.jpg">
+            <div class="desc">Taylor Swift</div>
+            </div>
+        </div><br><br><br>
+        <p style="text-align: center; font-size: 10px;">&copy; 2025 uIn4letters. All rights reserved.</p>    
     </footer>
     
 </body>

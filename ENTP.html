@@ -8,10 +8,10 @@
         * {
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
         body {
-            background-color: rgb(233, 220, 245);
+            background-color: rgb(217, 200, 232);
         }
         header {
             position: sticky;
@@ -76,21 +76,65 @@
         .dropdown-content a:hover {
             background-color: whitesmoke;
         }
+        .icon {
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         h1 {
             text-align: center;
-            margin-top: 50px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(76, 7, 99);
         }
-        h2 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        div.title {
+            padding:40px;
+            font-size: 30px;
         }
-        #section {
-            background-image: url('mbti.img/paperbg1.png');
-            margin: 20px;
+        div.content {
+            margin-top: 100px;
             padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            border:2px solid rgb(125, 79, 151);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(247, 240, 255);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgb(247, 240, 255);
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .container {
+            text-align: center;
+            flex: 1 1 200px;
+        }
+        .container img {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .desc {
+            padding: 10px 0;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -130,68 +174,102 @@
         </ul>
         </nav>
     </header>
-        <h1 style="color: lightpurple;">ENTP<br>
-        <div>
-            <img src="mbti.img/entp1.png" style="width: 16%; margin: 50px;">
+        <div style="margin:60px;">
+            <h1 style="font-size: 100px;text-align: left;">ENTP</h1>
+            <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Extraverted, Intuitive, Thinking, Perceiving )</h1></div>
+            <img title="ENTP icon" class="icon" src="mbti.img/entpdebater.svg" alt="entp icon"></div>
+            <div class="title">
+            <h1>Debater</h1>
         </div>
-        Debater</h1><br><br><br><br>
 
-        <h2 style="margin-left: 20px;">About</h2>
-        <section id="section">
-            <p>ENTP, or Extraverted Intuitive Thinking Perceiving, is one of the 16 personality types identified by the Myers-Briggs Type Indicator (MBTI). ENTPs are known for their innovative thinking, love for debate, and ability to see multiple perspectives on a given issue. They are often described as curious, energetic, and adaptable individuals who thrive in dynamic environments.</p>
-            <p>ENTPs are natural problem solvers who enjoy exploring new ideas and concepts. They are often drawn to careers that allow them to use their creativity and analytical skills, such as entrepreneurship, consulting, or research.</p>
-            <p>ENTPs value intellectual autonomy and often seek out opportunities to challenge themselves and others. They may struggle with routine or repetitive tasks and may prefer to work in environments that allow for flexibility and innovation.</p>
-        </section><br><br>
+        <div class="content">
+            <img src="mbti.img/entp1.png" alt="entp icon" style="margin-top:20px; height:230px;width:200px;float: left;">
+            <h2>About</h2>
+            <div style="margin:10px;">
+                <ul>
+                <li>ENTPs are known for their quick wit, love of debate, and ability to think outside the box. They are often seen as charismatic and energetic individuals who enjoy engaging in intellectual discussions.</li>
+                <li>They are often described as "idea people" who thrive on exploring new concepts and possibilities. ENTPs are typically independent thinkers who value their intellectual autonomy and may resist traditional structures or authority.</li>
+                <li>ENTPs are known for their ability to see the big picture and make sound judgments, often leading by example and inspiring others.</li>
+                <li>They are often seen as innovative and creative problem-solvers who enjoy exploring new ideas and possibilities.</li>
+                <li>ENTPs are often described as adaptable and open-minded individuals who enjoy exploring new ideas and possibilities.</li>
+                <ul>
+            </div>
+        </div>
 
-        <h2 style="text-align: right; margin-right: 20px;">Strengths</h2>
-        <section id="section">
+        <div class="content">
+            <img src="https://static.neris-assets.com/images/theory/traits/16personalities_trait_prospecting.svg" alt="entp icon" style="height:270px;width:340px;float:right;">
+            <h2>Strengths</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>Quick thinkers who can adapt to new situations</li>
+                <li>Excellent problem-solvers who enjoy exploring new ideas</li>
+                <li>Open-minded and adaptable</li>
+                <li>Independent and self-sufficient</li>
+                <li>Value intellectual autonomy</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <img src="mbti.img2/entp2.png" alt="entp icon" style="height:230px;width:210px;float:left;">
+            <h2>Weaknesses</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>Can be overly critical or demanding of themselves and others</li>
+                <li>May struggle with emotional expression and understanding others' feelings</li>
+                <li>Can be overly concerned with social status and others' expectations</li>
+                <li>May be overly concerned with intellectual pursuits and may struggle to engage in social interactions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <img src="mbti.img2/entp4.png" alt="entp icon" style="height:230px;width:220px;float:right;">
+            <h2>Relationship</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>ENTPs are often seen as charismatic and energetic individuals who enjoy engaging in intellectual discussions. They are often described as "idea people" who thrive on exploring new concepts and possibilities.</li>
+                <li>In relationships, ENTPs value intellectual autonomy and may resist traditional structures or authority. They may struggle with emotional expression and understanding others' feelings, but they are often seen as adaptable and open-minded individuals who enjoy exploring new ideas and possibilities.</li>
+                <li>ENTPs may struggle with balancing their desire for independence with their need for connection and intimacy in their relationships.</li>
+                <li>They may also struggle with emotional expression and understanding others' feelings, but they are often seen as adaptable and open-minded individuals who enjoy exploring new ideas and possibilities.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+        <img src="mbti.img2/entp5.png" alt="entp icon" style="height:240px;width:210px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
             <ul>
-                <li>Innovative and creative thinkers</li>
-                <li>Excellent problem solvers</li>
-                <li>Adaptable and flexible in their approach</li>
-                <li>Enjoy debating and challenging ideas</li>
-                <li>Charismatic and engaging communicators</li>
+                <li>ENTPs are often seen as innovative and creative problem-solvers who enjoy exploring new ideas and possibilities. They are often described as adaptable and open-minded individuals who thrive on intellectual challenges.</li>
+                <li>In the workplace, ENTPs may struggle with traditional structures or authority, but they are often seen as independent thinkers who value their intellectual autonomy.</li>
+                <li>ENTPs may excel in careers that allow them to explore new ideas and possibilities, such as entrepreneurship, consulting, or research.</li>
+                <li>They may also thrive in environments that allow them to engage in intellectual discussions and debates, such as academia or creative industries.</li>
             </ul>
-        </section><br><br>
-
-        <h2 style="margin-left: 20px;">Weaknesses</h2>
-        <section id="section">
-            <ul>
-                <li>May struggle with follow-through on projects</li>
-                <li>Can be argumentative or confrontational</li>
-                <li>May overlook details in favor of big-picture thinking</li>
-                <li>Can be perceived as insensitive or aloof</li>
-                <li>May become bored with routine tasks</li>
-            </ul>
-        </section><br><br>
-
-        <h2 style="text-align: right; margin-right: 20px;">Relationships</h2>
-        <section id="section">
-            <p>ENTPs are often drawn to partners who can engage them in intellectual discussions and debates. They value independence and may struggle with traditional relationship structures. ENTPs may also enjoy playful banter and teasing in their relationships.</p>
-            <p>In friendships, ENTPs are often seen as fun-loving and adventurous, always looking for new experiences and challenges. They may struggle with emotional intimacy and may need to work on expressing their feelings more openly.</p>
-            <p>ENTPs may also struggle with socializing with large groups, as they may find it difficult to connect with others and may prefer small, intimate gatherings.</p>
-        </section><br><br>
-
-        <h2 style="margin-left: 20px;">Career</h2>
-        <section id="section">
-            <p>ENTPs are often drawn to careers that allow them to use their creativity and analytical skills. They may excel in fields such as entrepreneurship, consulting, research, and technology. ENTPs may also enjoy roles that allow them to challenge the status quo and explore new ideas.</p>
-            <p>ENTPs value intellectual autonomy and may prefer to work independently or in small teams. They may struggle with rigid structures or rules and may thrive in environments that allow for flexibility and innovation.</p>
-            <p>ENTPs may also enjoy roles that allow them to engage in debate and discussion, such as teaching, coaching, or public speaking. They may struggle with routine or repetitive tasks and may prefer to work in dynamic environments that allow for creativity and innovation.</p>
-        </section><br><br>
-
-        <h2 style="text-align: right; margin-right: 20px;">Famous ENTPs</h2>
-        <section id="section">
-            <ul>
-                <li>Thomas Edison - Inventor and businessman</li>
-                <li>Mark Twain - Author and humorist</li>
-                <li>Leonardo da Vinci - Artist and polymath</li>
-                <li>Richard Feynman - Physicist and Nobel laureate</li>
-                <li>Steve Jobs - Co-founder of Apple Inc.</li>
-            </ul>
-        </section><br><br>
+        </div>
+        </div>
 
     <footer>
-        <p style="text-align: center;">&copy; 2025 uIn4letters. All rights reserved.</p><br><br><br>    
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/g22hzRtZ/bruno.jpg">
+            <div class="desc">Bruno Mars</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/7LCT74kP/hugh.jpg">
+            <div class="desc">Hugh Jackman</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/65wRPFdz/jennifer.jpg">
+            <div class="desc">Jennifer Lawrence</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/wTVJYF2z/taylor.jpg">
+            <div class="desc">Taylor Swift</div>
+            </div>
+        </div><br><br><br>
+        <p style="text-align: center; font-size: 10px;">&copy; 2025 uIn4letters. All rights reserved.</p>    
     </footer>
     
 </body>

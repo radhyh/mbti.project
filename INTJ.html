@@ -8,10 +8,10 @@
         * {
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
         body {
-            background-color: rgb(233, 220, 245);
+            background-color: rgb(217, 200, 232);
         }
         header {
             position: sticky;
@@ -76,21 +76,65 @@
         .dropdown-content a:hover {
             background-color: whitesmoke;
         }
+        .icon {
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         h1 {
             text-align: center;
-            margin-top: 50px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(76, 7, 99);
         }
-        h2 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        div.title {
+            padding:40px;
+            font-size: 30px;
         }
-        #section {
-            background-image: url('mbti.img/paperbg1.png');
-            margin: 20px;
+        div.content {
+            margin-top: 100px;
             padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            border:2px solid rgb(125, 79, 151);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(247, 240, 255);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgb(247, 240, 255);
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .container {
+            text-align: center;
+            flex: 1 1 200px;
+        }
+        .container img {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .desc {
+            padding: 10px 0;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -130,67 +174,100 @@
         </ul>
         </nav>
     </header>
-        <h1 style="color: lightpurple;">INTJ<br>
-        <div>
-            <img src="mbti.img/intj1.png" style="width: 22%; margin: 50px;">
+        <div style="margin:60px;">
+            <h1 style="font-size: 100px;text-align: left;">INTJ</h1>
+            <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Introverted, Intuitive, Thinking, Judging )</h1></div>
+            <img title="INTJ icon" class="icon" src="mbti.img/intjarchitect.svg" alt="intj icon"></div>
+            <div class="title">
+            <h1>Architect</h1>
         </div>
-        Architect</h1><br><br><br><br>
 
-        <h2 style="margin-left: 20px;">About</h2>
-        <section id="section">
-            <p>INTJs are known for their strategic thinking and analytical skills. They are often seen as independent and self-sufficient, preferring to work alone or in small groups. INTJs value knowledge and competence, and they are often driven by a desire to understand complex systems and ideas.</p>
-            <p>INTJs are often seen as reserved or aloof, but they can be passionate about their interests and ideas. They may struggle with emotional expression and may need to work on developing their emotional intelligence.</p>
-            <p>INTJs may also struggle with socializing in large groups, as they may find it difficult to connect with others on a personal level. They may prefer to engage in deep, meaningful conversations with a few close friends rather than small talk with many acquaintances.</p>
-        </section><br><br>
+        <div class="content">
+            <img src="https://static.neris-assets.com/images/personality-types/avatars/intj-architect-s3-female.svg" alt="intj icon" style="margin-top:20px; height:200px;width:200px;float: left;">
+            <h2>About</h2>
+            <div style="margin:10px;">
+                <ul>
+                <li>INTJs are known for their analytical and logical thinking skills, often approaching problems with a rational and objective mindset.</li>
+                <li>They are independent and self-sufficient, valuing intellectual autonomy and often preferring to work alone or in small teams.</li>
+                <li>INTJs are often seen as quiet and reserved, preferring to spend time alone or with a small group of close friends.</li>
+                <li>They are often seen as innovative and creative, often coming up with unique solutions to complex problems.</li>
+                <li>INTJs are often seen as open-minded and adaptable, willing to consider new ideas and perspectives.</li>
+                <ul>
+            </div>
+        </div>
 
-        <h2 style="text-align: right; margin-right: 20px;">Strengths</h2>
-        <section id="section">
-            <ul>
-                <li>Strategic and analytical thinkers</li>
+        <div class="content">
+            <img src="https://static.neris-assets.com/images/personality-types/avatars/intj-architect-s3-male.svg" alt="intj icon" style="height:220px;width:220px;float:right;">
+            <h2>Strengths</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>Quick thinkers who can adapt to new situations</li>
+                <li>Highly analytical and logical thinkers</li>
                 <li>Independent and self-sufficient</li>
-                <li>Highly organized and efficient</li>
-                <li>Value knowledge and competence</li>
-                <li>Driven by a desire to understand complex systems</li>
-            </ul>
-        </section><br><br>
+                </ul>
+            </div>
+        </div>
 
-        <h2 style="margin-left: 20px;">Weaknesses</h2>
-        <section id="section">
+        <div class="content">
+            <img src="mbti.img/intj4.png" alt="intj icon" style="height:240px;width:220px;float:left;">
+            <h2>Weaknesses</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>May struggle with expressing emotions and may come across as aloof or detached</li>
+                <li>May be seen as arrogant or condescending due to their confidence in their abilities</li>
+                <li>May struggle with rigid structures or rules and may thrive in environments that allow for creativity and innovation</li>
+                <li>May struggle with interpersonal relationships and may come across as insensitive or uncaring</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <img src="https://static.neris-assets.com/images/theory/traits/16personalities_trait_thinking.svg" alt="intj icon" style="height:280px;width:340px;float:right;">
+            <h2>Relationship</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>INTJs value intellectual autonomy and may prefer to work independently or in small teams. They may struggle with rigid structures or rules and may thrive in environments that allow for creativity and innovation.</li>
+                <li>INTJs may struggle with expressing emotions and may come across as aloof or detached. They may also struggle with interpersonal relationships and may come across as insensitive or uncaring.</li>
+                <li>INTJs may be drawn to partners who share their values and interests, and who can engage in deep and meaningful conversations. They may also appreciate partners who are independent and self-sufficient.</li>
+                <li>They may also thrive in environments that allow them to explore new ideas and possibilities, such as entrepreneurship, consulting, or research.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+        <img src="mbti.img/intj2.png" alt="intj icon" style="height:240px;width:250px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
             <ul>
-                <li>May struggle with emotional expression</li>
-                <li>Can be seen as aloof or reserved</li>
-                <li>May have difficulty connecting with others on a personal level</li>
-                <li>Can be overly critical or perfectionistic</li>
-                <li>May struggle with routine or repetitive tasks</li>
+                <li>INTJs are often drawn to careers that allow them to use their analytical and logical thinking skills, such as engineering, computer science, or finance.</li>
+                <li>They may also thrive in careers that allow them to explore new ideas and possibilities, such as entrepreneurship, consulting, or research.</li>
+                <li>INTJs may struggle with rigid structures or rules and may thrive in environments that allow for creativity and innovation.</li>
+                <li>They may also appreciate careers that allow them to work independently or in small teams.</li>
             </ul>
-        </section><br><br>
-
-        <h2 style="text-align: right; margin-right: 20px;">Relationships</h2>
-        <section id="section">
-            <p>INTJs are often drawn to partners who can engage them in intellectual discussions and debates. They value independence and may struggle with traditional relationship structures. INTJs may also enjoy playful banter and teasing in their relationships.</p>
-            <p>In friendships, INTJs are often seen as loyal and dependable, but they may struggle with emotional intimacy. They may need to work on expressing their feelings more openly and being more vulnerable with their friends.</p>
-            <p>INTJs may also struggle with socializing with large groups, as they may find it difficult to connect with others and may prefer small, intimate gatherings.</p>
-        </section><br><br>
-
-        <h2 style="margin-left: 20px;">Career</h2>
-        <section id="section">
-            <p>INTJs are often drawn to careers that allow them to use their strategic thinking and analytical skills. They may excel in fields such as science, technology, engineering, and mathematics (STEM), as well as in management and leadership roles.</p>
-            <p>INTJs may also be drawn to careers that allow them to work independently or in small groups, such as research or consulting. They may struggle with routine or repetitive tasks and may prefer to work in environments that allow for flexibility and innovation.</p>
-        </section><br><br>
-
-        <h2 style="text-align: right; margin-right: 20px;">Famous INTJs</h2>
-        <section id="section">
-            <ul>
-                <li>Elon Musk</li>
-                <li>Isaac Newton</li>
-                <li>Stephen Hawking</li>
-                <li>Jane Austen</li>
-                <li>Hillary Clinton</li>
-            </ul>
-        </section><br><br>
+        </div>
+        </div>
 
     <footer>
-        <p style="text-align: center;">&copy; 2025 uIn4letters. All rights reserved.</p><br><br><br>    
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/g22hzRtZ/bruno.jpg">
+            <div class="desc">Bruno Mars</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/7LCT74kP/hugh.jpg">
+            <div class="desc">Hugh Jackman</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/65wRPFdz/jennifer.jpg">
+            <div class="desc">Jennifer Lawrence</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/wTVJYF2z/taylor.jpg">
+            <div class="desc">Taylor Swift</div>
+            </div>
+        </div><br><br><br>
+        <p style="text-align: center; font-size: 10px;">&copy; 2025 uIn4letters. All rights reserved.</p>    
     </footer>
     
 </body>

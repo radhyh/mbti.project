@@ -8,10 +8,10 @@
         * {
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
         body {
-            background-color: rgb(233, 220, 245);
+            background-color: rgb(217, 200, 232);
         }
         header {
             position: sticky;
@@ -76,21 +76,65 @@
         .dropdown-content a:hover {
             background-color: whitesmoke;
         }
+        .icon {
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         h1 {
             text-align: center;
-            margin-top: 50px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(76, 7, 99);
         }
-        h2 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        div.title {
+            padding:40px;
+            font-size: 30px;
         }
-        #section {
-            background-image: url('mbti.img/paperbg1.png');
-            margin: 20px;
+        div.content {
+            margin-top: 100px;
             padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            border:2px solid rgb(125, 79, 151);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(247, 240, 255);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        ul li {
+            padding:8px;
+        }
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgb(247, 240, 255);
+        }
+        footer:hover {
+            border: 2px solid rgb(60, 60, 60);
+
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .container {
+            text-align: center;
+            flex: 1 1 200px;
+        }
+        .container img {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .desc {
+            padding: 10px 0;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -100,7 +144,7 @@
         <nav>
         <ul>
             <li class="dropdown">
-                <a href="#mbtitype" class="drpbtn">MBTI Type</a>
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
                 <div class="dropdown-content">
                     <a href="#analyst">Analysts</a>
                         <a href="INTP.html">INTP</a>
@@ -130,66 +174,98 @@
         </ul>
         </nav>
     </header>
-        <h1 style="color: lightpurple;">INTP<br>
-        <div>
-            <img src="mbti.img/intp1.png" style="width: 20%; margin: 50px;">
+        <div style="margin:60px;">
+            <h1 style="font-size: 100px;text-align: left;">INTP</h1>
+            <div style="margin-bottom: 50px;"><h1 style="text-align: left;">( Introverted, Intuitive, Thinking, Perceiving )</h1></div>
+            <img title="INTP icon" class="icon" src="mbti.img/intplogician.svg" alt="intp icon"></div>
+            <div class="title">
+            <h1>Logician</h1>
         </div>
-        Logician</h1><br><br><br><br>
 
-        <h2 style="margin-left: 20px;">About</h2>
-        <section id="section"><img src="mbti.img/intp1.png" style="width: 12%; margin-right:15px; float: left;">
-            <p>INTP, or the "Thinker," is one of the 16 personality types identified by the Myers-Briggs Type Indicator (MBTI). INTPs are known for their analytical and logical thinking, often seeking to understand complex systems and theories. They are independent, innovative, and value intellectual autonomy.</p>
-            <p>INTPs are often seen as quiet and reserved, preferring to spend time alone or with a small group of close friends. They enjoy exploring abstract concepts and theories, and they are often drawn to fields such as science, philosophy, and technology.</p>  
-            <p>INTPs are known for their creativity and originality, often coming up with unique solutions to problems. They are also highly adaptable and open-minded, willing to change their opinions based on new information or evidence.</p>
-            <p>In relationships, INTPs value intellectual compatibility and often seek partners who can engage them in deep conversations. They may struggle with expressing their emotions and may come across as aloof or detached.</p>
-        </section><br><br>
+        <div class="content">
+            <img src="mbti.img/intp3.png" alt="intp icon" style="margin-top:20px; height:200px;width:200px;float: left;">
+            <h2>About</h2>
+            <div style="margin:10px;">
+                <ul>
+                <li>INTP, or the "Thinker," is one of the 16 personality types identified by the Myers-Briggs Type Indicator (MBTI). INTPs are known for their analytical and logical thinking, often seeking to understand complex systems and theories. They are independent, innovative, and value intellectual autonomy.</li>
+                <li>INTPs are often seen as quiet and reserved, preferring to spend time alone or with a small group of close friends. They enjoy exploring abstract concepts and theories, and they are often drawn to fields such as science, philosophy, and technology.</li>  
+                <li>INTPs are known for their creativity and originality, often coming up with unique solutions to problems. They are also highly adaptable and open-minded, willing to change their opinions based on new information or evidence.</li>
+                <ul>
+            </div>
+        </div>
 
-        <h2 style="text-align: right; margin-right: 20px;">Strengths</h2>
-        <section id="section"><img src="mbti.img/intp1.png" style="width: 12%; margin-left:15px; float: right;">
-            <ul>
+        <div class="content">
+            <img src="https://static.neris-assets.com/images/theory/traits/16personalities_trait_intuitive.svg" alt="intp icon" style="height:280px;width:340px;float:right;">
+            <h2>Strengths</h2>
+            <div style="margin:10px;"> 
+                <ul>
                 <li>Analytical and logical thinking</li>
                 <li>Innovative and creative problem-solving</li>
                 <li>Open-minded and adaptable</li>
                 <li>Independent and self-sufficient</li>
                 <li>Value intellectual autonomy</li>
-            </ul>
-        </section><br><br>
+                </ul>
+            </div>
+        </div>
 
-        <h2 style="margin-left: 20px;">Weaknesses</h2>
-        <section id="section"><img src="mbti.img/intp1.png" style="width: 12%; margin-right:15px; float: left;">
-            <ul>
+        <div class="content">
+            <img src="https://static.neris-assets.com/images/theory/traits/16personalities_trait_turbulent.svg" alt="intp icon" style="height:280px;width:300px;float:left;">
+            <h2>Weaknesses</h2>
+            <div style="margin:10px;"> 
+                <ul>
                 <li>Can struggle with expressing emotions</li>
                 <li>May come across as detached or aloof</li>
                 <li>May struggle with social interaction</li>
                 <li>May be more introverted than extroverted</li>
-            </ul>
-        </section><br><br>
+                </ul>
+            </div>
+        </div>
 
-        <h2 style="text-align: right; margin-right: 20px;">Relationships</h2>
-        <section id="section"><img src="mbti.img/intp1.png" style="width: 12%; margin-left:15px; float: right;">
-            <p>INTPs value intellectual compatibility in relationships and often seek partners who can engage them in deep conversations. They may struggle with expressing their emotions and may come across as aloof or detached. However, they are loyal and committed partners who value independence and autonomy.</p>
-            <p>In friendships, INTPs enjoy spending time with like-minded individuals who share their interests and values. They may prefer small groups or one-on-one interactions over large social gatherings.</p>
-        </section><br><br>
+        <div class="content">
+            <img src="mbti.img/intp2.png" alt="intp icon" style="height:270px;width:260px;float:right;">
+            <h2>Relationship</h2>
+            <div style="margin:10px;"> 
+                <ul>
+                <li>INTPs value intellectual compatibility in relationships and often seek partners who can engage them in deep conversations. They may struggle with expressing their emotions and may come across as aloof or detached. However, they are loyal and committed partners who value independence and autonomy.</li>
+                <li>In friendships, INTPs enjoy spending time with like-minded individuals who share their interests and values. They may prefer small groups or one-on-one interactions over large social gatherings.</li>
+                <li>In relationships, INTPs value intellectual compatibility and often seek partners who can engage them in deep conversations. They may struggle with expressing their emotions and may come across as aloof or detached.</li>
+                </ul>
+            </div>
+        </div>
 
-        <h2 style="margin-left: 20px;">Career</h2>
-        <section id="section"><img src="mbti.img/intp1.png" style="width: 12%; margin-right:15px; float: left;">
-            <p>INTPs are often drawn to careers that allow them to use their analytical and logical thinking skills. They may excel in fields such as science, technology, engineering, and mathematics (STEM), as well as philosophy, research, and academia.</p>
-            <p>INTPs value intellectual autonomy and may prefer to work independently or in small teams. They may struggle with rigid structures or rules and may thrive in environments that allow for creativity and innovation.</p>
-        </section><br><br>
-
-        <h2 style="text-align: right; margin-right: 20px;">Famous INTPs</h2>
-        <section id="section">
+        <div class="content">
+        <img src="mbti.img/intp5.png" alt="intp icon" style="height:200px;width:200px;float:left;">
+        <h2>Career</h2>
+        <div style="margin:10px;"> 
             <ul>
-                <li>Albert Einstein</li>
-                <li>Isaac Newton</li>
-                <li>Marie Curie</li>
-                <li>Charles Darwin</li>
-                <li>Bill Gates</li>
+            <li>INTPs are often drawn to careers that allow them to use their analytical and logical thinking skills. They may excel in fields such as science, technology, engineering, and mathematics (STEM), as well as philosophy, research, and academia.</li>
+            <li>INTPs value intellectual autonomy and may prefer to work independently or in small teams. They may struggle with rigid structures or rules and may thrive in environments that allow for creativity and innovation.</li>
+            <li>Some common career paths for INTPs include software development, data analysis, research, engineering, and academia.</li>
             </ul>
-        </section><br><br>
+        </div>
+        </div>
 
     <footer>
-        <p style="text-align: center;">&copy; 2025 uIn4letters. All rights reserved.</p><br><br><br>    
+        <h1 style="text-align: left;margin-bottom: 30px;">Famous person: </h1>
+        <div class="flex-container">
+            <div class="container">
+            <img src="https://i.postimg.cc/g22hzRtZ/bruno.jpg">
+            <div class="desc">Bruno Mars</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/7LCT74kP/hugh.jpg">
+            <div class="desc">Hugh Jackman</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/65wRPFdz/jennifer.jpg">
+            <div class="desc">Jennifer Lawrence</div>
+            </div>
+            <div class="container">
+            <img src="https://i.postimg.cc/wTVJYF2z/taylor.jpg">
+            <div class="desc">Taylor Swift</div>
+            </div>
+        </div><br><br><br>
+        <p style="text-align: center; font-size: 10px;">&copy; 2025 uIn4letters. All rights reserved.</p>    
     </footer>
     
 </body>
