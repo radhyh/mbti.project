@@ -12,12 +12,68 @@
         body{
                 margin: 0;
             }
-        .header {    /* Creates a flexbox layout to align items like a logo and group name horizontally and responsively*/
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
             padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
         }
         img {  /* Makes all images responsive*/
             max-width: 100%;
@@ -41,19 +97,44 @@
             padding: 15px;
             text-align: center;
         }
-        .button{
-            text-decoration: none;
-            color: rgb(25, 31, 112);
-            font-size: 40px;
-            float:right;
-        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img title="our group's trademark !" src="https://i.postimg.cc/5ttmsfRc/photo-6179120980505511329-x-removebg-preview.png" alt="Logo" style="width:20%; height:20%; top: 0">
-        <img src="https://i.postimg.cc/25f15Gn0/gambar-besar-untuk-aboutus.png" alt="all mbti" style="margin: auto; width:30%; height:30%;">
-    </div>
+    <header>
+        <a href="homepage.html"><img title="uIn4Letters" src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
+                <div class="dropdown-content">
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
+                </div>
+            </li>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
 
     <h3 style="color:rgb(25, 31, 112); font-size: 200%; margin-left: 30px;">Prepared By :</h3>
 
@@ -80,8 +161,6 @@
     </div>
     <div style="clear: both;"></div>
     <footer>
-        <a title="homepage" class="button" href="homepage.html">Next<img src="https://i.postimg.cc/Pqxbfn9Q/arrow-untuk-next-button.png" style="width:10%;"></a>
-        <br><br><br><br><br><br>
         <p style="text-align: center; font-size: 10px;">&copy; 2025 uIn4letters. All rights reserved.</p>
     </footer>
 </body>
