@@ -17,7 +17,7 @@ import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
     const messagesDiv = document.getElementById("messages");
     const input = document.getElementById("userInput");
     const sendBtn = document.getElementById("sendBtn");
-    const loading = document.getElementById("loading");
+    const loading = document.getElementById("loading"); 
 
     // Make sendMessage available globally
     window.sendMessage = async function () {
