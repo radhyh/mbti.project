@@ -1,8 +1,6 @@
 let questions = [];
 let current = 0;
 let score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-let timer;
-let timeLeft = 15;
 
 fetch("questions.json")
   .then(res => res.json())
@@ -19,30 +17,19 @@ function showQuestion() {
   const btns = document.getElementById('buttons');
   btns.innerHTML = '';
 
-  // Timer
-  clearInterval(timer);
-  timeLeft = 15;
-  document.getElementById('result').innerHTML = `<p>⏱️ Time left: ${timeLeft}s</p>`;
-  timer = setInterval(() => {
-    timeLeft--;
-    document.getElementById('result').innerHTML = `<p>⏱️ Time left: ${timeLeft}s</p>`;
-    if (timeLeft === 0) {
-      clearInterval(timer);
-      alert("Time's up! Moving to next question.");
-      current++;
-      showQuestion();
-    }
-  }, 1000);
-
   for (let label in q.answers) {
     const btn = document.createElement('button');
     btn.innerText = label;
     btn.onclick = () => {
-      clearInterval(timer);
-      alert(`You selected: ${label}`);
-      score[q.answers[label]]++;
-      current++;
-      showQuestion();
+      const confirmAnswer = confirm(`Are you sure you want to select: "${label}"?`);
+      if (confirmAnswer) {
+        alert(`Answer confirmed: ${label}`);
+        score[q.answers[label]]++;
+        current++;
+        showQuestion();
+      } else {
+        alert("Answer cancelled. Please choose again.");
+      }
     };
     btns.appendChild(btn);
   }
