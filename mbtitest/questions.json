@@ -1,0 +1,17 @@
+[
+  { "question": "You find it easy to introduce yourself to people.", "dimension": "EI", "answers": { "Agree": "E", "Disagree": "I" } },
+  { "question": "You prefer to work alone than in a group.", "dimension": "EI", "answers": { "Agree": "I", "Disagree": "E" } },
+  { "question": "You rely on facts more than theories.", "dimension": "SN", "answers": { "Agree": "S", "Disagree": "N" } },
+  { "question": "You enjoy abstract ideas and concepts.", "dimension": "SN", "answers": { "Agree": "N", "Disagree": "S" } },
+  { "question": "You make decisions with your heart.", "dimension": "TF", "answers": { "Agree": "F", "Disagree": "T" } },
+  { "question": "You value logic over emotions.", "dimension": "TF", "answers": { "Agree": "T", "Disagree": "F" } },
+  { "question": "You prefer a structured lifestyle.", "dimension": "JP", "answers": { "Agree": "J", "Disagree": "P" } },
+  { "question": "You like to keep your options open.", "dimension": "JP", "answers": { "Agree": "P", "Disagree": "J" } },
+  { "question": "You're energized by social events.", "dimension": "EI", "answers": { "Agree": "E", "Disagree": "I" } },
+  { "question": "You notice details easily.", "dimension": "SN", "answers": { "Agree": "S", "Disagree": "N" } },
+  { "question": "You make decisions quickly.", "dimension": "JP", "answers": { "Agree": "J", "Disagree": "P" } },
+  { "question": "You enjoy solving logical problems.", "dimension": "TF", "answers": { "Agree": "T", "Disagree": "F" } },
+  { "question": "You dislike being the center of attention.", "dimension": "EI", "answers": { "Agree": "I", "Disagree": "E" } },
+  { "question": "You enjoy creating theories.", "dimension": "SN", "answers": { "Agree": "N", "Disagree": "S" } },
+  { "question": "You follow your gut feelings.", "dimension": "TF", "answers": { "Agree": "F", "Disagree": "T" } }
+]
