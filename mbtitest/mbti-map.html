@@ -59,89 +59,79 @@
   <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
 
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyBTUI2nTJCAr4xn0FYaa6SGV9xbaKsK1kg",
-      authDomain: "mbti-project-3c324.firebaseapp.com",
-      projectId: "mbti-project-3c324"
-    };
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
+  const firebaseConfig = {
+    apiKey: "AIzaSyBTUI2nTJCAr4xn0FYaa6SGV9xbaKsK1kg",
+    authDomain: "mbti-project-3c324.firebaseapp.com",
+    projectId: "mbti-project-3c324",
+    storageBucket: "mbti-project-3c324.appspot.com",
+    messagingSenderId: "539055979955",
+    appId: "1:539055979955:web:078e6481299a75b3735fc6"
+  };
 
-    // Replace with actual MBTI result from test or storage
-    const yourMBTI = localStorage.getItem("userMBTI") || "INFJ"; 
-    document.getElementById('center').innerText = yourMBTI;
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-    const matches = {
-      INFJ: { best: 'ENFP', worst: 'ESTP', okay: ['INFP', 'INTJ'], notbad: ['ENTP'] },
-      ENFP: { best: 'INFJ', worst: 'ISTJ', okay: ['ENFJ'], notbad: ['ESFP'] },
-      ISTJ: { best: 'ESFP', worst: 'ENFP', okay: ['ISFJ'], notbad: ['ESTJ'] },
-      ESTP: { best: 'ISFJ', worst: 'INFJ', okay: ['ESFP'], notbad: ['ISTP'] }
-      // Add more if needed
-    };
+  const yourMBTI = localStorage.getItem("userMBTI");
+  const resultArea = document.getElementById("result-map");
 
-    const colorCode = {
-      perfect: 'blue',
-      disaster: 'red',
-      notbad: 'yellow',
-      okay: 'green',
-    };
+  const matchTable = {
+    'INFJ': { best: 'ENFP', worst: 'ESTP' },
+    'ENFP': { best: 'INFJ', worst: 'ISTJ' },
+    'ISTJ': { best: 'ESFP', worst: 'ENFP' },
+    'ENTP': { best: 'INFJ', worst: 'ISFJ' },
+    'ESTP': { best: 'ISFJ', worst: 'INFJ' },
+    // Add more types...
+  };
 
-    db.collection("results").orderBy("timestamp", "desc").limit(8).get().then(snapshot => {
-      const docs = snapshot.docs.filter(doc => doc.data().type !== yourMBTI);
-      const angleStep = 360 / docs.length;
-      const container = document.getElementById("circle-container");
-      const canvas = document.getElementById("lines");
-      const ctx = canvas.getContext("2d");
-      const centerX = 250, centerY = 250;
+  function createCircle(type, label, color) {
+    const div = document.createElement('div');
+    div.style.width = '80px';
+    div.style.height = '80px';
+    div.style.borderRadius = '50%';
+    div.style.background = color;
+    div.style.color = '#fff';
+    div.style.display = 'flex';
+    div.style.alignItems = 'center';
+    div.style.justifyContent = 'center';
+    div.style.margin = '10px';
+    div.innerText = label;
+    div.title = type;
+    return div;
+  }
 
-      docs.forEach((doc, index) => {
-        const data = doc.data();
-        const otherMBTI = data.type;
-        const match = matches[yourMBTI] || {};
-        let label, color;
+  async function loadResults() {
+    const querySnapshot = await getDocs(collection(db, "results"));
+    const match = matchTable[yourMBTI] || {};
 
-        if (otherMBTI === match.best) {
-          label = "Perfect Match 💘";
-          color = colorCode.perfect;
-        } else if (otherMBTI === match.worst) {
-          label = "Disaster Match ⚠️";
-          color = colorCode.disaster;
-        } else if (match.notbad && match.notbad.includes(otherMBTI)) {
-          label = "Not Bad 🔅";
-          color = colorCode.notbad;
-        } else if (match.okay && match.okay.includes(otherMBTI)) {
-          label = "OK 🤝";
-          color = colorCode.okay;
-        } else {
-          label = "Unknown 🤷";
-          color = "gray";
-        }
+    const container = document.createElement('div');
+    container.style.display = 'flex';
+    container.style.flexWrap = 'wrap';
+    container.style.justifyContent = 'center';
 
-        // Position
-        const angle = angleStep * index;
-        const rad = angle * Math.PI / 180;
-        const x = centerX + 180 * Math.cos(rad);
-        const y = centerY + 180 * Math.sin(rad);
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const type = data.type;
 
-        // Draw line
-        ctx.beginPath();
-        ctx.moveTo(centerX, centerY);
-        ctx.lineTo(x, y);
-        ctx.strokeStyle = color;
-        ctx.lineWidth = 2;
-        ctx.stroke();
-
-        // Add MBTI bubble
-        const div = document.createElement("div");
-        div.className = "type";
-        div.style.left = `${x}px`;
-        div.style.top = `${y}px`;
-        div.innerHTML = `<strong>${otherMBTI}</strong><br><small>${label}</small>`;
-        container.appendChild(div);
-      });
+      if (type === yourMBTI) {
+        container.appendChild(createCircle(type, "You", "#3498db"));
+      } else if (type === match.best) {
+        container.appendChild(createCircle(type, "Perfect", "#2ecc71"));
+      } else if (type === match.worst) {
+        container.appendChild(createCircle(type, "Disaster", "#e74c3c"));
+      } else {
+        container.appendChild(createCircle(type, type, "#bdc3c7"));
+      }
     });
-  </script>
+
+    resultArea.innerHTML = '';
+    resultArea.appendChild(container);
+  }
+
+  loadResults();
+</script>
 </body>
 </html>
