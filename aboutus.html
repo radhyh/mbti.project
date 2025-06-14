@@ -6,13 +6,13 @@
     <title>About Us</title>
     <style>
         body,footer{
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            background-color: rgb(240, 237, 230);
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
         }
         body{
                 margin: 0;
-            }
-            header {
+        }
+        header {
             position: sticky;
             top: 0;
             background-color: white;
@@ -87,7 +87,13 @@
         .member {
             margin: 4.4%;
             float: left;
-            width: 16%;
+            width: 15%;
+            border-radius: 20px; 
+            box-shadow: 2px 2px 2px 2px rgb(206, 195, 165); 
+            padding-top: 10px;
+            text-align: center;
+            align-items: center;
+            background-color: rgb(250, 247, 237);
         }
         .member:hover {
             transform: scale(1.1);
@@ -96,6 +102,15 @@
         .desc {
             padding: 15px;
             text-align: center;
+        }
+        .finisher-header {
+            margin-top: 240px;
+            margin-bottom: -300px;
+            text-align: center;
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            font-size: 2.5em;
+            color: white;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -134,38 +149,79 @@
             <li><a href="aboutus.html">About Us</a></li>
         </ul>
         </nav>
+        
     </header>
-
-    <h3 style="color:rgb(25, 31, 112); font-size: 200%; margin-left: 30px;">Prepared By :</h3>
+    <div class="header finisher-header" style="width: 100%; height: 700px;">"From Curious to Certified MBTI Geeks"
+        <br><p style="font-size: 17px;">Just tap on the icons below to know more what kind of person we are.</p>
+    </div>
+    <script src="finisher-header.es5.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    new FinisherHeader({
+    "count": 6,
+    "size": {
+        "min": 1100,
+        "max": 1300,
+        "pulse": 0.4
+    },
+    "speed": {
+        "x": {
+        "min": 0.1,
+        "max": 0.3
+        },
+        "y": {
+        "min": 0.1,
+        "max": 0.3
+        }
+    },
+    "colors": {
+        "background": "#beadcd",
+        "particles": [
+        "#7bceee",
+        "#ffcb57",
+        "#6ac755"
+        ]
+    },
+    "blending": "overlay",
+    "opacity": {
+        "center": 1,
+        "edge": 0.1
+    },
+    "skew": -2,
+    "shapes": [
+        "c"
+    ]
+    });
+    </script>
+    <h3 style="color:rgb(25, 31, 112); font-size: 200%; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); text-align: center;">Prepared By :</h3>
 
     <div class="container">
         <div class="member">
-            <a href="ENTP.html"><img title="ENTP" src="mbti.img/entp1.png" alt="dini's mbti"></a>
-            <div class="desc">Nur Dini Syauqina binti Mohd Asri</div>
-            <div class="desc">245215</div>
+            <a href="ENTP.html"><img title="ENTP" src="mbti.img/entp1.png" alt="dini's mbti" style="width: 104px;"></a>
+            <div class="desc">𝙽𝚞𝚛 𝙳𝚒𝚗𝚒 𝚂𝚢𝚊𝚞𝚚𝚒𝚗𝚊 𝚋𝚒𝚗𝚝𝚒 𝙼𝚘𝚑𝚍 𝙰𝚜𝚛𝚒</div>
+            <div class="desc">𝟸𝟺𝟻𝟸𝟷𝟻</div>
         </div>
 
         <div class="member">
-            <a href="INTP.html"><img title="INTP" src="mbti.img/intp1.png" alt="sarah's mbti" style="width:100%; height:100%;"></a>
-            <div class="desc">Nur Sarah binti Azmi</div>
-            <div class="desc">245746</div>
+            <a href="INTP.html"><img title="INTP" src="mbti.img/intp1.png" alt="sarah's mbti" style="width: 137px;"></a>
+            <div class="desc">𝙽𝚞𝚛 𝚂𝚊𝚛𝚊𝚑 𝚋𝚒𝚗𝚝𝚒 𝙰𝚣𝚖𝚒</div>
+            <div class="desc">𝟸𝟺𝟻𝟽𝟺𝟼</div>
         </div>
 
         <div class="member">
-            <a href="ENFJ.html"><img title="ENFJ" src="mbti.img/enfj1.png" alt="rad's mbti"></a>
-            <div class="desc">Nurradhiyah binti Ridzuan</div>
-            <div class="desc">247237</div>
+            <a href="ENFJ.html"><img title="ENFJ" src="mbti.img/enfj1.png" alt="rad's mbti"style="width: 100px;"></a>
+            <div class="desc">𝙽𝚞𝚛𝚛𝚊𝚍𝚑𝚒𝚢𝚊𝚑 𝚋𝚒𝚗𝚝𝚒 𝚁𝚒𝚍𝚣𝚞𝚊𝚗</div>
+            <div class="desc">𝟸𝟺𝟽𝟸𝟹𝟽</div>
         </div>
 
         <div class="member">
-            <a href=""><img title="ESFJ" src="mbti.img/esfj1.png" alt="izzah's mbti"></a>
-            <div class="desc">Nur Izzah Amani binti Hasmayadi</div>
-            <div class="desc">245479</div>
+            <a href=""><img title="ESFJ" src="https://64.media.tumblr.com/c1727645302e8c76cb6613e61b1527a4/tumblr_inline_ny5bqwdDNz1teo9yu_500.pnj" alt="izzah's mbti" style="width: 110px;"></a>
+            <div class="desc">𝙽𝚞𝚛 𝙸𝚣𝚣𝚊𝚑 𝙰𝚖𝚊𝚗𝚒 𝚋𝚒𝚗𝚝𝚒 𝙷𝚊𝚜𝚖𝚊𝚢𝚊𝚍𝚒</div>
+            <div class="desc">𝟸𝟺𝟻𝟺𝟽𝟿</div>
         </div>
     </div>
     <div style="clear: both;"></div>
     <footer>
-        <p style="text-align: center; font-size: 10px;">&copy; 2025 uIn4letters. All rights reserved.</p>
+        <img src="https://www.16personalities.com/static/images/homepage/footer-desktop.svg">
     </footer>
 </body>
 </html>
