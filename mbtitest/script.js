@@ -21,54 +21,33 @@ function showQuestion() {
     const btn = document.createElement('button');
     btn.innerText = label;
     btn.onclick = () => {
-      const confirmAnswer = confirm(`Are you sure you want to select: "${label}"?`);
-      if (confirmAnswer) {
-        alert(`Answer confirmed: ${label}`);
-        score[q.answers[label]]++;
-        current++;
-        showQuestion();
-      } else {
-        alert("Answer cancelled. Please choose again.");
-      }
+      const confirmAnswer = confirm(`You selected: ${label}\n\nAre you sure?`);
+      if (!confirmAnswer) return; // Don't go next if canceled
+
+      score[q.answers[label]]++;
+      current++;
+      showQuestion();
     };
     btns.appendChild(btn);
   }
 }
 
 function showResult() {
-  const mbti = 
+  const mbti =
     (score.E > score.I ? 'E' : 'I') +
     (score.S > score.N ? 'S' : 'N') +
     (score.T > score.F ? 'T' : 'F') +
     (score.J > score.P ? 'J' : 'P');
 
   alert(`Your MBTI result is: ${mbti}`);
-  document.getElementById('question-box').innerText = `Your MBTI: ${mbti}`;
-  document.getElementById('buttons').innerHTML = '';
-  document.getElementById('result').innerHTML = `<p><strong>Your MBTI:</strong> ${mbti}</p><p>Score: ${JSON.stringify(score)}</p>`;
-  saveToFirebase(mbti);
-  showMatch(mbti);
-}
 
-function saveToFirebase(type) {
+  // Save to Firebase
   db.collection('results').add({
-    type: type,
+    type: mbti,
     timestamp: firebase.firestore.FieldValue.serverTimestamp()
   });
-}
 
-function showMatch(type) {
-  const matches = {
-    'INFJ': { best: 'ENFP', worst: 'ESTP' },
-    'ENFP': { best: 'INFJ', worst: 'ISTJ' },
-    'ISTJ': { best: 'ESFP', worst: 'ENFP' },
-    'ENTP': { best: 'INFJ', worst: 'ISFJ' },
-    'ESTP': { best: 'ISFJ', worst: 'INFJ' }
-  };
-
-  const result = matches[type] || { best: "Unknown", worst: "Unknown" };
-  document.getElementById('result').innerHTML += `
-    <p><strong>Best Match:</strong> ${result.best}</p>
-    <p><strong>Disaster Match:</strong> ${result.worst}</p>
-  `;
+  // Save to localStorage and redirect to mind map
+  localStorage.setItem("userMBTI", mbti);
+  window.location.href = "mbti-map.html";
 }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MBTI Compatibility Mind Map</title>
+  <style>
+    #circle-container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: 40px auto;
+      border-radius: 50%;
+      background-color: #f9f9f9;
+    }
+
+    .type {
+      position: absolute;
+      width: 100px;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+    }
+
+    #center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      line-height: 120px;
+      text-align: center;
+      background: #fff3cd;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid #333;
+      font-weight: bold;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .type, #center {
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">MBTI Compatibility Mind Map</h2>
+  <div id="circle-container">
+    <canvas id="lines" width="500" height="500"></canvas>
+    <div id="center">You</div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBTUI2nTJCAr4xn0FYaa6SGV9xbaKsK1kg",
+      authDomain: "mbti-project-3c324.firebaseapp.com",
+      projectId: "mbti-project-3c324"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Replace with actual MBTI result from test or storage
+    const yourMBTI = localStorage.getItem("userMBTI") || "INFJ"; 
+    document.getElementById('center').innerText = yourMBTI;
+
+    const matches = {
+      INFJ: { best: 'ENFP', worst: 'ESTP', okay: ['INFP', 'INTJ'], notbad: ['ENTP'] },
+      ENFP: { best: 'INFJ', worst: 'ISTJ', okay: ['ENFJ'], notbad: ['ESFP'] },
+      ISTJ: { best: 'ESFP', worst: 'ENFP', okay: ['ISFJ'], notbad: ['ESTJ'] },
+      ESTP: { best: 'ISFJ', worst: 'INFJ', okay: ['ESFP'], notbad: ['ISTP'] }
+      // Add more if needed
+    };
+
+    const colorCode = {
+      perfect: 'blue',
+      disaster: 'red',
+      notbad: 'yellow',
+      okay: 'green',
+    };
+
+    db.collection("results").orderBy("timestamp", "desc").limit(8).get().then(snapshot => {
+      const docs = snapshot.docs.filter(doc => doc.data().type !== yourMBTI);
+      const angleStep = 360 / docs.length;
+      const container = document.getElementById("circle-container");
+      const canvas = document.getElementById("lines");
+      const ctx = canvas.getContext("2d");
+      const centerX = 250, centerY = 250;
+
+      docs.forEach((doc, index) => {
+        const data = doc.data();
+        const otherMBTI = data.type;
+        const match = matches[yourMBTI] || {};
+        let label, color;
+
+        if (otherMBTI === match.best) {
+          label = "Perfect Match 💘";
+          color = colorCode.perfect;
+        } else if (otherMBTI === match.worst) {
+          label = "Disaster Match ⚠️";
+          color = colorCode.disaster;
+        } else if (match.notbad && match.notbad.includes(otherMBTI)) {
+          label = "Not Bad 🔅";
+          color = colorCode.notbad;
+        } else if (match.okay && match.okay.includes(otherMBTI)) {
+          label = "OK 🤝";
+          color = colorCode.okay;
+        } else {
+          label = "Unknown 🤷";
+          color = "gray";
+        }
+
+        // Position
+        const angle = angleStep * index;
+        const rad = angle * Math.PI / 180;
+        const x = centerX + 180 * Math.cos(rad);
+        const y = centerY + 180 * Math.sin(rad);
+
+        // Draw line
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Add MBTI bubble
+        const div = document.createElement("div");
+        div.className = "type";
+        div.style.left = `${x}px`;
+        div.style.top = `${y}px`;
+        div.innerHTML = `<strong>${otherMBTI}</strong><br><small>${label}</small>`;
+        container.appendChild(div);
+      });
+    });
+  </script>
+</body>
+</html>
