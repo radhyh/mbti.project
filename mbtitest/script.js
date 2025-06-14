@@ -21,12 +21,23 @@ function showQuestion() {
     const btn = document.createElement('button');
     btn.innerText = label;
     btn.onclick = () => {
-      const confirmAnswer = confirm(`You selected: ${label}\n\nAre you sure?`);
-      if (!confirmAnswer) return; // Don't go next if canceled
-
-      score[q.answers[label]]++;
+      let pendingAnswer = null;
+    function confirmAnswer(choice) {
+      document.getElementById("confirmBox").style.display = "none";
+      if (choice && pendingAnswer) {
+      score[pendingAnswer]++;
       current++;
       showQuestion();
+    }
+    pendingAnswer = null;
+}
+
+btn.onclick = () => {
+  pendingAnswer = q.answers[label];
+  document.getElementById("confirmText").innerText = `You selected: ${label}. Are you sure?`;
+  document.getElementById("confirmBox").style.display = "block";
+};
+
     };
     btns.appendChild(btn);
   }
