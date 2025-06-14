@@ -9,9 +9,10 @@
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 0.7px;
         }
         body {
-            background-image: url(mbti.img/paperbg1.png); 
+            background-image: url('mbti.img/paperbg1.png');
         }
         header {
             position: sticky;
@@ -21,7 +22,7 @@
             border-bottom: 1.5px solid rgb(179, 179, 179);
         }
         .gallery {
-            width: 1000px; 
+            width: 5000px; 
             display: flex;
             overflow-x: scroll;
             background-color: transparent;
@@ -36,6 +37,8 @@
         }
         .gallery div img {
             width: 100%; 
+            border-radius: 20%;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
         }
         .gallery div img:hover {
             transform: scale(1.1);
@@ -118,20 +121,46 @@
         }
         h2 {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-left: 20px;
         }
         #section {
+            margin: auto auto;
+            padding:0 0%;
+            display: flex;
+            margin: 20px;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent
+        }
+        #section > div {
+            font-size: 18px;
             margin: 20px;
             padding: 20px;
-            background-color: white;
+            text-align: justify;
+            background-color: rgb(255, 255, 255);
             border-radius: 5px;
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .finisher-header {
+            margin-top: 240px;
+            margin-bottom: -300px;
+            text-align: center;
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            font-size: 2.5em;
+            color: white;
+            font-weight: bold;
+        }
+        .logo {
+            width: 700px; 
+            display: block;
+            margin: 0 auto;
         }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" align="left" width=200px height=70px></a> 
+        <a href="homepage.html"><img src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" align="left" width=200px height=70px></a> 
         <nav>
         <ul>
             <li class="dropdown">
@@ -159,80 +188,176 @@
                         <a href="ESFP.html">ESFP</a>
                 </div>
             </li>
-            <li><a href="#meme">Meme</a></li>
-            <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
             <li><a href="aboutus.html">About Us</a></li>
         </ul>
         </nav>
     </header>
-        <div class="gallery-wrap">
-            <img src="mbti.img/scrollarrowtoleft_83879.png" id="leftbtn">
-            <div class="gallery">
-                <div>
-                    <img src="mbti.img/entj.jpg" alt="entj">
-                    <img src="mbti.img/entp.jpg" alt="entp">
-                    <img src="mbti.img/intj.jpg" alt="intj">
-                    <img src="mbti.img/intp.jpg" alt="intp">
-                </div>
-                <div>
-                    <img src="mbti.img/infj.jpg" alt="infj">
-                    <img src="mbti.img/infpa.jpg" alt="infp">
-                    <img src="mbti.img/enfj.jpg" alt="enfj">
-                    <img src="mbti.img/enfp.jpg" alt="enfp">
-                </div>
-                <div>
-                    <img src="mbti.img/istj.jpg" alt="istj">
-                    <img src="mbti.img/isfj.jpg" alt="isfj">
-                    <img src="mbti.img/estj.jpg" alt="estj">
-                    <img src="mbti.img/esfj.jpg" alt="esfj">
-                </div>
-                <div>
-                    <img src="mbti.img/istp.jpg" alt="istp">
-                    <img src="mbti.img/isfp.jpg" alt="isfp">
-                    <img src="mbti.img/estp.jpg" alt="estp">
-                    <img src="mbti.img/esfp.jpg" alt="esfp">
-                </div>  
+    <div class="header finisher-header" style="width: 100%; height: 700px;">"Why are they behaving that way?"
+        <br><p style="font-size: 17px; margin-top:10px;">Hi there ! Welcome to uIn4letters, where you get to know anyone's personality type in just 4 letters.</p>
+    </div>
+    <script src="finisher-header.es5.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    new FinisherHeader({
+    "count": 6,
+    "size": {
+        "min": 1100,
+        "max": 1300,
+        "pulse": 0.4
+    },
+    "speed": {
+        "x": {
+        "min": 0.1,
+        "max": 0.3
+        },
+        "y": {
+        "min": 0.1,
+        "max": 0.3
+        }
+    },
+    "colors": {
+        "background": "#beadcd",
+        "particles": [
+        "#7bceee",
+        "#ffcb57",
+        "#6ac755"
+        ]
+    },
+    "blending": "overlay",
+    "opacity": {
+        "center": 1,
+        "edge": 0.1
+    },
+    "skew": -2,
+    "shapes": [
+        "c"
+    ]
+    });
+    </script>
+
+    <img class="logo" src="mbti.img2/mbtiweblogo-removebg-preview.png">
+    <h1 style="color:rgb(0, 0, 0); font-size: 200%; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); text-align: center;">get to know yourself in four letters !</h1>
+    <div class="gallery-wrap">
+        <img src="mbti.img/scrollarrowtoleft_83879.png" id="leftbtn">
+        <div class="gallery">
+            <div>
+                <img src="mbti.img/entj.jpg" alt="entj">
+                <img src="mbti.img/entp.jpg" alt="entp">
+                <img src="mbti.img/intj.jpg" alt="intj">
+                <img src="mbti.img/intp.jpg" alt="intp">
             </div>
-            <img src="mbti.img/scrollarrowtoright_83712.png" id="rightbtn">
+            <div>
+                <img src="mbti.img/infj.jpg" alt="infj">
+                <img src="mbti.img/infp.jpg" alt="infp">
+                <img src="mbti.img/enfj.jpg" alt="enfj">
+                <img src="mbti.img/enfp.jpg" alt="enfp">
+            </div>
+            <div>
+                <img src="mbti.img/istj.jpg" alt="istj">
+                <img src="mbti.img/isfj.jpg" alt="isfj">
+                <img src="mbti.img/estj.jpg" alt="estj">
+                <img src="mbti.img/esfj.jpg" alt="esfj">
+            </div>
+            <div>
+                <img src="mbti.img/istp.jpg" alt="istp">
+                <img src="mbti.img/isfp.jpg" alt="isfp">
+                <img src="mbti.img/estp.jpg" alt="estp">
+                <img src="mbti.img/esfp.jpg" alt="esfp">
+            </div>  
         </div>
-        <script>
-            const gallery = document.querySelector('.gallery');
-            const rightBtn = document.getElementById('rightbtn');
-            const leftBtn = document.getElementById('leftbtn');
+        <img src="mbti.img/scrollarrowtoright_83712.png" id="rightbtn">
+    </div>
+    <script>
+        const gallery = document.querySelector('.gallery');
+        const rightBtn = document.getElementById('rightbtn');
+        const leftBtn = document.getElementById('leftbtn');
 
-            gallery.addEventListener('wheel', (event) => {
-                event.preventDefault();
-                gallery.scrollBy({ left: event.deltaY, behavior: 'smooth' });
-            });
+        gallery.addEventListener('wheel', (event) => {
+            event.preventDefault();
+            gallery.scrollBy({ left: event.deltaY, behavior: 'smooth' });
+        });
 
-            rightBtn.addEventListener('click', () => {
-                gallery.scrollBy({ left: gallery.offsetWidth, behavior: 'smooth' });
-            });
+        rightBtn.addEventListener('click', () => {
+            gallery.scrollBy({ left: gallery.offsetWidth, behavior: 'smooth' });
+        });
 
-            leftBtn.addEventListener('click', () => {
-                gallery.scrollBy({ left: -gallery.offsetWidth, behavior: 'smooth' });
-            });
-        </script>
+        leftBtn.addEventListener('click', () => {
+            gallery.scrollBy({ left: -gallery.offsetWidth, behavior: 'smooth' });
+        });
+    </script>
 
-        <h1>"Why are they behaving like that?"</h1>
-        <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Hi there ! Welcome to uIn4letters, where you get to know anyone's personality type in just 4 letters.</p><br><br>
-        
-        <br><br><br><br><br><br><h2>What's MBTI?</h2>
-        <section id="section">
-            <p>MBTI (Myers-Briggs Type Indicator) is a personality assessment tool that categorizes individuals into 16 different personality types based on their preferences in four dichotomies: Introversion/Extraversion, Sensing/Intuition, Thinking/Feeling, and Judging/Perceiving.</p>
-        </section><br><br>
-
-        <h2>How does it work?</h2>
-        <section id="section">
-            <p>There are 16 MBTI types, each represented by a four-letter code. For example, ISTJ stands for Introverted, Sensing, Thinking, and Judging. Each type has its own unique characteristics and preferences.</p>
-        </section><br><br>
-        
-        <h2>Fun Facts !</h2>
-        <section id="section">
-            <p>Did you know that the MBTI was developed during World War II?</p>
-        </section><br><br>
+    <h1 style="color:rgb(0, 0, 0); font-size: 200%; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); text-align: center;"></h1>
+    <p style="color:rgb(0, 0, 0); margin-top:10px; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); text-align: center;"></p>
+    
+    <section id="section">
+        <div><h2 style="text-align: left; font-size: 50px;">𝙼𝚢𝚎𝚛𝚜-𝙱𝚛𝚒𝚐𝚐𝚜 𝚃𝚢𝚙𝚎 𝙸𝚗𝚍𝚒𝚌𝚊𝚝𝚘𝚛.</h2></div>
+        <div>That's what MBTI stands for, a personality framework that helps you discover what kind of human puzzle piece you are in this wonderfully chaotic world.
+            <br>Basically, it’s like a Hogwarts Sorting Hat, but for real-life personalities and without the talking hat (sadly).
+            <br>MBTI helps you understand yourself and others a little better, making friendships, teamwork, and even small talk a lot more fun.
+        </div>
+    </section><br><br><br><br>
+    <h2 style="text-align: center; font-size: 50px;">ꃅꂦꅏ ꀸꂦꍟꌗ ꀤ꓄ ꅏꂦꋪꀘ?</h2><br><br>
+    <img src="https://www.16personalities.com/static/images/teams/communication.svg?v=1" style="width: 65%; display: block; margin: 0 auto;">
+    <section id="section">
+        <div style="text-align: center;">
+            It test whether you are:<br><br>
+            <h2>Introversion        or      Extraversion</h2>
+            <br><h2>Sensing        or      Intuition</h2>
+            <br><h2>Thinking        or      Feeling</h2>
+            <br><h2>Judging        or      Perceiving</h2>
+        </div>
+    </section>
+    <section id="section">
+        <div>
+            There are 16 MBTI types, each represented by a four-letter code. For example, ISTJ stands for Introverted, Sensing, Thinking, and Judging. Each type has its own unique characteristics and preferences.
+        </div>
+    </section><br><br><br><br>
+    <h2 style="text-align: center; font-size: 50px;">ꌃꍟ꓄ ꌩꂦꀎ ꀸꂦꈤ'꓄ ꀘꈤꂦꅏ ꓄ꃅꍟꌗꍟ.</h2>
+    <img src="https://static.neris-assets.com/images/theory/traits/16personalities_trait_observant.svg" style="float: left; width: 30%;">
+    <section id="section">
+        <div>
+        It was invented by a mother-daughter duo!
+        Isabel Briggs Myers and her mother, Katharine Cook Briggs, created MBTI based on Carl Jung's psychological theories-talk about a family project!
+        </div>
+        <div>
+        It's almost 80 years old.
+        MBTI was first published in the 1940s and has since become one of the most popular personality tools in the world.
+        </div>
+    </section>
+    <section id="section">
+        <div>
+        Over 2 million people take it every year.
+        From job applicants to curious teenagers, millions take the MBTI annually, especially in the U.S.
+        </div>
+        <div>
+        It's used in over 70 countries.
+        MBTI isn’t just a Western thing, it's translated into dozens of languages and used worldwide in education, counseling, and the workplace.
+        </div>
+    </section>
+    <img src="https://static.neris-assets.com/images/theory/traits/16personalities_trait_extraverted.svg?v=1" style="float: right; width: 30%;">
+    <section id="section">
+        <div>
+        There are 16 possible personality types... and 1 in 16 odds to match your bestie.
+        Statistically, there’s a 6.25% chance two people will share the same exact type (but infinite ways to vibe).
+        </div>
+        <div>
+        It’s not a test, it’s an inventory.
+        MBTI doesn’t have right or wrong answers. It simply reflects your preferences, like how you prefer tea over coffee or, people over peace and quiet.
+        </div>
+    </section>
+    <section id="section">
+        <div>
+        Some companies use MBTI to build better teams.
+        MBTI is used by 89 of the Fortune 100 companies to improve communication and teamwork. Yup, it's more than just an internet quiz.
+        </div>
+        <div>
+        It sparked tons of memes and fandoms.
+        The MBTI fandom online is alive and well with type memes, Twitter drama, and endless Reddit debates.
+        </div>
+    </section><br><br><br><br>
     <footer>
-        <p style="text-align: center; font-size: 10px;">&copy; 2025 uIn4letters. All rights reserved.</p> 
+        <img src="https://www.16personalities.com/static/images/homepage/footer-desktop.svg">
     </footer>
 </body>
 </html>
