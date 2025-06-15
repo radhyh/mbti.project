@@ -60,7 +60,6 @@
   </div>
 
   <script>
-    const db = firebase.firestore(); // initializes a reference to Firestore database
     const list = document.getElementById("results");
 
     db.collection("results").orderBy("timestamp", "desc").get().then(snapshot => {
