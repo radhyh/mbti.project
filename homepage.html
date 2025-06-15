@@ -18,20 +18,20 @@
         }
 
         .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fffbfb;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
         .sidenav a {
-        padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -39,7 +39,7 @@
   transition: 0.3s;
 }
 
-.sidenav a:hover {
+.sidenav a:hover{
   color: #f1f1f1;
 }
 
@@ -201,11 +201,82 @@
             display: block;
             margin: 0 auto;
         }
+    .dropbutang {
+  background-color: #fffbfb;
+  color: black;
+  padding: 16px;
+  font-size: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownbutang {
+    margin-top: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-contentbutang {
+  display: none;
+  position: absolute;
+  background-color: #fffbfb;
+  min-width: 160px;
+  box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-contentbutang a {
+  color: black;
+  padding: 12px 160px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-contentbutang a:hover {background-color: #6a98e1dc}
+
+.dropdownbutang:hover .dropdown-contentbutang {
+  display: block;
+}
+
+.dropdownbutang:hover .dropbutang {
+  color: rgba(112, 192, 229, 0.906);
+}
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
+        <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="dropdownbutang">
+  <button class="dropbutang">MBTI</button>
+  <div class="dropdown-contentbutang">
+  <a href="analysts.html">Analysts</a>
+  <a href="diplomats.html">Diplomats</a>
+  <a href="sentinels.html">Sentinels</a>
+  <a href="explorers.html">Explorers</a>
+  </div>
+</div>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "400px";
+  document.getElementById("main").style.marginLeft = "400px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+
+<div id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    
+</div>
         <a href="homepage.html"><img src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" align="left" width=200px height=70px></a> 
         <nav>
         <ul>
