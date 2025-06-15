@@ -1,15 +1,3 @@
-// Firebase config first
-const firebaseConfig = {
-  apiKey: "AIzaSyBTUI2nTJCAr4xn0FYaa6SGV9xbaKsK1kg",
-  authDomain: "mbti-project-3c324.firebaseapp.com",
-  projectId: "mbti-project-3c324",
-  storageBucket: "mbti-project-3c324.appspot.com",
-  messagingSenderId: "539055979955",
-  appId: "1:539055979955:web:078e6481299a75b3735fc6"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
 const compatibilityMap = {
   INFP: {
     love: "ENFJ",
@@ -113,7 +101,7 @@ let questions = [];
 let current = 0;
 let score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 let pendingAnswer = null;
-let username = "";  // <-- add this if you get user name from form
+let username = "";  // <-- add this if you get user name from form and declared globally so it can be accessed in both startTest() and showResult().
 
 function startTest() {
   username = document.getElementById("username").value.trim();
@@ -146,6 +134,9 @@ function startTest() {
 }
 
 function showQuestion() {
+  document.getElementById("question-box").style.display = "block";
+  document.getElementById("buttons").style.display = "block";
+
   if (current >= questions.length) return showResult();
 
   const q = questions[current];
@@ -179,6 +170,10 @@ function confirmAnswer(confirmed) {
 }
 
 function showResult() {
+  document.getElementById("question-box").style.display = "none";
+  document.getElementById("buttons").style.display = "none";
+  document.getElementById("confirmBox").style.display = "none";
+  
   const mbti =
     (score.E > score.I ? 'E' : 'I') +
     (score.S > score.N ? 'S' : 'N') +
@@ -193,10 +188,8 @@ function showResult() {
 
 
   // Call saveToFirebase here with MBTI and username
-  saveToFirebase(mbti);
+  saveToFirebase(mbti, username);
 
-  document.getElementById('question-box').innerText = "none";
-  document.getElementById('buttons').innerHTML = "none";
   document.getElementById('result').innerHTML = `
   <h2>Your MBTI: ${mbti}</h2>
   <div style="white-space: pre-line; font-family: monospace;">
@@ -207,10 +200,15 @@ function showResult() {
     💼 Work Match: ${match.work}
     💥 Disaster Match: ${match.disaster}
   </div>
+  <div style="margin-top: 20px;">
+    <a href="dashboard.html">
+    <button style="background-color: #28a745;">View All Results</button>
+    </a>
+  </div>
 `;
 }
 
-function saveToFirebase(mbti) {
+function saveToFirebase(mbti, username) {
   db.collection('results').add({
     name: username,          // make sure username is set somewhere before test starts
     type: mbti,

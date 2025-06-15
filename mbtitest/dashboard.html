@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
   <script src="firebase-config.js"></script>
   <style>
     body {
@@ -59,7 +60,7 @@
   </div>
 
   <script>
-    const db = firebase.firestore();
+    const db = firebase.firestore(); // initializes a reference to Firestore database
     const list = document.getElementById("results");
 
     db.collection("results").orderBy("timestamp", "desc").get().then(snapshot => {
