@@ -137,7 +137,7 @@ function startTest() {
       current = 0;
       score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 
-      showQuestion(); // ✅ Now this runs when questions are ready
+      showQuestion(); // Nowthis runs when questions are ready
     })
     .catch(err => {
       alert("Failed to load questions.");
