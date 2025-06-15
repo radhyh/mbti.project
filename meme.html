@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: poppins, sans-serif;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+        nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(250, 187, 187);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .container .box  {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px;
+        }
+        .container .box .dream {
+            width: 32.5%;
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+        }
+        .container .box .dream img {
+            width: 100%;
+            padding-bottom: 15px;
+            border-radius: 5px;
+        }
+    </style>
+<body>
+    <header>
+        <a href="homepage.html"><img src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
+                <div class="dropdown-content">
+                    <a href="#analyst">Analysts</a>
+                        <a href="INTP.html">INTP</a>
+                        <a href="ENTP.html">ENTP</a>
+                        <a href="INTJ.html">INTJ</a>
+                        <a href="ENTJ.html">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="INFP.html">INFP</a>
+                        <a href="ENFP.html">ENFP</a>
+                        <a href="INFJ.html">INFJ</a>
+                        <a href="ENFJ.html">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="ISTJ.html">ISTJ</a>
+                        <a href="ISFJ.html">ISFJ</a>
+                        <a href="ESTJ.html">ESTJ</a>
+                        <a href="ESFJ.html">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="ISTP.html">ISTP</a>
+                        <a href="ISFP.html">ISFP</a>
+                        <a href="ESTP.html">ESTP</a>
+                        <a href="ESFP.html">ESFP</a>
+                </div>
+            </li>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1 style="font-size: 30px; text-align: center; margin: 90px; padding-bottom: 10px;">Bored? Have a look at some memes.</h1>
+        </div>
+        <div class="box">
+            <div class="dream">
+                <img src="mbti.img/meme1.jpg">
+                <img src="https://i.pinimg.com/736x/ad/3b/a8/ad3ba8998874662b087246f961719db3.jpg">
+                <img src="mbti.img/meme2.jpg">
+                <img src="https://i.pinimg.com/736x/37/1a/db/371adb3aa3669db4b7a639e734f0c394.jpg">
+                <img src="https://i.pinimg.com/736x/5a/58/36/5a5836f5cbb0fc5bf2cbae54bd89d642.jpg">
+                <img src="https://i.pinimg.com/736x/45/b5/b8/45b5b87e1967b8d1ba65314c56a2981d.jpg">
+                <img src="mbti.img/meme4.jpg">
+                <img src="https://i.pinimg.com/736x/6f/9f/2e/6f9f2eb2b590615f7503eec92d5e968d.jpg">
+                <img src="mbti.img/meme5.jpg">
+                <img src="https://i.pinimg.com/736x/a4/d5/85/a4d5854ead5fb8d11bd00e91cc45f8d7.jpg">
+            </div>
+            <div class="dream">
+                <img src="mbti.img/meme6.jpg">
+                <img src="https://i.pinimg.com/736x/16/d0/2c/16d02cc0260fc8e7ada8909843c1b7e6.jpg">
+                <img src="mbti.img/meme7.jpg">
+                <img src="https://i.pinimg.com/736x/f9/1a/82/f91a82eee5ecf002f0b60bd4a383cfbb.jpg">
+                <img src="mbti.img/meme8.jpg">
+                <img src="https://i.pinimg.com/736x/33/0a/cf/330acf31949455a02c8421ea5d0d24c9.jpg">
+                <img src="mbti.img/meme9.jpg">
+                <img src="https://i.pinimg.com/736x/05/91/de/0591de0c154e5629c2b7ab8c78b2edbf.jpg">
+                <img src="mbti.img/meme10.jpg">
+                <img src="https://i.pinimg.com/736x/e0/21/28/e021287482e196be3b0cb9f05a20eae4.jpg">
+            </div>
+            <div class="dream">
+                <img src="https://i.pinimg.com/736x/ae/41/07/ae4107a07bf8b4c518a8a1aab1486861.jpg">
+                <img src="https://i.pinimg.com/736x/02/56/25/02562571487907fc19c70344c9b4756a.jpg">
+                <img src="https://i.pinimg.com/736x/06/f3/b3/06f3b38ac39a389e7f1ef8c45224e2c4.jpg">
+                <img src="https://i.pinimg.com/736x/76/69/64/7669647436a4eb05564ba74efccafd0f.jpg">
+                <img src="https://i.pinimg.com/736x/5c/b4/ff/5cb4ff0b8bc9be0eb9f24deeaa0bca33.jpg">
+            </div>
+            <div class="dream">
+                <img src="https://i.pinimg.com/736x/92/87/5c/92875cbd60dececddbabe52fb8bfbfc3.jpg">
+                <img src="https://i.pinimg.com/736x/41/22/94/412294b1bf36f356caace184d8dacabc.jpg">
+                <img src="https://i.pinimg.com/736x/db/ef/de/dbefde869555290262e274197fde5fed.jpg">
+                <img src="https://i.pinimg.com/736x/eb/e6/d5/ebe6d52b1e5e38d626cc49445ee16848.jpg">
+                <img src="https://i.pinimg.com/736x/86/a1/69/86a1696621e394508233628d1c3e395e.jpg">
+            </div>
+        </div>
+    </div>
+</body>
