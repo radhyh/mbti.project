@@ -1,3 +1,14 @@
+// Firebase config first
+const firebaseConfig = {
+  apiKey: "AIzaSyBTUI2nTJCAr4xn0FYaa6SGV9xbaKsK1kg",
+  authDomain: "mbti-project-3c324.firebaseapp.com",
+  projectId: "mbti-project-3c324",
+  storageBucket: "mbti-project-3c324.appspot.com",
+  messagingSenderId: "539055979955",
+  appId: "1:539055979955:web:078e6481299a75b3735fc6"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 let questions = [];
 let current = 0;
 let score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
@@ -76,8 +87,8 @@ function showResult() {
   // Call saveToFirebase here with MBTI and username
   saveToFirebase(mbti);
 
-  document.getElementById('question-box').innerText = `Your MBTI: ${mbti}`;
-  document.getElementById('buttons').innerHTML = '';
+  document.getElementById('question-box').innerText = "none";
+  document.getElementById('buttons').innerHTML = "none";
   document.getElementById('result').innerHTML = `
     <h2>Your MBTI: ${mbti}</h2>
     <div style="white-space: pre-line; font-family: monospace;">${scoreText}</div>
