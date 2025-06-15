@@ -83,12 +83,16 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
   <script src="firebase-config.js"></script>
 </head>
 <body>
   <div id="quiz-container">
     <h1>MBTI Test</h1>
+    <div id="user-form">
+      <label for="username">Enter your name:</label>
+      <input type="text" id="username" required />
+      <button onclick="startTest()">Start Test</button>
+    </div>
     <div id="question-box"></div>
     <div id="buttons"></div>
     <div id="result"></div>
@@ -99,6 +103,12 @@
     <button onclick="confirmAnswer(true)">OK</button>
     <button onclick="confirmAnswer(false)">Cancel</button>
   </div>
+  <div style="margin-top: 20px;">
+    <a href="dashboard.html">
+    <button style="background-color: #28a745;">View All Results</button>
+    </a>
+  </div>
+
 
   <div id="chat">
     <h2 style="text-align: center; color: #333; font-size: 20px;">Gemini AI Chat</h2>

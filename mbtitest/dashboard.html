@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MBTI Results Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #dashboard-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #e9ecef;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
+
+    a button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    a button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="dashboard-container">
+    <h2>MBTI Results Dashboard</h2>
+    <ul id="results"></ul>
+    <a href="mbti-test.html"><button>Back to Test</button></a>
+  </div>
+
+  <script>
+    const db = firebase.firestore();
+    const list = document.getElementById("results");
+
+    db.collection("results").orderBy("timestamp", "desc").get().then(snapshot => {
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const item = document.createElement("li");
+        item.innerText = `${data.name}: ${data.type}`;
+        list.appendChild(item);
+      });
+    });
+  </script>
+</body>
+</html>
