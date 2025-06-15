@@ -115,12 +115,6 @@ let score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 let pendingAnswer = null;
 let username = "";  // <-- add this if you get user name from form
 
-fetch("questions.json")
-  .then(res => res.json())
-  .then(data => {
-    questions = data;
-  });
-
 function startTest() {
   username = document.getElementById("username").value.trim();
   if (!username) {
@@ -128,16 +122,29 @@ function startTest() {
     return;
   }
 
-  document.getElementById("user-form").style.display = "none";
-  document.getElementById("question-box").style.display = "block";
-  document.getElementById("buttons").style.display = "block";
-  document.getElementById("result").style.display = "block";
+  // Fetch questions and only then start the test
+  fetch("questions.json")
+    .then(res => res.json())
+    .then(data => {
+      questions = data;
 
-  current = 0;
-  score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+      // Now initialize test AFTER questions loaded
+      document.getElementById("user-form").style.display = "none";
+      document.getElementById("question-box").style.display = "block";
+      document.getElementById("buttons").style.display = "block";
+      document.getElementById("result").style.display = "block";
 
-  showQuestion(); // show the question after name is entered
+      current = 0;
+      score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+
+      showQuestion(); // ✅ Now this runs when questions are ready
+    })
+    .catch(err => {
+      alert("Failed to load questions.");
+      console.error(err);
+    });
 }
+
 function showQuestion() {
   if (current >= questions.length) return showResult();
 
