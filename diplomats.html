@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uIn4letters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 0.7px;
+        }
+
+ header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+
+ nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(250, 187, 187);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+            background-image: url('mbti.img/paperbg1.png');
+            font-family: "Lato", sans-serif;
+            transition: background-color .5s;
+        }
+
+        div.content {
+            margin-top: 100px;
+            padding: 20px;
+            border:2px solid rgb(98, 151, 79);
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgb(243, 255, 245);
+            overflow: auto;
+        }
+        div.content:hover {
+            border: 2px solid rgb(60, 60, 60);
+            box-shadow: 0px 8px 16px 0px rgba(21, 99, 44, 0.704);
+        }
+        
+        h1 {
+    color: rgba(21, 99, 44, 0.704); 
+    font-size: 90px;
+        }
+
+ul li {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(31, 115, 29, 0.797);
+}
+
+    </style>
+    <body>
+        <header>
+        <a href="homepage.html"><img src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
+                <div class="dropdown-content">
+                    <a href="#analyst">Analysts</a>
+                        <a href="#">INTP</a>
+                        <a href="#">ENTP</a>
+                        <a href="#">INTJ</a>
+                        <a href="#">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="#">INFP</a>
+                        <a href="#">ENFP</a>
+                        <a href="#">INFJ</a>
+                        <a href="#">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="#">ISTJ</a>
+                        <a href="#">ISFJ</a>
+                        <a href="#">ESTJ</a>
+                        <a href="#">ESFJ</a>
+                    <a href="#explorer">Explorers</a>
+                        <a href="#">ISTP</a>
+                        <a href="#">ISFP</a>
+                        <a href="#">ESTP</a>
+                        <a href="#s">ESFP</a>
+                </div>
+            </li>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
+            <h1 style ="color: rgba(31, 115, 29, 0.797); font-size: 90px;"> Diplomats</h1>
+            <a href="INFJ.html"><div class="content">
+            <img src="mbti.img\Picture10-removebg-preview.png" alt="intj icon" style="margin-top:20px; height:200px;width:200px;float: left;">
+            <h1>INFJ</h1>
+            <ul>
+                <li>Quiet and mystical, yet very inspiring and tireless idealists</li>
+            </ul>
+        </div></a>
+
+        <a href="INFP.html"><div class="content">
+            <img src="mbti.img\Picture15-removebg-preview.png" alt="intj icon" style="margin-top:20px; height:200px;width:200px;float: left;">
+            <h1>INFP</h1>
+            <ul>
+                <li>Poetic, kind and altruistic people, always eager to help a good cause</li>
+            </ul>
+        </div></a>
+
+        <a href="ENFJ.html"><div class="content">
+            <img src="mbti.img\enfj-removebg-preview.png" alt="intj icon" style="margin-top:20px; height:220px;width:200px;float: left;">
+            <h1>ENFJ</h1>
+            <ul>
+                <li>Charismatic and inspiring leaders, able to mesmerize their listeners</li>
+            </ul>
+        </div></a>
+
+        <a href="ENFP.html"><div class="content">
+            <img src="mbti.img\Picture5-removebg-preview.png" alt="intj icon" style="margin-top:20px; height:200px;width:200px;float: left;">
+            <h1>ENFP</h1>
+            <ul>
+                <li>Enthusiastic, creative and sociable free spirits, who can always find a reason to smile</li>
+            </ul>
+        </div></a>
+
+    <footer>
+        <img style="padding-top: 40px;" src="https://www.16personalities.com/static/images/homepage/footer-desktop.svg">
+    </footer>
+</body>
+</html>

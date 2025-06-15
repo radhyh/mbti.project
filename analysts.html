@@ -11,6 +11,78 @@
             font-family: Arial, Helvetica, sans-serif;
             letter-spacing: 0.7px;
         }
+
+ header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1.5px solid rgb(179, 179, 179);
+        }
+
+ nav ul {
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+            margin-right: 60px;
+            margin-left: 60px;
+            background-color: white;
+            height: 100%;
+        }
+        nav ul li a{
+            display: inline;
+            color: rgb(99, 99, 99);    
+            text-decoration: none;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown {
+            position: sticky;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+            color: rgb(99, 99, 99);
+            padding: 0;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(250, 187, 187);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+        .icon {
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         body {
             background-image: url('mbti.img/paperbg1.png');
             font-family: "Lato", sans-serif;
@@ -39,20 +111,79 @@
 ul li {
     font-size: 20px;
 }
+a {
+    text-decoration: none;
+}
 
     </style>
     <body>
         <header>
+        <a href="homepage.html"><img src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" width=200px height=70px align="left"></a> 
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
+                <div class="dropdown-content">
+                    <a href="#analyst">Analysts</a>
+                        <a href="#">INTP</a>
+                        <a href="#">ENTP</a>
+                        <a href="#">INTJ</a>
+                        <a href="#">ENTJ</a>
+                    <a href="#diplomat">Diplomats</a>
+                        <a href="#">INFP</a>
+                        <a href="#">ENFP</a>
+                        <a href="#">INFJ</a>
+                        <a href="#">ENFJ</a>
+                    <a href="#sentinel">Sentinels</a>
+                        <a href="#">ISTJ</a>
+                        <a href="#">ISFJ</a>
+                        <a href="#">ESTJ</a>
+                        <a href="#">ESFJ</a>
+                    <a href="##">Explorers</a>
+                        <a href="#">ISTP</a>
+                        <a href="#">ISFP</a>
+                        <a href="#">ESTP</a>
+                        <a href="#">ESFP</a>
+                </div>
+            </li>
+            <li><a href="meme.html">Meme</a></li>
+            <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        </nav>
+    </header>
             <h1 style ="color: rgba(85, 42, 125, 0.767); font-size: 90px;"> Analysts</h1>
-            </header>
-
-            <div class="content">
+            <a href="INTJ.html"><div class="content">
             <img src="https://static.neris-assets.com/images/personality-types/avatars/intj-architect-s3-female.svg" alt="intj icon" style="margin-top:20px; height:200px;width:200px;float: left;">
             <h1>INTJ</h1>
             <ul>
                 <li>Imaginative and strategic thinkers, with a plan for everything</li>
             </ul>
-        </div>
+        </div></a>
+
+        <a href="INTP.html"><div class="content">
+            <img src="mbti.img/intp3.png" alt="intj icon" style="margin-top:20px; height:200px;width:200px;float: left;">
+            <h1>INTP</h1>
+            <ul>
+                <li>Innovative inventors with an unquenchable thirst for knowledge</li>
+            </ul>
+        </div></a>
+
+        <a href="ENTJ.html"><div class="content">
+            <img src="mbti.img/entj1.png" alt="intj icon" style="margin-top:20px; height:200px;width:200px;float: left;">
+            <h1>ENTJ</h1>
+            <ul>
+                <li>Bold, imaginative and strong-willed leaders, always finding a way-or making one</li>
+            </ul>
+        </div></a>
+
+        <a href="ENTP.html"><div class="content">
+            <img src="mbti.img/entp1.png" alt="intj icon" style="margin-top:20px; height:200px;width:200px;float: left;">
+            <h1>ENTP</h1>
+            <ul>
+                <li>Smart and curious thinkers who cannot resist an intellectual challenge</li>
+            </ul>
+        </div></a>
 
     <footer>
         <img style="padding-top: 40px;" src="https://www.16personalities.com/static/images/homepage/footer-desktop.svg">
