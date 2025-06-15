@@ -9,6 +9,106 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+
+const compatibilityMap = {
+  INFP: {
+    love: "ENFJ",
+    friendship: "INFJ",
+    work: "INTJ",
+    disaster: "ESTJ"
+  },
+  INFJ: {
+    love: "ENFP",
+    friendship: "INFP",
+    work: "ENTP",
+    disaster: "ESTP"
+  },
+  ENFP: {
+    love: "INFJ",
+    friendship: "ENFP",
+    work: "INTJ",
+    disaster: "ISTJ"
+  },
+  ENFJ: {
+    love: "INFP",
+    friendship: "ENFJ",
+    work: "INTP",
+    disaster: "ISTP"
+  },
+  INTP: {
+    love: "ENTJ",
+    friendship: "INTP",
+    work: "INFJ",
+    disaster: "ESFJ"
+  },
+  INTJ: {
+    love: "ENFP",
+    friendship: "INTJ",
+    work: "ENFP",
+    disaster: "ESFP"
+  },
+  ENTP: {
+    love: "INFJ",
+    friendship: "ENTP",
+    work: "INTJ",
+    disaster: "ISFJ"
+  },
+  ENTJ: {
+    love: "INFP",
+    friendship: "ENTJ",
+    work: "INTP",
+    disaster: "ISFP"
+  },
+  ISFP: {
+    love: "ESTJ",
+    friendship: "ISFP",
+    work: "ESFP",
+    disaster: "ENTJ"
+  },
+  ISTP: {
+    love: "ESFJ",
+    friendship: "ISTP",
+    work: "ESTP",
+    disaster: "ENFJ"
+  },
+  ESFP: {
+    love: "ISFJ",
+    friendship: "ESFP",
+    work: "ISTP",
+    disaster: "INTJ"
+  },
+  ESTP: {
+    love: "ISFJ",
+    friendship: "ESTP",
+    work: "ISTP",
+    disaster: "INFJ"
+  },
+  ISFJ: {
+    love: "ESFP",
+    friendship: "ISFJ",
+    work: "ESTJ",
+    disaster: "ENTP"
+  },
+  ISTJ: {
+    love: "ESFP",
+    friendship: "ISTJ",
+    work: "ESTJ",
+    disaster: "ENFP"
+  },
+  ESFJ: {
+    love: "ISFP",
+    friendship: "ESFJ",
+    work: "ISTJ",
+    disaster: "INTP"
+  },
+  ESTJ: {
+    love: "ISFP",
+    friendship: "ESTJ",
+    work: "ISTJ",
+    disaster: "INFP"
+  }
+};
+
 let questions = [];
 let current = 0;
 let score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
@@ -79,6 +179,7 @@ function showResult() {
     (score.J > score.P ? 'J' : 'P');
 
   const scoreText = getScorePercent();
+  const match = compatibilityMap[mbti] || { love: "?", friendship: "?", work: "?", disaster: "?" };
 
   //Show result in alert 
   alert(`Your MBTI: ${mbti}`);
@@ -90,9 +191,16 @@ function showResult() {
   document.getElementById('question-box').innerText = "none";
   document.getElementById('buttons').innerHTML = "none";
   document.getElementById('result').innerHTML = `
-    <h2>Your MBTI: ${mbti}</h2>
-    <div style="white-space: pre-line; font-family: monospace;">${scoreText}</div>
-  `;
+  <h2>Your MBTI: ${mbti}</h2>
+  <div style="white-space: pre-line; font-family: monospace;">
+    ${scoreText}
+
+    💖 Love Match: ${match.love}
+    🫶 Friendship Match: ${match.friendship}
+    💼 Work Match: ${match.work}
+    💥 Disaster Match: ${match.disaster}
+  </div>
+`;
 }
 
 function saveToFirebase(mbti) {
