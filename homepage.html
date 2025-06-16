@@ -16,7 +16,6 @@
             font-family: "Lato", sans-serif;
             transition: background-color .5s;
         }
-
         .sidenav {
             height: 100%;
             width: 0;
@@ -28,8 +27,7 @@
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
-}
-
+        }
         .sidenav a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
@@ -38,11 +36,9 @@
             display: block;
             transition: 0.3s;
         }
-
         .sidenav a:hover{
             color: #f1f1f1;
         }
-
         .sidenav .closebtn {
             position: absolute;
             top: 0;
@@ -50,7 +46,6 @@
             font-size: 36px;
             margin-left: 50px;
         }
-
         #main {
             transition: margin-left .5s;
             padding: 16px;
@@ -127,7 +122,6 @@
             justify-content: center;
             align-items: center;
         }
-        
         h1 {
             text-align: center;
             margin-top: 50px;
@@ -186,13 +180,11 @@
             border: none;
             cursor: pointer;
         }
-
         .dropdownbutang {
             margin-top: 40px;
             position: relative;
             display: inline-block;
         }
-
         .dropdown-contentbutang {
             display: none;
             position: absolute;
@@ -201,24 +193,21 @@
             box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
             z-index: 1;
         }
-
         .dropdown-contentbutang a {
             color: black;
             padding: 12px 160px;
             text-decoration: none;
             display: block;
         }
-
-        .dropdown-contentbutang a:hover {background-color: #6a98e1dc}
-
+        .dropdown-contentbutang a:hover {
+            background-color: #6a98e1dc
+        }
         .dropdownbutang:hover .dropdown-contentbutang {
             display: block;
         }
-
         .dropdownbutang:hover .dropbutang {
             color: rgba(112, 192, 229, 0.906);
         }
-
         .search-form input {
             padding: 6px 14px;
             border-radius: 20px;
@@ -226,7 +215,6 @@
             outline: none;
             transition: border 0.3s ease;
         }
-
         .search-form input:focus {
             border-color: #007BFF;
         }
@@ -238,7 +226,6 @@
             padding: 0;
             justify-content: center;
         }
-
         .navbar {
             display: flex;
             justify-content: right;
@@ -261,94 +248,83 @@
             position: absolute;
             z-index: 999;
         }
-
         #itemList li a {
             text-decoration: none;
             color: black;
             display: block;
             padding: 6px;
         }
-
         #itemList li a:hover {
             background-color: #f2f2f2;
         }
-
-
-
-</style>
+    </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-            <div class="header-container">
-        <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="dropdownbutang">
-  <button class="dropbutang">MBTI</button>
-  <div class="dropdown-contentbutang">
-  <a href="analysts.html">Analysts</a>
-  <a href="diplomats.html">Diplomats</a>
-  <a href="sentinels.html">Sentinels</a>
-  <a href="explorers.html">Explorers</a>
-  </div>
-</div>
-</div>
+        <div class="header-container">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="dropdownbutang">
+                    <button class="dropbutang">MBTI</button>
+                    <div class="dropdown-contentbutang">
+                        <a href="analysts.html">Analysts</a>
+                        <a href="diplomats.html">Diplomats</a>
+                        <a href="sentinels.html">Sentinels</a>
+                        <a href="explorers.html">Explorers</a>
+                    </div>
+                </div>
+            </div>
 
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "400px";
-  document.getElementById("main").style.marginLeft = "400px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
+            <script>
+            function openNav() {
+            document.getElementById("mySidenav").style.width = "400px";
+            document.getElementById("main").style.marginLeft = "400px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-  document.body.style.backgroundColor = "white";
-}
-
-</script>
-
-<div id="main">
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-    
-</div>
+            function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+            }
+            </script>
+            <div id="main">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
         </div>
             <nav class="main-nav">
-
-        <ul>
-             <li><a href="meme.html">Meme</a></li>
-             <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
-             <li><a href="aboutus.html">About Us</a></li>
-            <nav class="navbar">
-            <form class="search-form">
-        <input type="text" id="searchBar" placeholder="Search MBTI type..." onkeyup="searchItems()">
-    </form>       
-    </div>
-
-<ul id="itemList" style="display: none;">
-  <li><a href="ENFJ.html">ENFJ</a></li>
-  <li><a href="ENFP.html">ENFP</a></li>
-  <li><a href="ENTJ.html">ENTJ</a></li>
-  <li><a href="ENTP.html">ENTP</a></li>
-  <li><a href="ESFJ.html">ESFJ</a></li>
-  <li><a href="ESFP.html">ESFP</a></li>
-  <li><a href="ESTJ.html">ESTJ</a></li>
-  <li><a href="ESTP.html">ESTP</a></li>
-  <li><a href="INFJ.html">INFJ</a></li>
-  <li><a href="INTJ.html">INTJ</a></li>
-  <li><a href="INTP.html">INTP</a></li>
-  <li><a href="ISFJ.html">ISFJ</a></li>
-  <li><a href="ISFP.html">ISFP</a></li>
-  <li><a href="ISTJ.html">ISTJ</a></li>
-  <li><a href="ISTP.html">ISTP</a></li>
-</ul>
-
-
-  <script src="search.js"></script>
-        </ul>
-        </nav>
+                <ul>
+                    <li><a href="meme.html">Meme</a></li>
+                    <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <nav class="navbar">
+                    <form class="search-form">
+                        <input type="text" id="searchBar" placeholder="Search MBTI type..." onkeyup="searchItems()">
+                    </form>       
+                </div>
+                    <ul id="itemList" style="display: none;">
+                        <li><a href="ENFJ.html">ENFJ</a></li>
+                        <li><a href="ENFP.html">ENFP</a></li>
+                        <li><a href="ENTJ.html">ENTJ</a></li>
+                        <li><a href="ENTP.html">ENTP</a></li>
+                        <li><a href="ESFJ.html">ESFJ</a></li>
+                        <li><a href="ESFP.html">ESFP</a></li>
+                        <li><a href="ESTJ.html">ESTJ</a></li>
+                        <li><a href="ESTP.html">ESTP</a></li>
+                        <li><a href="INFJ.html">INFJ</a></li>
+                        <li><a href="INTJ.html">INTJ</a></li>
+                        <li><a href="INTP.html">INTP</a></li>
+                        <li><a href="ISFJ.html">ISFJ</a></li>
+                        <li><a href="ISFP.html">ISFP</a></li>
+                        <li><a href="ISTJ.html">ISTJ</a></li>
+                        <li><a href="ISTP.html">ISTP</a></li>
+                    </ul>
+                    <script src="search.js"></script>
+                </ul>
+            </nav>
     </header>
+
     <div class="header finisher-header" style="width: 100%; height: 700px;">"Why are they behaving that way?"
         <br><p style="font-size: 17px; margin-top:10px;">Hi there ! Welcome to uIn4letters, where you get to know anyone's personality type in just 4 letters.</p>
     </div>
