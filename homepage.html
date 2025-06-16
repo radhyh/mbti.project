@@ -18,16 +18,16 @@
         }
 
         .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
+            height: 100%;  /* Full height of screen */
+            width: 0;  /* Initially hidden */
+            position: fixed; /* Sticks to viewport */
+            z-index: 1; /* Sits above all elements */
             top: 0;
             left: 0;
             background-color: #fffbfb;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            transition: 0.5s; /* Smooth slide effect */
+            padding-top: 60px; /* Spacing from top */
 }
 
         .sidenav a {
@@ -40,7 +40,7 @@
         }
 
         .sidenav a:hover{
-            color: #f1f1f1;
+            color: #f1f1f1; /* Changes link color on hover */
         }
 
         .sidenav .closebtn {
@@ -52,11 +52,11 @@
         }
 
         #main {
-            transition: margin-left .5s;
+            transition: margin-left .5s;  /* Slide effect for main content */
             padding: 16px;
         }
 
-        @media screen and (max-height: 450px) {
+        @media screen and (max-height: 450px) {  /* Responsive sidenav */
             .sidenav {padding-top: 15px;}
             .sidenav a {font-size: 18px;}
         }
