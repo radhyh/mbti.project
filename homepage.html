@@ -221,7 +221,6 @@
 
         .search-form input {
             padding: 6px 14px;
-            border: 1px solid #ccc;
             border-radius: 20px;
             font-size: 14px;
             outline: none;
@@ -232,13 +231,14 @@
             border-color: #007BFF;
         }
 
+
         .navbar {
             display: flex;
             justify-content: right;
             align-items: center;
             padding: 20px 40px;
             background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+           
         }
         #searchBar {
             padding: 8px;
@@ -249,10 +249,10 @@
             list-style: none;
             margin-top: 5px;
             padding: 0;
-            border: 1px solid #ccc;
+            border: 1px solid white;
             width: 200px;
             background-color: white;
-            position: absolute;
+            position:absolute;
             z-index: 999;
         }
 
@@ -266,6 +266,8 @@
         #itemList li a:hover {
             background-color: #f2f2f2;
         }
+
+
 
 </style>
     <link rel="stylesheet" href="styles.css">
@@ -282,7 +284,6 @@
   <a href="sentinels.html">Sentinels</a>
   <a href="explorers.html">Explorers</a>
   </div>
-</div>
 </div>
 
 <script>
@@ -305,15 +306,19 @@ function closeNav() {
     
 </div>
 
-        <a href="homepage.html"><img src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" align="left" width=200px height=70px></a> 
-        <nav>
+         <a href="homepage.html"><img src="mbti.img/mbtiweblogo.png" class="header-logo" style="margin-top: 10px; margin-left: 15px;" align="left" width=200px height=70px></a> 
+        </div>
+            <nav>
+
         <ul>
-            <li><a href="meme.html">Meme</a></li>
-            <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
+             <li><a href="meme.html">Meme</a></li>
+             <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
+             <li><a href="aboutus.html">About Us</a></li>
             <nav class="navbar">
             <form class="search-form">
         <input type="text" id="searchBar" placeholder="Search MBTI type..." onkeyup="searchItems()">
+    </form>       
+    </div>
 
 <ul id="itemList" style="display: none;">
   <li><a href="ENFJ.html">ENFJ</a></li>
@@ -335,7 +340,6 @@ function closeNav() {
 
 
   <script src="search.js"></script>
-    </nav>
         </ul>
         </nav>
     </header>
