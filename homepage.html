@@ -18,48 +18,48 @@
         }
 
         .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #fffbfb;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #fffbfb;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
 }
 
         .sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
 
-.sidenav a:hover{
-  color: #f1f1f1;
-}
+        .sidenav a:hover{
+            color: #f1f1f1;
+        }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
 
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
         header {
             position: sticky;
             top: 0;
@@ -127,39 +127,7 @@
             justify-content: center;
             align-items: center;
         }
-        .dropdown {
-            position: sticky;
-            display: inline-block;
-        }
-        .dropbtn {
-            background-color: white;
-            color: rgb(99, 99, 99);
-            padding: 0;
-            text-decoration: none;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgb(250, 187, 187);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            border-bottom: 1px solid whitesmoke;
-        }
-        .dropdown:hover .dropdown-content {
-            display: grid;
-            grid-template-columns: auto auto auto auto auto;
-        }
-        .dropdown-content a:hover {
-            background-color: whitesmoke;
-        }
+        
         h1 {
             text-align: center;
             margin-top: 50px;
@@ -210,95 +178,96 @@
             display: block;
             margin: 0 auto;
         }
-    .dropbutang {
-  background-color: #fffbfb;
-  color: black;
-  padding: 16px;
-  font-size: 40px;
-  border: none;
-  cursor: pointer;
-}
+        .dropbutang {
+            background-color: #fffbfb;
+            color: black;
+            padding: 16px;
+            font-size: 40px;
+            border: none;
+            cursor: pointer;
+        }
 
-.dropdownbutang {
-    margin-top: 40px;
-  position: relative;
-  display: inline-block;
-}
+        .dropdownbutang {
+            margin-top: 40px;
+            position: relative;
+            display: inline-block;
+        }
 
-.dropdown-contentbutang {
-  display: none;
-  position: absolute;
-  background-color: #fffbfb;
-  min-width: 160px;
-  box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+        .dropdown-contentbutang {
+            display: none;
+            position: absolute;
+            background-color: #fffbfb;
+            min-width: 160px;
+            box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
 
-.dropdown-contentbutang a {
-  color: black;
-  padding: 12px 160px;
-  text-decoration: none;
-  display: block;
-}
+        .dropdown-contentbutang a {
+            color: black;
+            padding: 12px 160px;
+            text-decoration: none;
+            display: block;
+        }
 
-.dropdown-contentbutang a:hover {background-color: #6a98e1dc}
+        .dropdown-contentbutang a:hover {background-color: #6a98e1dc}
 
-.dropdownbutang:hover .dropdown-contentbutang {
-  display: block;
-}
+        .dropdownbutang:hover .dropdown-contentbutang {
+            display: block;
+        }
 
-.dropdownbutang:hover .dropbutang {
-  color: rgba(112, 192, 229, 0.906);
-}
+        .dropdownbutang:hover .dropbutang {
+            color: rgba(112, 192, 229, 0.906);
+        }
 
-.search-form input {
-  padding: 6px 14px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 14px;
-  outline: none;
-  transition: border 0.3s ease;
-}
+        .search-form input {
+            padding: 6px 14px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
 
-.search-form input:focus {
-  border-color: #007BFF;
-}
+        .search-form input:focus {
+            border-color: #007BFF;
+        }
 
-.navbar {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-#searchBar {
-  padding: 8px;
-  width: 200px;
-}
+        .navbar {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #searchBar {
+            padding: 8px;
+            width: 200px;
+        }
 
-#itemList {
-  list-style: none;
-  margin-top: 5px;
-  padding: 0;
-  border: 1px solid #ccc;
-  width: 200px;
-  background-color: white;
-  position: absolute;
-  z-index: 999;
-}
+        #itemList {
+            list-style: none;
+            margin-top: 5px;
+            padding: 0;
+            border: 1px solid #ccc;
+            width: 200px;
+            background-color: white;
+            position: absolute;
+            z-index: 999;
+        }
 
-#itemList li a {
-  text-decoration: none;
-  color: black;
-  display: block;
-  padding: 6px;
-}
+        #itemList li a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 6px;
+        }
 
-#itemList li a:hover {
-  background-color: #f2f2f2;
-}
-    </style>
+        #itemList li a:hover {
+            background-color: #f2f2f2;
+        }
+
+</style>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -339,31 +308,6 @@ function closeNav() {
         <a href="homepage.html"><img src="mbti.img/mbtiweblogo.png" style="margin-top: 10px; margin-left: 15px;" align="left" width=200px height=70px></a> 
         <nav>
         <ul>
-            <li class="dropdown">
-                <a href="#mbtitype" class="dropbtn">MBTI Type</a>
-                <div class="dropdown-content">
-                    <a href="#analyst">Analysts</a>
-                        <a href="#">INTP</a>
-                        <a href="#">ENTP</a>
-                        <a href="#">INTJ</a>
-                        <a href="#">ENTJ</a>
-                    <a href="#diplomat">Diplomats</a>
-                        <a href="#">INFP</a>
-                        <a href="#">ENFP</a>
-                        <a href="#">INFJ</a>
-                        <a href="#">ENFJ</a>
-                    <a href="#sentinel">Sentinels</a>
-                        <a href="#">ISTJ</a>
-                        <a href="#">ISFJ</a>
-                        <a href="#">ESTJ</a>
-                        <a href="#">ESFJ</a>
-                    <a href="#explorer">Explorers</a>
-                        <a href="#">ISTP</a>
-                        <a href="#">ISFP</a>
-                        <a href="#">ESTP</a>
-                        <a href="#">ESFP</a>
-                </div>
-            </li>
             <li><a href="meme.html">Meme</a></li>
             <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
             <li><a href="aboutus.html">About Us</a></li>
