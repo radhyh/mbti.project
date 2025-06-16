@@ -76,7 +76,7 @@
         .dropdown-content a:hover {
             background-color: whitesmoke;
         }
-        .icon {
+        .icon {  /* Centered icons */
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -89,14 +89,14 @@
             padding:40px;
             font-size: 30px;
         }
-        div.content {
+        div.content {  /* Content box styling */
             margin-top: 100px;
             padding: 20px;
             border:2px solid rgb(142, 171, 199);
             margin-left: 50px;
             margin-right: 50px;
             background-color: aliceblue;
-            overflow: auto;
+            overflow: auto;  /* Ensure content like floated images don't overflow */
         }
         div.content:hover {
             border: 2px solid rgb(60, 60, 60);
@@ -114,19 +114,19 @@
             border: 2px solid rgb(60, 60, 60);
 
         }
-        .flex-container {
+        .flex-container {  /* Flex layout for famous person cards */
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.container {
+.container {   /* Container for each famous person */
     text-align: center;
     flex: 1 1 200px;
 }
 
-.container img {
+.container img {  /* Styling for famous person image */
     width: 180px;
     height: 220px;
     object-fit: cover;
@@ -134,7 +134,7 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.desc {
+.desc {  /* Description under each image */
     padding: 10px 0;
     font-size: 16px;
 }
