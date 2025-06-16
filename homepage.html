@@ -230,7 +230,14 @@
         .search-form input:focus {
             border-color: #007BFF;
         }
-
+        .main-nav ul {
+            display: flex;
+            gap: 60px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
 
         .navbar {
             display: flex;
@@ -238,7 +245,6 @@
             align-items: center;
             padding: 20px 40px;
             background-color: white;
-           
         }
         #searchBar {
             padding: 8px;
@@ -249,10 +255,10 @@
             list-style: none;
             margin-top: 5px;
             padding: 0;
-            border: 1px solid white;
+            border: 1px solid #ccc;
             width: 200px;
             background-color: white;
-            position:absolute;
+            position: absolute;
             z-index: 999;
         }
 
@@ -274,6 +280,7 @@
 </head>
 <body>
     <header>
+            <div class="header-container">
         <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="dropdownbutang">
@@ -284,6 +291,7 @@
   <a href="sentinels.html">Sentinels</a>
   <a href="explorers.html">Explorers</a>
   </div>
+</div>
 </div>
 
 <script>
@@ -305,10 +313,8 @@ function closeNav() {
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
     
 </div>
-
-         <a href="homepage.html"><img src="mbti.img/mbtiweblogo.png" class="header-logo" style="margin-top: 10px; margin-left: 15px;" align="left" width=200px height=70px></a> 
         </div>
-            <nav>
+            <nav class="main-nav">
 
         <ul>
              <li><a href="meme.html">Meme</a></li>
