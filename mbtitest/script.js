@@ -1,3 +1,4 @@
+// Stores the ideal MBTI matches for each type
 const compatibilityMap = {
   INFP: {
     love: "ENFJ",
@@ -96,12 +97,12 @@ const compatibilityMap = {
     disaster: "INFP"
   }
 };
-
-let questions = [];
-let current = 0;
-let score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-let pendingAnswer = null;
-let username = "";  // <-- add this if you get user name from form and declared globally so it can be accessed in both startTest() and showResult().
+//Declare global variables
+let questions = []; // stores all the MBTI questions (fetched from JSON file).
+let current = 0; // keeps track of which question number is showing.
+let score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 }; // keeps count of how many times each trait is selected
+let pendingAnswer = null; // temporarily stores an answer waiting for confirmation
+let username = "";  // <-- stores the name the user typed in the form and declared globally so it can be accessed in both startTest() and showResult().
 
 function startTest() {
   username = document.getElementById("username").value.trim();
@@ -112,20 +113,22 @@ function startTest() {
 
   // Fetch questions and only then start the test
   fetch("questions.json")
-    .then(res => res.json())
+    .then(res => res.json()) 
+    // then() runs after the fetch is successful.
+    // res.json() will replace the format of response from json to usable javascript array.
     .then(data => {
-      questions = data;
+      questions = data; //assign it to the global variable questions
 
-      // Now initialize test AFTER questions loaded
+      // Show question section and hide name form
       document.getElementById("user-form").style.display = "none";
       document.getElementById("question-box").style.display = "block";
       document.getElementById("buttons").style.display = "block";
       document.getElementById("result").style.display = "block";
 
       current = 0;
-      score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+      score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 }; //Reset all scores to zero (so every new user starts fresh).
 
-      showQuestion(); // Nowthis runs when questions are ready
+      showQuestion(); // Now this runs when questions are ready
     })
     .catch(err => {
       alert("Failed to load questions.");
@@ -137,36 +140,36 @@ function showQuestion() {
   document.getElementById("question-box").style.display = "block";
   document.getElementById("buttons").style.display = "block";
 
-  if (current >= questions.length) return showResult();
+  if (current >= questions.length) return showResult(); // if all questions are answered, show the result.
 
   const q = questions[current];
   document.getElementById('question-box').innerText = q.question;
-  const btns = document.getElementById('buttons');
-  btns.innerHTML = '';
+  const btns = document.getElementById('buttons'); //btns is the container for the answer buttons.
+  btns.innerHTML = ''; // clears any old buttons from the previous question before adding new ones
 
   for (let label in q.answers) {
-    const btn = document.createElement('button');
-    btn.innerText = label;
+    const btn = document.createElement('button'); //Creates a new button element in JavaScript
+    btn.innerText = label; //label as agree or disagree
     btn.onclick = () => {
       pendingAnswer = {
-        dimension: q.answers[label],
-        label: label
+        dimension: q.answers[label], //pendingAnswer.dimension stores the MBTI letter (`E`, `I`, etc.)
+        label: label //pendingAnswer.label stores the actual label clicked ("Agree" or "Disagree")
       };
       document.getElementById("confirmText").innerText = `You selected: "${label}". Are you sure?`;
       document.getElementById("confirmBox").style.display = "block";
     };
-    btns.appendChild(btn);
+    btns.appendChild(btn); //created new button inside the area on the page reserved for <div id="buttons"></div>
   }
 }
 
 function confirmAnswer(confirmed) {
-  document.getElementById("confirmBox").style.display = "none";
-  if (confirmed && pendingAnswer) {
-    score[pendingAnswer.dimension]++;
-    current++;
+  document.getElementById("confirmBox").style.display = "none"; //Hides the confirmation box
+  if (confirmed && pendingAnswer) { //If the user clickes "OK"
+    score[pendingAnswer.dimension]++; //It adds a point to the selected trait.
+    current++; //Goes to the next question.
     showQuestion();
   }
-  pendingAnswer = null;
+  pendingAnswer = null; //reset to null to clear it
 }
 
 function showResult() {
@@ -181,6 +184,8 @@ function showResult() {
     (score.J > score.P ? 'J' : 'P');
 
   const scoreText = getScorePercent();
+
+  //find the match from compatibilityMap using the user's MBTI type. If it exists, use it. If it does NOT exist, use the default values: ?.
   const match = compatibilityMap[mbti] || { love: "?", friendship: "?", work: "?", disaster: "?" };
 
   //Show result in alert 
@@ -224,7 +229,7 @@ function saveToFirebase(mbti, username) {
 
 function getScorePercent() {
   const result = [];
-  const pairs = [['E', 'I'], ['S', 'N'], ['T', 'F'], ['J', 'P']];
+  const pairs = [['E', 'I'], ['S', 'N'], ['T', 'F'], ['J', 'P']]; //Compares each pair of traits 
   for (let [a, b] of pairs) {
     const total = score[a] + score[b];
     if (total === 0) continue;
@@ -232,5 +237,5 @@ function getScorePercent() {
     const percentB = 100 - percentA;
     result.push(`${a}: ${percentA}%, ${b}: ${percentB}%`);
   }
-  return result.join('<br>');
+  return result.join('<br>'); //Taking multiple percentage results and combining them into one text block (with line breaks) to display nicely on the result page.
 }
