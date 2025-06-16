@@ -29,7 +29,7 @@
             padding-top: 60px; /* Spacing from top */
         }
         .sidenav a {
-            padding: 8px 8px 8px 32px;
+            padding: 8px 8px 8px 32px; /* Space inside links */
             text-decoration: none;
             font-size: 25px;
             color: #818181;
@@ -180,7 +180,7 @@
             display: flex;
             justify-content: right;
             align-items: center;
-            padding: 20px 40px;
+            
             background-color: white;
         }
         #searchBar {
@@ -260,7 +260,6 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="dropdownbutang">
@@ -290,35 +289,34 @@
             <div id="main">
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </div>
-        </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="meme.html">Meme</a></li>
                     <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
                     <nav class="navbar">
-                    <form class="search-form">
-                        <input type="text" id="searchBar" placeholder="Search MBTI type..." onkeyup="searchItems()">
-                    </form>       
-                </div>
-                    <ul id="itemList" style="display: none;">
-                        <li><a href="ENFJ.html">ENFJ</a></li>
-                        <li><a href="ENFP.html">ENFP</a></li>
-                        <li><a href="ENTJ.html">ENTJ</a></li>
-                        <li><a href="ENTP.html">ENTP</a></li>
-                        <li><a href="ESFJ.html">ESFJ</a></li>
-                        <li><a href="ESFP.html">ESFP</a></li>
-                        <li><a href="ESTJ.html">ESTJ</a></li>
-                        <li><a href="ESTP.html">ESTP</a></li>
-                        <li><a href="INFJ.html">INFJ</a></li>
-                        <li><a href="INTJ.html">INTJ</a></li>
-                        <li><a href="INTP.html">INTP</a></li>
-                        <li><a href="ISFJ.html">ISFJ</a></li>
-                        <li><a href="ISFP.html">ISFP</a></li>
-                        <li><a href="ISTJ.html">ISTJ</a></li>
-                        <li><a href="ISTP.html">ISTP</a></li>
-                    </ul>
-                    <script src="search.js"></script>
+                        <form class="search-form">
+                            <input type="text" id="searchBar" placeholder="Search MBTI type..." onkeyup="searchItems()">
+                        </form>       
+                        <ul id="itemList" style="display: none;">
+                            <li><a href="ENFJ.html">ENFJ</a></li>
+                            <li><a href="ENFP.html">ENFP</a></li>
+                            <li><a href="ENTJ.html">ENTJ</a></li>
+                            <li><a href="ENTP.html">ENTP</a></li>
+                            <li><a href="ESFJ.html">ESFJ</a></li>
+                            <li><a href="ESFP.html">ESFP</a></li>
+                            <li><a href="ESTJ.html">ESTJ</a></li>
+                            <li><a href="ESTP.html">ESTP</a></li>
+                            <li><a href="INFJ.html">INFJ</a></li>
+                            <li><a href="INTJ.html">INTJ</a></li>
+                            <li><a href="INTP.html">INTP</a></li>
+                            <li><a href="ISFJ.html">ISFJ</a></li>
+                            <li><a href="ISFP.html">ISFP</a></li>
+                            <li><a href="ISTJ.html">ISTJ</a></li>
+                            <li><a href="ISTP.html">ISTP</a></li>
+                        </ul>
+                        <script src="search.js">
+                        </script>
                 </ul>
             </nav>
     </header>

@@ -16,7 +16,7 @@ function searchItems() {
     }
   }
 
-  // Show the list only if there's a match
+  // Show the list only if there's a match,meaning a matching item was found and the user typed something (i.e., the input is not empty).
   list.style.display = found && input !== '' ? 'block' : 'none';
 }
 
