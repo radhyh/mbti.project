@@ -165,71 +165,71 @@
     </div>
     <canvas id="bgCanvas"></canvas>
 
-  <script>
-    const canvas = document.getElementById('bgCanvas');
-    const ctx = canvas.getContext('2d');
+    <script>
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
 
-    let particles = [];
-    const particleCount = 5;
+        let particles = [];
+        const particleCount = 5;
 
-    function resizeCanvas() {     // resize canvas to fill the window
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);  // adjust canvas size on window resize
-    resizeCanvas();
+        function resizeCanvas() {     // resize canvas to fill the window
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);  // adjust canvas size on window resize
+        resizeCanvas();
 
-    function createParticles() {    // create random particles and store them in an array
-      particles = [];
-      const colorOptions = [
-        'rgba(251, 150, 251, OPACITY)',  // Pastel Purple
-        'rgba(114, 268, 114, OPACITY)',  // Pastel Green
-        'rgba(133, 176, 250, OPACITY)',  // Pastel Blue
-        'rgba(255, 255, 103, OPACITY)'   // Pastel Yellow
-      ];
-      for (let i = 0; i < particleCount; i++) {
-        const opacity = Math.random().toFixed(2);
-        const baseColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
-        const color = baseColor.replace("OPACITY", opacity);
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,  // random position of the particles
-          vx: (Math.random() - 0.5) * 3,
-          vy: (Math.random() - 0.5) * 3,    // random velocity for each particle
-          radius: Math.random() * 800 + 500,
-          color: color
-        });
-      }
-    }
-    function animate() {    // animate the particles and clear the canvas
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+        function createParticles() {    // create random particles and store them in an array
+        particles = [];
+        const colorOptions = [
+            'rgba(251, 150, 251, OPACITY)',  // Pastel Purple
+            'rgba(114, 268, 114, OPACITY)',  // Pastel Green
+            'rgba(133, 176, 250, OPACITY)',  // Pastel Blue
+            'rgba(255, 255, 103, OPACITY)'   // Pastel Yellow
+        ];
+        for (let i = 0; i < particleCount; i++) {
+            const opacity = Math.random().toFixed(2);
+            const baseColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+            const color = baseColor.replace("OPACITY", opacity);
+            particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,  // random position of the particles
+            vx: (Math.random() - 0.5) * 3,
+            vy: (Math.random() - 0.5) * 3,    // random velocity for each particle
+            radius: Math.random() * 800 + 500,
+            color: color
+            });
+        }
+        }
+        function animate() {    // animate the particles and clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      for (let p of particles) {   // loop through each particle
-        ctx.beginPath();
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
-        gradient.addColorStop(0, p.color);
-        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-        ctx.fillStyle = gradient;
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);  // draw a circle for each particle
-        ctx.fill();
+        for (let p of particles) {   // loop through each particle
+            ctx.beginPath();
+            const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
+            gradient.addColorStop(0, p.color);
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            ctx.fillStyle = gradient;
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);  // draw a circle for each particle
+            ctx.fill();
 
-        // update position
-        p.x += p.vx;
-        p.y += p.vy;
+            // update position
+            p.x += p.vx;
+            p.y += p.vy;
 
-        // bounce off edges
-        if (p.x < 0 || p.x > canvas.width) 
-          p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) 
-          p.vy *= -1;
-      }
+            // bounce off edges
+            if (p.x < 0 || p.x > canvas.width) 
+            p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) 
+            p.vy *= -1;
+        }
 
-      requestAnimationFrame(animate);
-    }
+        requestAnimationFrame(animate);
+        }
 
-    createParticles();
-    animate();
-  </script>
+        createParticles();
+        animate();
+    </script>
     <h3 style="color:rgb(25, 31, 112); font-size: 200%; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); text-align: center;">Prepared By :</h3>
 
     <div class="container">
