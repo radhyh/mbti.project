@@ -103,12 +103,21 @@
             padding: 15px;
             text-align: center;
         }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            z-index: -1;
+            width: 100%;
+            height: 700px;
+        }
         .finisher-header {
             margin-top: 240px;
             margin-bottom: -300px;
             text-align: center;
             text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-            font-size: 3em;
+            font-size: 2.5em;
             color: white;
             font-weight: bold;
         }
@@ -145,7 +154,7 @@
                 </div>
             </li>
             <li><a href="meme.html">Meme</a></li>
-            <li><a href="mbtitest/mbti-test.html">Take Test</a></li>
+            <li><a href="test.html">Take Test</a></li>
             <li><a href="aboutus.html">About Us</a></li>
         </ul>
         </nav>
@@ -154,44 +163,73 @@
     <div class="header finisher-header" style="width: 100%; height: 700px;">"From Curious to Certified MBTI Geeks"
         <br><p style="font-size: 17px;">Just tap on the icons below to know more what kind of person we are.</p>
     </div>
-    <script src="finisher-header.es5.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-    new FinisherHeader({
-    "count": 6,
-    "size": {
-        "min": 1100,
-        "max": 1300,
-        "pulse": 0.4
-    },
-    "speed": {
-        "x": {
-        "min": 0.1,
-        "max": 0.3
-        },
-        "y": {
-        "min": 0.1,
-        "max": 0.3
-        }
-    },
-    "colors": {
-        "background": "#beadcd",
-        "particles": [
-        "#7bceee",
-        "#ffcb57",
-        "#6ac755"
-        ]
-    },
-    "blending": "overlay",
-    "opacity": {
-        "center": 1,
-        "edge": 0.1
-    },
-    "skew": -2,
-    "shapes": [
-        "c"
-    ]
-    });
-    </script>
+    <canvas id="bgCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    const particleCount = 5;
+
+    function resizeCanvas() {     // resize canvas to fill the window
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);  // adjust canvas size on window resize
+    resizeCanvas();
+
+    function createParticles() {    // create random particles and store them in an array
+      particles = [];
+      const colorOptions = [
+        'rgba(251, 150, 251, OPACITY)',  // Pastel Purple
+        'rgba(114, 268, 114, OPACITY)',  // Pastel Green
+        'rgba(133, 176, 250, OPACITY)',  // Pastel Blue
+        'rgba(255, 255, 103, OPACITY)'   // Pastel Yellow
+      ];
+      for (let i = 0; i < particleCount; i++) {
+        const opacity = Math.random().toFixed(2);
+        const baseColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+        const color = baseColor.replace("OPACITY", opacity);
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,  // random position of the particles
+          vx: (Math.random() - 0.5) * 3,
+          vy: (Math.random() - 0.5) * 3,    // random velocity for each particle
+          radius: Math.random() * 800 + 500,
+          color: color
+        });
+      }
+    }
+    function animate() {    // animate the particles and clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let p of particles) {   // loop through each particle
+        ctx.beginPath();
+        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
+        gradient.addColorStop(0, p.color);
+        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = gradient;
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);  // draw a circle for each particle
+        ctx.fill();
+
+        // update position
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // bounce off edges
+        if (p.x < 0 || p.x > canvas.width) 
+          p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) 
+          p.vy *= -1;
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    createParticles();
+    animate();
+  </script>
     <h3 style="color:rgb(25, 31, 112); font-size: 200%; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); text-align: center;">Prepared By :</h3>
 
     <div class="container">
@@ -202,19 +240,19 @@
         </div>
 
         <div class="member">
-            <a href="INTP.html"><img title="INTP" src="mbti.img/intp1.png" alt="sarah's mbti" style="width: 137px;"></a>
+            <a href="INTP.html"><img title="INTP" src="mbti.img/intp1.png" alt="sarah's mbti" style="width: 97px;"></a>
             <div class="desc">𝙽𝚞𝚛 𝚂𝚊𝚛𝚊𝚑 𝚋𝚒𝚗𝚝𝚒 𝙰𝚣𝚖𝚒</div>
             <div class="desc">𝟸𝟺𝟻𝟽𝟺𝟼</div>
         </div>
 
         <div class="member">
-            <a href="ENFJ.html"><img title="ENFJ" src="mbti.img/enfj1.png" alt="rad's mbti"style="width: 110px;"></a>
+            <a href="ENFJ.html"><img title="ENFJ" src="mbti.img/enfj1.png" alt="rad's mbti"style="width: 90px;"></a>
             <div class="desc">𝙽𝚞𝚛𝚛𝚊𝚍𝚑𝚒𝚢𝚊𝚑 𝚋𝚒𝚗𝚝𝚒 𝚁𝚒𝚍𝚣𝚞𝚊𝚗</div>
             <div class="desc">𝟸𝟺𝟽𝟸𝟹𝟽</div>
         </div>
 
         <div class="member">
-            <a href=""><img title="ISFP" src="mbti.img/isfprbg.png" alt="izzah's mbti" style="width: 140px;"></a>
+            <a href="ISFJ.html"><img title="ISFJ" src="https://64.media.tumblr.com/c1727645302e8c76cb6613e61b1527a4/tumblr_inline_ny5bqwdDNz1teo9yu_500.pnj" alt="izzah's mbti" style="width: 120px;"></a>
             <div class="desc">𝙽𝚞𝚛 𝙸𝚣𝚣𝚊𝚑 𝙰𝚖𝚊𝚗𝚒 𝚋𝚒𝚗𝚝𝚒 𝙷𝚊𝚜𝚖𝚊𝚢𝚊𝚍𝚒</div>
             <div class="desc">𝟸𝟺𝟻𝟺𝟽𝟿</div>
         </div>
