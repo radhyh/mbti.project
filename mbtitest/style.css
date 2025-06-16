@@ -1,16 +1,22 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f0f4f8;
+  background-image: url("mbti.img/mbtiweblogo-removebg-preview.png");
+  background-size: cover;
   text-align: center;
   padding: 20px;
 }
 
 #quiz-container {
-  background: white;
+  background: #4298b4;
+  color: white;
   padding: 30px;
   border-radius: 10px;
   max-width: 600px;
+  height: 650px;
   margin: auto;
+  background-image: url('https://www.16personalities.com/static/images/homepage/header-mountains-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -20,10 +26,10 @@ button {
   font-size: 16px;
   border-radius: 5px;
   border: none;
-  background-color: #007bff;
-  color: white;
+  background-color: #539ceb;
+  color: rgb(255, 255, 255);
   cursor: pointer;
 }
 button:hover {
-  background-color: #0056b3;
+  background-color: #799cc6;;
 }
