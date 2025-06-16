@@ -122,34 +122,34 @@
             justify-content: center;
             align-items: center;
         }
-        .dropbutang {
+        .dropbutang { /* Style for the main dropdown button */
             background-color: #fffbfb;
             color: black;
             padding: 16px;
             font-size: 40px;
-            border: none;
-            cursor: pointer;
+            border: none; /* No border */
+            cursor: pointer; /* Cursor changes to pointer on hover */
         }
         .dropdownbutang {
             margin-top: 40px;
             position: relative;
-            display: inline-block;
+            display: inline-block; /* Keeps element in line while allowing width/height */
         }
         .dropdown-contentbutang {
-            display: none;
+            display: none; /* Initially hidden */
             position: absolute;
             background-color: #fffbfb;
             min-width: 160px;
             box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
             z-index: 1;
         }
-        .dropdown-contentbutang a {
+        .dropdown-contentbutang a { /* Each link inside the dropdown */
             color: black;
             padding: 12px 160px;
             text-decoration: none;
             display: block;
         }
-        .dropdown-contentbutang a:hover {
+        .dropdown-contentbutang a:hover { /* Highlight dropdown item on hover */
             background-color: #6a98e1dc
         }
         .dropdownbutang:hover .dropdown-contentbutang {
@@ -158,14 +158,14 @@
         .dropdownbutang:hover .dropbutang {
             color: rgba(112, 192, 229, 0.906);
         }
-        .search-form input {
+        .search-form input { /* Input field styling inside a search form */
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 14px;
-            outline: none;
-            transition: border 0.3s ease;
+            outline: none; /* Removes default blue outline on focus */
+            transition: border 0.3s ease; /* Smooth border change animation */
         }
-        .search-form input:focus {
+        .search-form input:focus { /* When input is focused, change border color */
             border-color: #007BFF;
         }
         .main-nav ul {
@@ -181,9 +181,9 @@
         #searchBar {
             padding: 10px;
             width: 200px;
-        }
-        #itemList {
-            list-style: none;
+        } 
+        #itemList {  /* Container for search results */
+            list-style: none; 
             margin-top: 5px;
             padding: 0;
             border: 1px solid #ccc;
@@ -192,13 +192,13 @@
             position: absolute;
             z-index: 999;
         }
-        #itemList li a {
+        #itemList li a { /* Style for each result item */
             text-decoration: none;
             color: black;
             display: block;
             padding: 6px;
         }
-        #itemList li a:hover {
+        #itemList li a:hover { /* Hover effect on each result item */
             background-color: #f2f2f2;
         }
         h1 {
